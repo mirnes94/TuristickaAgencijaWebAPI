@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:views="clr-namespace:TuristickaAgencija.MobileApp.Views" xmlns:vm="clr-namespace:TuristickaAgencija.MobileApp.ViewModels"
+                  x:Class="TuristickaAgencija.MobileApp.Views.MainPage">
+    <MasterDetailPage.BindingContext>
+        <vm:MainViewModel/>
+    </MasterDetailPage.BindingContext>
+
+    <MasterDetailPage.Master>
+        <views:MenuPage />
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <views:ItemsPage />
+            </x:Arguments>
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_feed.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            
+
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

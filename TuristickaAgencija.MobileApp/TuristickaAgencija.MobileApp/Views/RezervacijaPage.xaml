@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:TuristickaAgencija.MobileApp.ViewModels"
+             x:Class="TuristickaAgencija.MobileApp.Views.RezervacijaPage">
+    <ContentPage.BindingContext>
+        <vm:RezervacijaViewModel></vm:RezervacijaViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <StackLayout HorizontalOptions="EndAndExpand">
+                <Button Text="Nastavi" Clicked="Button_Clicked_1" Margin="5" Padding="5"></Button>
+            </StackLayout>
+            <ListView ItemsSource="{Binding PutovanjaList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="CenterAndExpand" Margin="10">
+                                <Label Text="Rezervacija" HorizontalTextAlignment="Center" Margin="10"
+                  Grid.ColumnSpan="2"  FontAttributes="Bold" FontSize="20"/>
+                                <Label Text="Naziv putovanja:"/>
+                                <Label Text="{Binding Putovanje.NazivPutovanja}"></Label>
+                                <Label Text="Opis putovanja:"/>
+                                <Label Text="{Binding Putovanje.OpisPutovanja}"></Label>
+                                <Label Text="Opis putovanja:"/>
+                                <Label Text="{Binding Putovanje.CijenaPutovanja}"></Label>
+                                <StackLayout Grid.Row="1" Grid.Column="1">
+                                    <Button Clicked="Button_Clicked" Command="{Binding RezervisiCommand}" Text="Ukloni"></Button>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                    
+                </ListView.ItemTemplate>
+                </ListView>   
+        </StackLayout>   
+           
+       
+    </ContentPage.Content>
+</ContentPage>

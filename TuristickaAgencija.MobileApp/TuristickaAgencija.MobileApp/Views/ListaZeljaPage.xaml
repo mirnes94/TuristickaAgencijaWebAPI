@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+xmlns:vm="clr-namespace:TuristickaAgencija.MobileApp.ViewModels"
+             x:Class="TuristickaAgencija.MobileApp.Views.ListaZeljaPage">
+    <ContentPage.BindingContext>
+        <vm:ListaZeljaViewModel></vm:ListaZeljaViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Favoriti"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Vertical">
+                <StackLayout Margin="10" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                    <Label Text="Welcome "></Label>
+                    <Label Text="{Binding Korisnik.KorisnickoIme}"></Label>
+                    <Label Text="{Binding Korisnik.Id}" IsVisible="false"></Label>
+                 
+                </StackLayout>
+            </StackLayout>
+
+            <ListView ItemsSource="{Binding PutovanjaList}" ItemSelected="ListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding NazivPutovanja}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
+                                    <Label Text="{Binding OpisPutovanja}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
+                                </StackLayout>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
