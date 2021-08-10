@@ -84,7 +84,7 @@ namespace TuristickaAgencija.MobileApp.ViewModels
 
             await _service.Insert<Model.Korisnici>(request);
             await Application.Current.MainPage.DisplayAlert("Success", "Uspješna registracija", "OK");
-            Application.Current.MainPage = new AppShell();
+            Application.Current.MainPage = new LoginPage();
            
 
         }

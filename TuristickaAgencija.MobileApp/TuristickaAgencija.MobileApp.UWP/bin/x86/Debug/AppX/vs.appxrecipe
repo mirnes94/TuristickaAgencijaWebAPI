@@ -172,7 +172,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp\bin\Debug\netstandard2.0\TuristickaAgencija.MobileApp.dll">
       <PackagePath>TuristickaAgencija.MobileApp.dll</PackagePath>
-      <Modified>2021-07-11T17:12:55.971</Modified>
+      <Modified>2021-08-10T09:22:52.052</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp\bin\Debug\netstandard2.0\TuristickaAgencija.Model.dll">
       <PackagePath>TuristickaAgencija.Model.dll</PackagePath>
