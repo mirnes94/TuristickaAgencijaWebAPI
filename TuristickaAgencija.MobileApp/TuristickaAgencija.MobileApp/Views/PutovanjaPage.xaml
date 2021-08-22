@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:vm="clr-namespace:TuristickaAgencija.MobileApp.ViewModels" 
              xmlns:local="clr-namespace:TuristickaAgencija.MobileApp.Converters"
-             x:Class="TuristickaAgencija.MobileApp.Views.PutovanjaPage">
+             x:Class="TuristickaAgencija.MobileApp.Views.PutovanjaPage"
+             >
     <ContentPage.BindingContext>
         <vm:PutovanjaViewModel></vm:PutovanjaViewModel>
     </ContentPage.BindingContext>
@@ -19,12 +20,15 @@
             <Label Text="Putovanja"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            
             <StackLayout Orientation="Vertical">
+              
                 <StackLayout Margin="10" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
                     <Label Text="Welcome "></Label>
                     <Label Text="{Binding Korisnik.KorisnickoIme}"></Label>
                     <Label Text="{Binding Korisnik.Id}" IsVisible="false"></Label>
                 </StackLayout>
+              
             </StackLayout>
             <Picker ItemsSource="{Binding GradoviList}" SelectedItem="{Binding SelectedGrad}" ItemDisplayBinding="{Binding NazivGrada}"></Picker>
             <ListView ItemsSource="{Binding PutovanjaList}" ItemSelected="ListView_OnItemSelected">

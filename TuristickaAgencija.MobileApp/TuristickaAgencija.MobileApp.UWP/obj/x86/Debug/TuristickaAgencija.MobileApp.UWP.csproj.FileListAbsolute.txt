@@ -106,3 +106,13 @@ C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\Turist
 C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\System.Security.Cryptography.ProtectedData.dll
 C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\obj\x86\Debug\FxResources.System.Configuration.ConfigurationManager.SR.resw
 C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\obj\x86\Debug\FxResources.System.Security.Cryptography.ProtectedData.SR.resw
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\Plugin.Messaging.Abstractions.dll
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\Plugin.Messaging.Abstractions.pdb
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\Plugin.Messaging.dll
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\Plugin.Messaging.pdb
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\obj\x86\Debug\Plugin.Messaging.pri.xml
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\Plugin.Settings.Abstractions.dll
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\Plugin.Settings.Abstractions.pdb
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\Plugin.Settings.dll
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\Plugin.Settings.pdb
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\obj\x86\Debug\Plugin.Settings.pri.xml

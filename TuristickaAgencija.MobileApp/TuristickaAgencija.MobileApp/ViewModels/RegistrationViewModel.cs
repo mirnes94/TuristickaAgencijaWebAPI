@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Plugin.Messaging;
+using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,6 +69,13 @@ namespace TuristickaAgencija.MobileApp.ViewModels
             set { SetProperty(ref _passwordpotvrda, value); }
         }
 
+        string _konfirmacijskiKod = string.Empty;
+        public string KonfirmacijskiKod
+        {
+            get { return _konfirmacijskiKod; }
+            set { SetProperty(ref _konfirmacijskiKod, value); }
+        }
+
         public async Task Registracija()
         {
             KorisniciInsertUpdateRequest request = new KorisniciInsertUpdateRequest
@@ -76,14 +86,53 @@ namespace TuristickaAgencija.MobileApp.ViewModels
                 Password = Password,
                 PasswordConfirmation = PasswordPotvrda,
                 Prezime = Prezime,
-                Status = true,
+                Status = false,
                 Telefon = Telefon,
+              
 
             };
-            
 
+            
+            MailAddress from = new MailAddress(request.Email, request.Ime+" "+request.Prezime);
+            MailAddress to = new MailAddress("mirnest10@gmail.com","Mirnes Turkovic");
+         
+            MailMessage mm = new MailMessage(from, to)
+            {
+                Subject = "Confirmation email",
+                Body = "Confirm your registration. Go to"+ " http://localhost:43791/api/Korisnici/Potvrdi/"+request.KorisnickoIme,
+                IsBodyHtml = false
+            };
+
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+
+
+            NetworkCredential nc = new NetworkCredential("mirnest10@gmail.com", "mirnes12345*");
+            smtp.UseDefaultCredentials = true;
+            smtp.Credentials = nc;
+
+            smtp.Send(mm);
+
+            /*
+            var emailMessenger = CrossMessaging.Current.EmailMessenger;
+            if (emailMessenger.CanSendEmail)
+            {
+                var email = new EmailMessageBuilder()
+                    
+                    .To("mirnes.turkovic94@gmail.com")
+                    .Subject("Confirmation email")
+                    .Body("Wellcome to Travelex. Confirm email")
+                    .Build();
+
+                emailMessenger.SendEmail(email);
+
+            }*/
             await _service.Insert<Model.Korisnici>(request);
-            await Application.Current.MainPage.DisplayAlert("Success", "Uspješna registracija", "OK");
+
+
+            await Application.Current.MainPage.DisplayAlert("Success", "Confirmation mail is sent", "OK");
             Application.Current.MainPage = new LoginPage();
            
 

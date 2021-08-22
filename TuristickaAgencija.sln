@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuristickaAgencija.MobileAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuristickaAgencija.MobileApp.iOS", "TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.iOS\TuristickaAgencija.MobileApp.iOS.csproj", "{D0314BD3-59D9-4700-8E03-75A248DE75E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuristickaAgencija.MobileApp", "TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.csproj", "{74F38608-BB58-4DE7-845A-03E15D9EE2C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TuristickaAgencija.MobileApp", "TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.csproj", "{74F38608-BB58-4DE7-845A-03E15D9EE2C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

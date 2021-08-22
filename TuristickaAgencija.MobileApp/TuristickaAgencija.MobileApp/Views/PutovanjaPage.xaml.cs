@@ -30,5 +30,7 @@ namespace TuristickaAgencija.MobileApp.Views
             await Navigation.PushModalAsync(new NavigationPage(new PutovanjaDetaljiPage(item, model.Korisnik)));
          
         }
+
+       
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wERJ2TX+8KDN/gagout0PwgI7N4BPAF0iJgoGxRz9tVOKS8J67NwJBrBnKGAFhs/iDthLhpkor7O3Vk/gnZTAQ==",
+  "dgSpecHash": "TtxZuT8rxtnQag1C40fpHxV+zvpXUYjE8XvXtJbh8ty8cRWnpdmlgk/BVOrRKgbfdIitPb3bph1XGhhOEeQ30w==",
   "success": true,
   "projectFilePath": "C:\\Users\\ACER\\Desktop\\RS2\\TuristickaAgencija\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.csproj",
   "expectedPackageFiles": [
@@ -47,6 +47,8 @@
     "C:\\Users\\ACER\\.nuget\\packages\\system.text.encodings.web\\5.0.1\\system.text.encodings.web.5.0.1.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\system.text.json\\5.0.2\\system.text.json.5.0.2.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\ACER\\.nuget\\packages\\xam.plugins.messaging\\5.2.0\\xam.plugins.messaging.5.2.0.nupkg.sha512",
+    "C:\\Users\\ACER\\.nuget\\packages\\xam.plugins.settings\\3.1.1\\xam.plugins.settings.3.1.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
   ],

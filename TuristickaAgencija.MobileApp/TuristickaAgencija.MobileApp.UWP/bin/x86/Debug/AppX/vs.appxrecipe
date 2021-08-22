@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-07-11T14:56:33.538</Modified>
+      <Modified>2021-08-22T09:40:23.677</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\TuristickaAgencija.MobileApp.UWP.exe">
       <PackagePath>entrypoint\TuristickaAgencija.MobileApp.UWP.exe</PackagePath>
-      <Modified>2021-07-11T14:56:28.449</Modified>
+      <Modified>2021-08-22T09:40:09.446</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\.nuget\packages\flurl\2.8.1\lib\netstandard2.0\Flurl.dll">
       <PackagePath>Flurl.dll</PackagePath>
@@ -150,6 +150,22 @@
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
       <Modified>2016-11-30T01:58:38.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ACER\.nuget\packages\xam.plugins.messaging\5.2.0\lib\UAP10\Plugin.Messaging.Abstractions.dll">
+      <PackagePath>Plugin.Messaging.Abstractions.dll</PackagePath>
+      <Modified>2018-04-07T15:24:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ACER\.nuget\packages\xam.plugins.messaging\5.2.0\lib\UAP10\Plugin.Messaging.dll">
+      <PackagePath>Plugin.Messaging.dll</PackagePath>
+      <Modified>2018-04-07T15:24:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ACER\.nuget\packages\xam.plugins.settings\3.1.1\lib\UAP10\Plugin.Settings.Abstractions.dll">
+      <PackagePath>Plugin.Settings.Abstractions.dll</PackagePath>
+      <Modified>2017-10-17T21:03:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ACER\.nuget\packages\xam.plugins.settings\3.1.1\lib\UAP10\Plugin.Settings.dll">
+      <PackagePath>Plugin.Settings.dll</PackagePath>
+      <Modified>2017-10-17T21:03:16.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft\Xamarin\NuGet\xamarin.essentials\1.6.1\lib\uap10.0.16299\Xamarin.Essentials.dll">
       <PackagePath>Xamarin.Essentials.dll</PackagePath>
       <Modified>2021-01-25T17:38:56.000</Modified>
@@ -172,11 +188,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp\bin\Debug\netstandard2.0\TuristickaAgencija.MobileApp.dll">
       <PackagePath>TuristickaAgencija.MobileApp.dll</PackagePath>
-      <Modified>2021-08-10T09:22:52.052</Modified>
+      <Modified>2021-08-22T09:39:11.786</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp\bin\Debug\netstandard2.0\TuristickaAgencija.Model.dll">
       <PackagePath>TuristickaAgencija.Model.dll</PackagePath>
-      <Modified>2021-07-11T11:15:48.048</Modified>
+      <Modified>2021-08-22T09:38:46.504</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -347,11 +363,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-07-11T14:56:28.086</Modified>
+      <Modified>2021-08-22T09:40:09.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-07-11T14:56:28.087</Modified>
+      <Modified>2021-08-22T09:40:09.018</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -367,11 +383,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-07-09T09:05:35.654</Modified>
+      <Modified>2021-08-22T09:40:16.012</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\Core\TuristickaAgencija.MobileApp.UWP.exe">
       <PackagePath>TuristickaAgencija.MobileApp.UWP.exe</PackagePath>
-      <Modified>2021-07-11T14:56:33.515</Modified>
+      <Modified>2021-08-22T09:40:23.653</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

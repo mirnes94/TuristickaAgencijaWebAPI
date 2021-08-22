@@ -37,9 +37,12 @@ namespace TuristickaAgencija.MobileApp.ViewModels
 
 
         public ICommand InitCommand { get; set; }
+        public ICommand BackToMenuCommand { get; set; }
         public Korisnici Korisnik { get; set; }
 
-        public async Task Init()
+      
+
+            public async Task Init()
         {
             if (GradoviList.Count == 0)
             {

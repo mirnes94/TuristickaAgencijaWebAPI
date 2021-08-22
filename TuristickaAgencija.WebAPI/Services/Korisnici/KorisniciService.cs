@@ -154,6 +154,19 @@ namespace TuristickaAgencija.WebAPI.Services.Korisnici
             return null;
         }
 
+        public Model.Korisnici Potvrdi(string username)
+        {
+            var user = _context.Korisnici.Include(x => x.KorisniciUloge).ThenInclude(x => x.Uloga).FirstOrDefault(x => x.KorisnickoIme == username);
+
+            if (user != null)
+            {
+                    user.Status = true;
+                _context.SaveChanges(); 
+                    return _mapper.Map<Model.Korisnici>(user);
+                    
+            }
+            return null;
+        }
         public List<Model.Korisnici> GetAllUsers()
         {
             var list = _context.Korisnici.ToList();

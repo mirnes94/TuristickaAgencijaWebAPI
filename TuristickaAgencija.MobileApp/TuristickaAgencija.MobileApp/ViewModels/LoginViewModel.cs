@@ -40,16 +40,25 @@ namespace TuristickaAgencija.MobileApp.ViewModels
 
             if (korisnik != null)
             {
-                LoggedInUser.ActiveUser = korisnik;
+                if (korisnik.Status == true)
+                {
+                    
+                    LoggedInUser.ActiveUser = korisnik;
 
-                await Application.Current.MainPage.DisplayAlert("Success", "Dobro dosli " + korisnik.Ime + " " + korisnik.Prezime, "OK");
-                //Application.Current.MainPage = new PutovanjaPage(korisnik);
-                //Application.Current.MainPage = new ObavijestiPage();
-                Application.Current.MainPage = new MainPage(korisnik);
+                    await Application.Current.MainPage.DisplayAlert("Success", "Dobro dosli " + korisnik.Ime + " " + korisnik.Prezime, "OK");
+                    //Application.Current.MainPage = new PutovanjaPage(korisnik);
+                    //Application.Current.MainPage = new ObavijestiPage();
+                    Application.Current.MainPage = new MainPage(korisnik);
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", "Potrebno je da potvrdite Vas racun", "OK");
+                }
+               
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Netačni pritupni podaci", "OK");
+                await Application.Current.MainPage.DisplayAlert("Error", "Netačni pristupni podaci", "OK");
             }
         }
     }

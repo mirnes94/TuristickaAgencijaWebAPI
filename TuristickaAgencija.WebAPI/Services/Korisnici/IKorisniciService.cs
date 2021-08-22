@@ -16,5 +16,6 @@ namespace TuristickaAgencija.WebAPI.Services.Korisnici
         Model.Korisnici Insert(KorisniciInsertUpdateRequest request);
         Model.Korisnici Update(int id, KorisniciInsertUpdateRequest request);
         Model.Korisnici Authenticiraj(string username, string password);
+        Model.Korisnici Potvrdi(string username);
     }
 }

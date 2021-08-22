@@ -1,12 +1,15 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TuristickaAgencija.Model.Request;
+using TuristickaAgencija.WebAPI.Database;
 using TuristickaAgencija.WebAPI.Services.Korisnici;
+
 
 namespace TuristickaAgencija.WebAPI.Controllers
 {
@@ -15,10 +18,22 @@ namespace TuristickaAgencija.WebAPI.Controllers
     [ApiController]
     public class KorisniciController : ControllerBase
     {
+        //private readonly UserManager<Korisnici> _userManager;
         private readonly IKorisniciService _korisniciService;
-        public KorisniciController(IKorisniciService korisniciService)
+        //private readonly ITokenService _tokenService;
+        /*
+        public KorisniciController(UserManager<Korisnici> userManager,IKorisniciService korisniciService,
+            ITokenService tokenService)
         {
             _korisniciService = korisniciService;
+           _userManager = userManager;
+            _tokenService = tokenService;
+        }*/
+
+        public KorisniciController( IKorisniciService korisniciService)
+        {
+            _korisniciService = korisniciService;
+           
         }
 
         //[Authorize(Roles = "Admin")]
@@ -38,8 +53,9 @@ namespace TuristickaAgencija.WebAPI.Controllers
 
         //[Authorize(Roles="Admin")]
         [HttpPost]
-        public Model.Korisnici Insert(KorisniciInsertUpdateRequest request)
+        public  Model.Korisnici Insert(KorisniciInsertUpdateRequest request)
         {
+            //request.Token =_tokenService.CreateToken(request);
             return _korisniciService.Insert(request);
         }
         //[Authorize(Roles = "Administrator")]
@@ -54,6 +70,15 @@ namespace TuristickaAgencija.WebAPI.Controllers
         {
             return _korisniciService.Authenticiraj(username, password);
         }
+
+        [HttpGet]
+        [Route("Potvrdi/{username}")]
+        public Model.Korisnici Potvrdi(string username)
+        {
+
+            return _korisniciService.Potvrdi(username);
+        }
+
 
 
     }
