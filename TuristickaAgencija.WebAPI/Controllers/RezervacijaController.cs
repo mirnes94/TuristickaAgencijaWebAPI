@@ -19,14 +19,14 @@ namespace TuristickaAgencija.WebAPI.Controllers
         {
             _rezervacijaService = rezervacijaService;
         }
-        //[Authorize(Roles = "Admin")]
+      
         [HttpGet]
         public ActionResult<List<Model.Rezervacija>> Get([FromQuery] RezervacijaSearchRequest request)
         {
             return _rezervacijaService.Get(request);
 
         }
-        //[Authorize(Roles = "Admin")]
+      
         [HttpGet("{id}")]
         public Model.Rezervacija GetById(int id)
         {
@@ -39,7 +39,7 @@ namespace TuristickaAgencija.WebAPI.Controllers
         {
             return _rezervacijaService.Insert(request);
         }
-        //[Authorize(Roles = "Admin")]
+       
         [HttpPut("{id}")]
         public Model.Rezervacija Update(int id, RezervacijaInsertUpdateRequest request)
         {

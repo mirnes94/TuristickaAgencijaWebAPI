@@ -24,16 +24,20 @@ namespace TuristickaAgencija.MobileApp.ViewModels
         public ICommand InitCommand { get; set; }
         public Korisnici Korisnik { get; set; }
 
-        public async Task Obrisi(int id)
+        public async Task Obrisi(int putovanjeId)
         {
 
-            var listaZelja = await _listaZeljaService.GetById<Model.ListaZelja>(id);
-           
+            IEnumerable<ListaZelja> listaZelja = await _listaZeljaService.Get<IEnumerable<ListaZelja>>(null);
+         
+            foreach (var i in listaZelja)
+            {
+                if(i.PutovanjeId==putovanjeId)
+                await _listaZeljaService.Delete<Model.ListaZelja>(i.Id);
+               
+            }
 
-                await _listaZeljaService.Delete<Model.ListaZelja>(listaZelja.Id);
-                await Application.Current.MainPage.DisplayAlert("Success", "Obrisali ste putovanje iz favorita", "OK");
-          
-
+               await Application.Current.MainPage.DisplayAlert("Success", "Obrisali ste putovanje iz favorita", "OK");
+        
 
         }
         public async Task Init()

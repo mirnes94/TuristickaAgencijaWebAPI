@@ -14,15 +14,15 @@ namespace TuristickaAgencija.WebAPI.Database
             modelBuilder.Entity<Korisnici>().HasData(
                 new WebAPI.Database.Korisnici()
                 {
-
+                    //password za sve korisnike je: 123456
                     Id = 1,
                     Ime = "Mirnes",
                     Prezime = "Turkovic",
                     Email = "admin@mail.com",
                     Telefon = "061478951",
                     KorisnickoIme = "tmirnes",
-                    LozinkaHash = "jADLS6AKnFKvo0T1OLorml5I6zM=",//lozinka je string
-                    LozinkaSalt = "7mrNBkeLCpTAgWdf+dXIfQ==",
+                    LozinkaHash = "Fcm514xjmNp/HVnC/upkWqW0G+0=",
+                    LozinkaSalt = "YW55IGNhcm5hbCBwbGVhc3VyZQ==",
                     Status = true
                 },
                 new Korisnici
@@ -33,8 +33,8 @@ namespace TuristickaAgencija.WebAPI.Database
                     Email = "amila@mail.com",
                     Telefon = "062479951",
                     KorisnickoIme = "tamila",
-                    LozinkaHash = "jADLS6AKnFKvo0T1OLorml5I6zM=",//lozinka je string
-                    LozinkaSalt = "7mrNBkeLCpTAgWdf+dXIfQ==",
+                    LozinkaHash = "Fcm514xjmNp/HVnC/upkWqW0G+0=",
+                    LozinkaSalt = "YW55IGNhcm5hbCBwbGVhc3VyZQ==",
                     Status = true
 
                 },
@@ -46,8 +46,8 @@ namespace TuristickaAgencija.WebAPI.Database
                      Email = "meho@mail.com",
                      Telefon = "061478951",
                      KorisnickoIme = "mmeho",
-                     LozinkaHash = "1QNz37oxp0X45S8TpFyNItYYSvY=",//lozinka je qweasd
-                     LozinkaSalt = "XG1/eB+ktmgmM5d9Dg8cmA==",
+                     LozinkaHash = "Fcm514xjmNp/HVnC/upkWqW0G+0=",
+                     LozinkaSalt = "YW55IGNhcm5hbCBwbGVhc3VyZQ==",
                      Status = true
 
                  },
@@ -59,8 +59,8 @@ namespace TuristickaAgencija.WebAPI.Database
                         Email = "suljo@mail.com",
                         Telefon = "0601478951",
                         KorisnickoIme = "ssuljo",
-                        LozinkaHash = "1QNz37oxp0X45S8TpFyNItYYSvY=",//lozinka je qweasd
-                        LozinkaSalt = "XG1/eB+ktmgmM5d9Dg8cmA==",
+                        LozinkaHash = "Fcm514xjmNp/HVnC/upkWqW0G+0=",
+                        LozinkaSalt = "YW55IGNhcm5hbCBwbGVhc3VyZQ==",
                         Status = true
 
                     },
@@ -72,8 +72,8 @@ namespace TuristickaAgencija.WebAPI.Database
                            Email = "mujo@mail.com",
                            Telefon = "0601478951",
                            KorisnickoIme = "mmujo",
-                           LozinkaHash = "1QNz37oxp0X45S8TpFyNItYYSvY=",//lozinka je qweasd
-                           LozinkaSalt = "XG1/eB+ktmgmM5d9Dg8cmA==",
+                           LozinkaHash = "Fcm514xjmNp/HVnC/upkWqW0G+0=",
+                           LozinkaSalt = "YW55IGNhcm5hbCBwbGVhc3VyZQ==",
                            Status = true
 
                        },
@@ -85,8 +85,8 @@ namespace TuristickaAgencija.WebAPI.Database
                              Email = "kemo@mail.com",
                              Telefon = "0601478851",
                              KorisnickoIme = "kmujic",
-                             LozinkaHash = "1QNz37oxp0X45S8TpFyNItYYSvY=",//lozinka je qweasd
-                             LozinkaSalt = "XG1/eB+ktmgmM5d9Dg8cmA==",
+                             LozinkaHash = "Fcm514xjmNp/HVnC/upkWqW0G+0=",
+                             LozinkaSalt = "YW55IGNhcm5hbCBwbGVhc3VyZQ==",
                              Status = true
 
                          }
@@ -288,7 +288,7 @@ namespace TuristickaAgencija.WebAPI.Database
                     CijenaNocenja = 100,
                     NazivSmjestaja = "Hotel",
                     OpisSmjestaja = "Hotel sa 5 zvjezdica. Ukljucen dorucak",
-                    Slika = File.ReadAllBytes("Helpers/OIP.jpg"),
+                    Slika = null,
                     TipSobe = "trokrevetna"
 
                 },
@@ -298,7 +298,7 @@ namespace TuristickaAgencija.WebAPI.Database
                        CijenaNocenja = 60,
                        NazivSmjestaja = "Hotel",
                        OpisSmjestaja = "Hotel sa 4 zvjezdica.Ukljucen dorucak",
-                       Slika = File.ReadAllBytes("Helpers/OIP.jpg"),
+                       Slika = null,
                        TipSobe = "dvokrevetna"
 
                    },
@@ -308,7 +308,7 @@ namespace TuristickaAgencija.WebAPI.Database
                           CijenaNocenja = 40,
                           NazivSmjestaja = "Hotel",
                           OpisSmjestaja = "Hotel sa 4 zvjezdica",
-                          Slika = File.ReadAllBytes("Helpers/OIP.jpg"),
+                          Slika = null,
                           TipSobe = "dvkrevetna"
 
                       }
@@ -325,7 +325,7 @@ namespace TuristickaAgencija.WebAPI.Database
                     GradId = 3,
                     PrevozId = 1,
                     SmjestajId = 3,
-                    Slika = File.ReadAllBytes("Helpers/template.jpg")
+                    Slika = null
                 },
                   new Putovanja
                   {
@@ -339,7 +339,7 @@ namespace TuristickaAgencija.WebAPI.Database
                       GradId = 4,
                       PrevozId = 2,
                       SmjestajId = 2,
-                      Slika = File.ReadAllBytes("Helpers/template2.jpg")
+                      Slika = null
                   },
                      new Putovanja
                      {
@@ -353,7 +353,7 @@ namespace TuristickaAgencija.WebAPI.Database
                          GradId = 5,
                          PrevozId = 2,
                          SmjestajId = 1,
-                         Slika = File.ReadAllBytes("Helpers/template.jpg")
+                         Slika = null
                      },
                      new Putovanja
                      {
@@ -367,7 +367,7 @@ namespace TuristickaAgencija.WebAPI.Database
                          GradId = 6,
                          PrevozId = 1,
                          SmjestajId = 2,
-                         Slika = File.ReadAllBytes("Helpers/template2.jpg")
+                         Slika = null
                      },
                      new Putovanja
                      {
@@ -381,7 +381,7 @@ namespace TuristickaAgencija.WebAPI.Database
                          GradId = 6,
                          PrevozId = 2,
                          SmjestajId = 1,
-                         Slika = File.ReadAllBytes("Helpers/template2.jpg")
+                         Slika = null
                      },
                       new Putovanja
                       {
@@ -395,7 +395,7 @@ namespace TuristickaAgencija.WebAPI.Database
                           GradId = 3,
                           PrevozId = 2,
                           SmjestajId = 3,
-                          Slika = File.ReadAllBytes("Helpers/template.jpg")
+                          Slika = null
                       },
                        new Putovanja
                        {
@@ -409,7 +409,7 @@ namespace TuristickaAgencija.WebAPI.Database
                            GradId = 7,
                            PrevozId = 2,
                            SmjestajId = 2,
-                           Slika = File.ReadAllBytes("Helpers/template.jpg")
+                           Slika = null
                        },
                         new Putovanja
                         {
@@ -423,7 +423,7 @@ namespace TuristickaAgencija.WebAPI.Database
                             GradId = 10,
                             PrevozId = 1,
                             SmjestajId = 2,
-                            Slika = File.ReadAllBytes("Helpers/template.jpg")
+                            Slika = null
                         },
                           new Putovanja
                           {
@@ -437,7 +437,7 @@ namespace TuristickaAgencija.WebAPI.Database
                               GradId = 11,
                               PrevozId = 1,
                               SmjestajId = 3,
-                              Slika = File.ReadAllBytes("Helpers/template.jpg")
+                              Slika = null
                           }
 
                 );
@@ -965,7 +965,7 @@ namespace TuristickaAgencija.WebAPI.Database
                  Jmbg="1457896541278",
                  Kontakt="061475963",
                  Prezime="Prezime1",
-                 Slika = File.ReadAllBytes("Helpers/template.jpg")
+                 Slika = null
              },
                new Vodic
                {
@@ -974,7 +974,7 @@ namespace TuristickaAgencija.WebAPI.Database
                    Jmbg = "1459896541278",
                    Kontakt = "062475963",
                    Prezime = "Prezime2",
-                   Slika = File.ReadAllBytes("Helpers/template.jpg")
+                   Slika = null
                },
                new Vodic
                {
@@ -983,7 +983,7 @@ namespace TuristickaAgencija.WebAPI.Database
                    Jmbg = "8959896541278",
                    Kontakt = "062495963",
                    Prezime = "Prezime3",
-                   Slika = File.ReadAllBytes("Helpers/template.jpg")
+                   Slika = null
                },
                  new Vodic
                  {
@@ -992,7 +992,7 @@ namespace TuristickaAgencija.WebAPI.Database
                      Jmbg = "8959896541277",
                      Kontakt = "062495964",
                      Prezime = "Prezime4",
-                     Slika = File.ReadAllBytes("Helpers/template.jpg")
+                     Slika = null
                  },
                    new Vodic
                    {
@@ -1001,7 +1001,7 @@ namespace TuristickaAgencija.WebAPI.Database
                        Jmbg = "8959866541278",
                        Kontakt = "062495563",
                        Prezime = "Prezime5",
-                       Slika = File.ReadAllBytes("Helpers/template.jpg")
+                       Slika = null
                    },
                     new Vodic
                     {
@@ -1010,7 +1010,7 @@ namespace TuristickaAgencija.WebAPI.Database
                         Jmbg = "8959866441278",
                         Kontakt = "061495963",
                         Prezime = "Prezime6",
-                        Slika = File.ReadAllBytes("Helpers/template.jpg")
+                        Slika = null
                     },
                        new Vodic
                        {
@@ -1019,7 +1019,7 @@ namespace TuristickaAgencija.WebAPI.Database
                            Jmbg = "8959866441278",
                            Kontakt = "061499963",
                            Prezime = "Prezime7",
-                           Slika = File.ReadAllBytes("Helpers/template.jpg")
+                           Slika = null
                        },
                           new Vodic
                           {
@@ -1028,7 +1028,7 @@ namespace TuristickaAgencija.WebAPI.Database
                               Jmbg = "1359866441278",
                               Kontakt = "0601495963",
                               Prezime = "Prezime8",
-                              Slika = File.ReadAllBytes("Helpers/template.jpg")
+                              Slika = null
                           }
              );
 

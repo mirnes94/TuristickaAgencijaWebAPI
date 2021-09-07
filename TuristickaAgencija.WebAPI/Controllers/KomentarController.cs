@@ -18,14 +18,14 @@ namespace TuristickaAgencija.WebAPI.Controllers
         {
             _komentarService = komentarService;
         }
-        //[Authorize(Roles = "Admin")]
+     
         [HttpGet]
         public ActionResult<List<Model.Komentar>> Get([FromQuery] KomentarSearchRequest request)
         {
             return _komentarService.Get(request);
 
         }
-        //[Authorize(Roles = "Admin")]
+       
         [HttpGet("{id}")]
         public Model.Komentar GetById(int id)
         {
@@ -38,7 +38,7 @@ namespace TuristickaAgencija.WebAPI.Controllers
         {
             return _komentarService.Insert(request);
         }
-        //[Authorize(Roles = "Admin")]
+       
         [HttpPut("{id}")]
         public Model.Komentar Update(int id, KomentarInsertUpdateRequest request)
         {

@@ -25,5 +25,7 @@ namespace TuristickaAgencija.MobileApp.Views
             base.OnAppearing();
             await model.Init();
         }
+
+       
     }
 }

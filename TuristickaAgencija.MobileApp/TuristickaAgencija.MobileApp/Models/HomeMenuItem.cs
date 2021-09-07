@@ -11,7 +11,8 @@ namespace TuristickaAgencija.MobileApp.Models
         Obavijesti, 
         Putovanja,
         Rezervacije,
-        Uplate,
+        ListaUplata,
+        Uplata,
         Favoriti
     }
     public class HomeMenuItem

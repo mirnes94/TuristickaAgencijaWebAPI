@@ -26,6 +26,10 @@
                             <StackLayout Padding="10" Orientation="Horizontal">
                                
                                 <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding Id}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
                                     <Label Text="{Binding DatumRezervacije}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 

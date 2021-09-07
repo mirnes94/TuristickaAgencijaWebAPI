@@ -20,7 +20,7 @@ namespace TuristickaAgencija.WebAPI.Controllers
         {
             _uplateService = uplateService;
         }
-        //[Authorize(Roles = "Admin")]
+        
 
         [HttpGet]
         public ActionResult<List<Model.Uplate>> Get([FromQuery] UplateSearchRequest request)
@@ -28,7 +28,13 @@ namespace TuristickaAgencija.WebAPI.Controllers
             return _uplateService.Get(request);
 
         }
-        //[Authorize(Roles = "Admin")]
+        [HttpGet("GetByMonth/{mjesec}")]
+        public ActionResult<List<Model.Uplate>> GetByMonth(int mjesec)
+        {
+            return _uplateService.GetByMonth(mjesec);
+
+        }
+       
         [HttpGet("{id}")]
         public Model.Uplate GetById(int id)
         {
@@ -41,7 +47,7 @@ namespace TuristickaAgencija.WebAPI.Controllers
         {
             return _uplateService.Insert(request);
         }
-        //[Authorize(Roles = "Admin")]
+     
         [HttpPut("{id}")]
         public Model.Uplate Update(int id, UplateInsertUpdateRequest request)
         {

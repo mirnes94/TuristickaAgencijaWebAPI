@@ -37,7 +37,7 @@ namespace TuristickaAgencija.WinUI
                 if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Unauthorized)
                 {
                     MessageBox.Show("Niste authentificirani");
-                    //await Application.Current.MainPage.DisplayAlert("Greška", "Niste authentificirani", "OK");
+                
                 }
                 throw;
 
@@ -68,7 +68,7 @@ namespace TuristickaAgencija.WinUI
                 {
                     stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
                 }
-                //await Application.Current.MainPage.DisplayAlert("Greška", stringBuilder.ToString(), "OK");
+               
                 MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return default(T);
             }
@@ -90,14 +90,12 @@ namespace TuristickaAgencija.WinUI
                 {
                     stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
                 }
-                //await Application.Current.MainPage.DisplayAlert("Greška", stringBuilder.ToString(), "OK");
+               
                 MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return default(T);
             }
         }
        
-
-      
 
     }
 }

@@ -18,7 +18,7 @@
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand"/>
             <Label Text="Korisničko ime:"/>
-            <Entry x:Name="KorisnickoIme" Text="{Binding Username}}"></Entry>
+            <Entry x:Name="KorisnickoIme" Text="{Binding Username}"></Entry>
             <Label Text="Lozinka:"/>
             <Entry Text="{Binding Password}" IsPassword="True"></Entry>
             <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>

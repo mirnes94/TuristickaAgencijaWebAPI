@@ -13,7 +13,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-
+        <ScrollView>
 
         <StackLayout>
             
@@ -185,10 +185,10 @@
             </StackLayout>
             
         </StackLayout>
+        </ScrollView>
 
 
 
-        
 
 
 

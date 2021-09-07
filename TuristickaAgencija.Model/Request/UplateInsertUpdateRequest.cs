@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace TuristickaAgencija.Model.Request
 {
     public class UplateInsertUpdateRequest
     {
-        public DateTime DatumUplate { get; set; }
+       [Required]
+       public DateTime Datum{ get; set; }
+        [Required]
         public double Iznos { get; set; }
+        [Required]
         public int RezervacijaId { get; set; }
     }
 }

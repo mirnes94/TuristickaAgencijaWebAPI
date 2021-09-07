@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TuristickaAgencija.MobileApp.Views;
 using TuristickaAgencija.Model;
 using TuristickaAgencija.Model.Request;
 using Xamarin.Forms;
@@ -95,14 +96,11 @@ namespace TuristickaAgencija.MobileApp.ViewModels
         {
             RecommenderList.Clear();
             List<Putovanja> putovanjalist = new List<Putovanja>();
-            putovanjalist = await _recommenderService.GetRecommendedPutovanja<List<Putovanja>>(LoggedInUser.ActiveUser.Id);
-
-            List<Ocjene> ocjenelist = new List<Ocjene>();
-            ocjenelist = await _ocjeneService.Get<List<Ocjene>>(null);
+            putovanjalist = await _recommenderService.GetRecommendedPutovanja<List<Putovanja>>(Putovanje.Id);
 
             foreach (var item in putovanjalist)
             {
-
+               
                 RecommenderList.Add(item);
             }       
                 
@@ -209,11 +207,13 @@ namespace TuristickaAgencija.MobileApp.ViewModels
 
         private async Task Rezervisi()
         {
+
           
             if (RezervacijaService.Service.ContainsKey(Putovanje.Id))
             {
                 RezervacijaService.Service.Remove(Putovanje.Id);
                 await Application.Current.MainPage.DisplayAlert("Success", "Putovanje " + Putovanje.NazivPutovanja + " je uklonjeno iz korpe!", "OK");
+                Application.Current.MainPage = new MainPage(Korisnik);
                 return;
             }
             RezervacijaService.Service.Add(Putovanje.Id, this);

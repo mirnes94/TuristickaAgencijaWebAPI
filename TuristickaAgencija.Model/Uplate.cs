@@ -8,7 +8,7 @@ namespace TuristickaAgencija.Model
     {
 
         public int Id { get; set; }
-        public DateTime DatumUplate { get; set; }
+        public DateTime Datum { get; set; }
         public double Iznos { get; set; }
         public int RezervacijaId { get; set; }
     }

@@ -24,7 +24,7 @@
             <StackLayout Orientation="Vertical">
               
                 <StackLayout Margin="10" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                    <Label Text="Welcome "></Label>
+                    <Label Text="Dobro došli "></Label>
                     <Label Text="{Binding Korisnik.KorisnickoIme}"></Label>
                     <Label Text="{Binding Korisnik.Id}" IsVisible="false"></Label>
                 </StackLayout>

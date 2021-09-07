@@ -18,14 +18,14 @@ namespace TuristickaAgencija.WebAPI.Controllers
         {
             _ocjeneService = ocjeneService;
         }
-        //[Authorize(Roles = "Admin")]
+      
         [HttpGet]
         public ActionResult<List<Model.Ocjene>> Get([FromQuery] OcjeneSearchRequest request)
         {
             return _ocjeneService.Get(request);
 
         }
-        //[Authorize(Roles = "Admin")]
+       
         [HttpGet("{id}")]
         public Model.Ocjene GetById(int id)
         {
@@ -38,7 +38,7 @@ namespace TuristickaAgencija.WebAPI.Controllers
         {
             return _ocjeneService.Insert(request);
         }
-        //[Authorize(Roles = "Admin")]
+       
         [HttpPut("{id}")]
         public Model.Ocjene Update(int id, OcjeneInsertUpdateRequest request)
         {

@@ -116,3 +116,9 @@ C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\Turist
 C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\Plugin.Settings.dll
 C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\Plugin.Settings.pdb
 C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\obj\x86\Debug\Plugin.Settings.pri.xml
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\EntityFramework.SqlServer.dll
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\EntityFramework.dll
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\obj\x86\Debug\EntityFramework.SqlServer\en-US\System.Data.Entity.SqlServer.Properties.Resources.SqlServer.resw
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\obj\x86\Debug\EntityFramework\en-US\System.Data.Entity.Properties.Resources.resw
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\obj\x86\Debug\EntityFramework\en-US\System.Data.Entity.Properties.Resources.Migrate.resw
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\obj\x86\Debug\EntityFramework\en-US\System.Data.Entity.Properties.Resources.PowerShell.resw

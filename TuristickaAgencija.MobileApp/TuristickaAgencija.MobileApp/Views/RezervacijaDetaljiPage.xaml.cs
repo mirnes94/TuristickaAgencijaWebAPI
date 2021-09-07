@@ -34,9 +34,21 @@ namespace TuristickaAgencija.MobileApp.Views
         private async void Button_Clicked(object sender, EventArgs e)
         {
             //Navigation.RemovePage(this);
-            RezervacijaService.Service.Clear();
-            PayWithStripe();
-            await Navigation.PushModalAsync(new NavigationPage(new PutovanjaPage(model.Korisnik)));
+            if(ValidateCard()==true)
+            {
+                if(ValidateRezervacija()==true)
+                {
+                    RezervacijaService.Service.Clear();
+                    PayWithStripe();
+                 
+                }
+                else 
+                    await DisplayAlert("Error", "Rezervacija Input error", "OK");
+
+            }
+            else 
+                await DisplayAlert("Error", "Card Input error", "OK");
+           
         }
 
         public async void PayWithStripe()
@@ -44,12 +56,12 @@ namespace TuristickaAgencija.MobileApp.Views
             StripeConfiguration.ApiKey = "sk_test_51J7fvxCQVjpUpLYrKFHiDEBGTSj8t3GIGYv91QPVqalY3HzU3qzbuQwdfPc9fl1mpnSUHGg8RrTxzisDSchpJ5aG00pEzE4mCH";
 
 
-            string cardNo = brojKartice.Text;
-            string expMonth = mjesecIsteka.Text;
-            string expYear = godinaIsteka.Text;
-            string cardCvv = cvv.Text;
+            string cardNo = brojKarticeInput.Text;
+            string expMonth = mjesecIstekaInput.Text;
+            string expYear = godinaIstekaInput.Text;
+            string cardCvv = cvvInput.Text;
 
-            
+
             try
             {
                 //1.Create card option
@@ -115,22 +127,169 @@ namespace TuristickaAgencija.MobileApp.Views
                     await DisplayAlert("Oops, nesto nije uredu", "Placanje neuspjesno", "OK");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                await DisplayAlert("Error","Problemi sa karticom", "OK");
+                await DisplayAlert("Error", "Problemi sa karticom", "OK");
             }
-           
 
 
-           
-
-           
 
         }
+        private bool ValidateCard()
+        {
+            bool valid = true;
+            if (ValidateBrojKartice() == false || ValidateMjesecIsteka() == false || ValidateGodinaIsteka() == false || ValidateCvv()==false)
+             
+                valid = false;
 
-       
-      
+            if (valid == false)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            };
+        }
+        private bool ValidateRezervacija()
+            {
+                bool valid = true;
+                if (ValidateBrojOsoba() == false || ValidateNapomena() == false || ValidateIznosUplate() == false
+                 )
+                    valid = false;
+
+                if (valid == false)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                };
+            }
+
 
         
+
+        private bool ValidateBrojKartice()
+        {
+            if (string.IsNullOrWhiteSpace(brojKarticeInput.Text))
+            {
+                brojKarticeInputError.Text = "Obavezno polje!";
+                brojKarticeInputError.IsVisible = true;
+                return false;
+            }
+            else
+            {
+
+                brojKarticeInputError.IsVisible = false;
+                brojKarticeInputError.Text = "";
+                return true;
+            }
+        }
+        private bool ValidateGodinaIsteka()
+        {
+            if (string.IsNullOrWhiteSpace(godinaIstekaInput.Text))
+            {
+                godinaIstekaInputError.Text = "Obavezno polje!";
+                godinaIstekaInputError.IsVisible = true;
+                return false;
+            }
+            else
+            {
+
+                godinaIstekaInputError.IsVisible = false;
+                godinaIstekaInputError.Text = "";
+                return true;
+            }
+        }
+        private bool ValidateMjesecIsteka()
+        {
+            if (string.IsNullOrWhiteSpace(mjesecIstekaInput.Text))
+            {
+                mjesecIstekaInputError.Text = "Obavezno polje!";
+                mjesecIstekaInputError.IsVisible = true;
+                return false;
+            }
+            else
+            {
+
+                mjesecIstekaInputError.IsVisible = false;
+                mjesecIstekaInputError.Text = "";
+                return true;
+            }
+        }
+        private bool ValidateCvv()
+        {
+            if (string.IsNullOrWhiteSpace(cvvInput.Text))
+            {
+                cvvInputError.Text = "Obavezno polje!";
+                cvvInputError.IsVisible = true;
+                return false;
+            }
+            else
+            {
+
+                cvvInputError.IsVisible = false;
+                cvvInputError.Text = "";
+                return true;
+            }
+        }
+        private bool ValidateBrojOsoba()
+        {
+            if (string.IsNullOrWhiteSpace(brojOsobaInput.Text))
+            {
+                brojOsobaInputError.Text = "Obavezno polje!";
+                brojOsobaInputError.IsVisible = true;
+                return false;
+            }
+            else
+            {
+
+                brojOsobaInputError.IsVisible = false;
+                brojOsobaInputError.Text = "";
+                return true;
+            }
+        }
+
+        
+
+        private bool ValidateNapomena()
+        {
+            if (string.IsNullOrWhiteSpace(napomenaInput.Text))
+            {
+                napomenaInputError.Text = "Obavezno polje!";
+                napomenaInputError.IsVisible = true;
+                return false;
+            }
+            else
+            {
+
+                napomenaInputError.IsVisible = false;
+                napomenaInputError.Text = "";
+                return true;
+            }
+        }
+        private bool ValidateIznosUplate()
+        {
+            if (string.IsNullOrWhiteSpace(iznosUplateInput.Text))
+            {
+                iznosUplateInputError.Text = "Obavezno polje!";
+                iznosUplateInputError.IsVisible = true;
+                return false;
+            }
+            else
+            {
+
+                iznosUplateInputError.IsVisible = false;
+                iznosUplateInputError.Text = "";
+                return true;
+            }
+        }
+
+
+
+
+
     }
 }

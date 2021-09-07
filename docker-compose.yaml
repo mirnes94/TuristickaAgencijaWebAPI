@@ -1,11 +1,12 @@
 version: '3'
 services:
+#mssql docker
   turistickaagencija-sql:
     image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
     restart: unless-stopped
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=Pa55w0rd2021!
+      - SA_PASSWORD=QWElkj132!
       - MSSQL_PID=Developer
     ports:
       - 1401:1433
@@ -17,7 +18,7 @@ services:
     build:
       context: .
     environment:
-      - ConnectionStrings:TuristickaAgencija=Server=turistickaagencija-sql,1433;Database=TuristickaAgencijaDocker;User=sa;Password=Pa55w0rd2021!;ConnectRetryCount=0
+      - ConnectionStrings:TuristickaAgencija=Server=turistickaagencija-sql,1433;Database=DockerDatabase1;User=sa;Password=QWElkj132!;ConnectRetryCount=0
     ports:
       - 5000:80
     networks:
@@ -29,7 +30,4 @@ services:
       
 networks:
   turistickaagencijanet:
-    driver: bridge     
- 
-   
-    
+    driver: bridge

@@ -18,6 +18,7 @@
                     <Label Text="{Binding Korisnik.Id}" IsVisible="false"></Label>
 
                 </StackLayout>
+               
             </StackLayout>
             <Label>Rezervacija</Label>
             <ListView ItemsSource="{Binding RezervacijaList}">
@@ -27,6 +28,10 @@
                             <StackLayout Padding="10" Orientation="Horizontal">
 
                                 <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding Id}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
                                     <Label Text="{Binding Ime}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
@@ -54,7 +59,7 @@
                             <StackLayout Padding="10" Orientation="Horizontal">
 
                                 <StackLayout Orientation="Vertical">
-                                    <Label Text="{Binding DatumUplate}" 
+                                    <Label Text="{Binding Datum}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
                             FontSize="16" />

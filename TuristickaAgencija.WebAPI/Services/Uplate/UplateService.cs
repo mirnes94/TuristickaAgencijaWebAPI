@@ -40,6 +40,20 @@ namespace TuristickaAgencija.WebAPI.Services.Uplate
             return _mapper.Map<Model.Uplate>(entity);
         }
 
+        public List<Model.Uplate> GetByMonth(int mjesec)
+        {
+             var uplate = _context.Uplate.ToList();
+
+           List<Database.Uplate> listaUplataZaMjesec = new List<Database.Uplate>();
+           foreach(var uplata in uplate)
+            {
+                if(uplata.Datum.Month==mjesec)
+                listaUplataZaMjesec.Add(uplata);
+            }
+
+            return _mapper.Map<List<Model.Uplate>>(listaUplataZaMjesec);
+        }
+
         public Model.Uplate Insert(UplateInsertUpdateRequest request)
         {
             var entity = _mapper.Map<Database.Uplate>(request);

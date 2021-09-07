@@ -28,7 +28,8 @@ namespace TuristickaAgencija.MobileApp.Views
                 new HomeMenuItem {Id = MenuItemType.Putovanja, Title="Putovanja" },
                 new HomeMenuItem {Id = MenuItemType.Obavijesti, Title="Obavijesti" },
                 new HomeMenuItem {Id = MenuItemType.Rezervacije, Title="Rezervacije" },
-                new HomeMenuItem {Id = MenuItemType.Uplate, Title="Uplate" },
+                new HomeMenuItem {Id = MenuItemType.ListaUplata, Title="Lista Uplata" },
+                new HomeMenuItem {Id = MenuItemType.Uplata, Title="Uplata" },
                 new HomeMenuItem {Id = MenuItemType.Favoriti, Title="Favoriti" },
                 new HomeMenuItem {Id = MenuItemType.AboutUs, Title="About Us" },
             };

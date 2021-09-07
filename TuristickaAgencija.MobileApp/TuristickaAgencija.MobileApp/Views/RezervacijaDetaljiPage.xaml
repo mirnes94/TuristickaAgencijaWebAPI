@@ -73,19 +73,22 @@
                         </StackLayout>
                         <StackLayout Padding="20">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                                <Entry Placeholder="Broj kartice"  x:Name="brojKartice" Keyboard="Numeric" MaxLength="16" WidthRequest="200"></Entry>
+                                <Entry Placeholder="Broj kartice"  x:Name="brojKarticeInput" Keyboard="Numeric" MaxLength="16" WidthRequest="200"></Entry>
+                                <Label x:Name="brojKarticeInputError" TextColor="Red" IsVisible="True"></Label>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
 
-                                <Entry Placeholder="Godina isteka" x:Name="godinaIsteka" Keyboard="Numeric" MaxLength="2" WidthRequest="200" ></Entry>
+                                <Entry Placeholder="Godina isteka" x:Name="godinaIstekaInput" Keyboard="Numeric" MaxLength="2" WidthRequest="200" ></Entry>
+                                <Label x:Name="godinaIstekaInputError" TextColor="Red" IsVisible="True"></Label>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
 
-                                <Entry Placeholder="Mjesec isteka" x:Name="mjesecIsteka" Keyboard="Numeric" MaxLength="2" WidthRequest="200"></Entry>
-                               
+                                <Entry Placeholder="Mjesec isteka" x:Name="mjesecIstekaInput" Keyboard="Numeric" MaxLength="2" WidthRequest="200"></Entry>
+                                <Label x:Name="mjesecIstekaInputError" TextColor="Red" IsVisible="True"></Label>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                                <Entry Placeholder="CVV" x:Name="cvv" Keyboard="Numeric" MaxLength="3" WidthRequest="200"></Entry>
+                                <Entry Placeholder="CVV" x:Name="cvvInput" Keyboard="Numeric" MaxLength="3" WidthRequest="200"></Entry>
+                                <Label x:Name="cvvInputError" TextColor="Red" IsVisible="True"></Label>
                             </StackLayout>
                         </StackLayout>
                         

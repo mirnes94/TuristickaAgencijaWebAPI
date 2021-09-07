@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:TuristickaAgencija.MobileApp.ViewModels"
+             x:Class="TuristickaAgencija.MobileApp.Views.UplataDetaljiPage">
+    <ContentPage.BindingContext>
+        <vm:UplataDetaljiViewModel></vm:UplataDetaljiViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+          
+            <StackLayout Padding="20">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                    <Entry Placeholder="RezervacijaId" x:Name="rezervacijaIdInput" Text="{Binding RezervacijaId}" MaxLength="4" Keyboard="Numeric"></Entry>
+                    <Label x:Name="rezervacijaIdInputError" TextColor="Red" IsVisible="True"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                    <Entry Placeholder="Iznos uplate" x:Name="iznosUplateInput" Text="{Binding IznosUplate}" MaxLength="4" Keyboard="Numeric"></Entry>
+                    <Label x:Name="iznosUplateInputError" TextColor="Red" IsVisible="True"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                    <Entry Placeholder="Broj kartice"  x:Name="brojKarticeInput" Keyboard="Numeric" MaxLength="16" WidthRequest="200"></Entry>
+                    <Label x:Name="brojKarticeInputError" TextColor="Red" IsVisible="True"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+
+                    <Entry Placeholder="Godina isteka" x:Name="godinaIstekaInput" Keyboard="Numeric" MaxLength="2" WidthRequest="200" ></Entry>
+                    <Label x:Name="godinaIstekaInputError" TextColor="Red" IsVisible="True"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+
+                    <Entry Placeholder="Mjesec isteka" x:Name="mjesecIstekaInput" Keyboard="Numeric" MaxLength="2" WidthRequest="200"></Entry>
+                    <Label x:Name="mjesecIstekaInputError" TextColor="Red" IsVisible="True"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                    <Entry Placeholder="CVV" x:Name="cvvInput" Keyboard="Numeric" MaxLength="3" WidthRequest="200"></Entry>
+                    <Label x:Name="cvvInputError" TextColor="Red" IsVisible="True"></Label>
+                </StackLayout>
+
+            </StackLayout>
+            <StackLayout>
+                <Button Margin="20" BackgroundColor="Red" TextColor="White" Text="Uplati" 
+                    Command="{Binding IzvrsiUplatuCommand }" 
+                    Clicked="Button_Clicked"></Button>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4AbTmoEu3ron1Bqa138w0olr85QI4wivWHbroHc1Xq8aTL02E4WHz1he8L+BHVbyshxZGB7AXfmDzv04HsgsAw==",
+  "dgSpecHash": "Ef3a1HmTJTsyg0p3TtwQulAZVyg3i1uRK+h0uu0Rvs698Uoqrc35DmU5gHqW4tbHomRaFKeP9nfLb4hzhvmKIw==",
   "success": true,
   "projectFilePath": "C:\\Users\\ACER\\Desktop\\RS2\\TuristickaAgencija\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.iOS\\TuristickaAgencija.MobileApp.iOS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ACER\\.nuget\\packages\\entityframework\\6.1.3\\entityframework.6.1.3.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\flurl\\2.8.1\\flurl.2.8.1.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\flurl.http\\2.4.1\\flurl.http.2.4.1.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
@@ -32,7 +33,6 @@
     "C:\\Users\\ACER\\.nuget\\packages\\system.memory\\4.5.2\\system.memory.4.5.2.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
-    "C:\\Users\\ACER\\.nuget\\packages\\system.runtime.windowsruntime\\4.7.0\\system.runtime.windowsruntime.4.7.0.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",

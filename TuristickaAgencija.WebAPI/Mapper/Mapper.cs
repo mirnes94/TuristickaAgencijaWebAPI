@@ -44,7 +44,7 @@ namespace TuristickaAgencija.WebAPI.Mapper
             CreateMap<Rezervacija, Model.Rezervacija>().ReverseMap();
             CreateMap<RezervacijaInsertUpdateRequest, Rezervacija>().ReverseMap();
 
-            CreateMap<Uplate, Model.Uplate>();
+            CreateMap<Uplate, Model.Uplate>().ReverseMap();
             CreateMap<UplateInsertUpdateRequest, Uplate>().ReverseMap();
 
             CreateMap<Komentar, Model.Komentar>();

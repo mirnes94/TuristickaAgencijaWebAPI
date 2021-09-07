@@ -18,14 +18,14 @@ namespace TuristickaAgencija.WebAPI.Controllers
         {
             _listaZeljaService = listaZeljaService;
         }
-        //[Authorize(Roles = "Admin")]
+       
         [HttpGet]
         public ActionResult<List<Model.ListaZelja>> Get([FromQuery] ListaZeljaSearchRequest request)
         {
             return _listaZeljaService.Get(request);
 
         }
-        //[Authorize(Roles = "Admin")]
+       
         [HttpGet("{id}")]
         public Model.ListaZelja GetById(int id)
         {
@@ -38,7 +38,7 @@ namespace TuristickaAgencija.WebAPI.Controllers
         {
             return _listaZeljaService.Insert(request);
         }
-        //[Authorize(Roles = "Admin")]
+      
         [HttpPut("{id}")]
         public Model.ListaZelja Update(int id, ListaZeljaInsertUpdateRequest request)
         {

@@ -10,7 +10,7 @@ using TuristickaAgencija.WebAPI.Services.Smjestaj;
 
 namespace TuristickaAgencija.WebAPI.Controllers
 {
-    [Authorize]
+   
     [Route("api/[controller]")]
     [ApiController]
     public class SmjestajController : ControllerBase

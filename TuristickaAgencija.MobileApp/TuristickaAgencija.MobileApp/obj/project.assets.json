@@ -2,6 +2,17 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "EntityFramework/6.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
       "Flurl/2.8.1": {
         "type": "package",
         "compile": {
@@ -401,15 +412,6 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
-      "System.Runtime.WindowsRuntime/4.7.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Runtime.WindowsRuntime.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Runtime.WindowsRuntime.dll": {}
-        }
-      },
       "System.Security.AccessControl/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -592,6 +594,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "EntityFramework": "6.1.3",
           "Newtonsoft.Json": "13.0.1",
           "System.ComponentModel.Annotations": "5.0.0",
           "System.Text.Json": "5.0.2"
@@ -606,6 +609,36 @@
     }
   },
   "libraries": {
+    "EntityFramework/6.1.3": {
+      "sha512": "2xzFHAF3VVdmTR3//MygtQpwfbDjeaq+nQwCcokLzen7MKHOojPaxNPQPa4diHY1QtcR7zlHAJHNRqPB7W2Syw==",
+      "type": "package",
+      "path": "entityframework/6.1.3",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/App.config.transform",
+        "content/Web.config.transform",
+        "entityframework.6.1.3.nupkg.sha512",
+        "entityframework.nuspec",
+        "lib/net40/EntityFramework.SqlServer.dll",
+        "lib/net40/EntityFramework.SqlServer.xml",
+        "lib/net40/EntityFramework.dll",
+        "lib/net40/EntityFramework.xml",
+        "lib/net45/EntityFramework.SqlServer.dll",
+        "lib/net45/EntityFramework.SqlServer.xml",
+        "lib/net45/EntityFramework.dll",
+        "lib/net45/EntityFramework.xml",
+        "tools/EntityFramework.PowerShell.Utility.dll",
+        "tools/EntityFramework.PowerShell.dll",
+        "tools/EntityFramework.psd1",
+        "tools/EntityFramework.psm1",
+        "tools/about_EntityFramework.help.txt",
+        "tools/init.ps1",
+        "tools/install.ps1",
+        "tools/migrate.exe"
+      ]
+    },
     "Flurl/2.8.1": {
       "sha512": "RI3e1vOfhtZJNSsrA/5aEAenC60Dmf/8ODXdSOJ9kHwS+EjXGMjLt8AZKhCPqKSaykUIV/M3FLBsf9vQgLxTxw==",
       "type": "package",
@@ -1524,86 +1557,6 @@
         "version.txt"
       ]
     },
-    "System.Runtime.WindowsRuntime/4.7.0": {
-      "sha512": "RQxUkf37fp7MSWbOfKRjUjyudyfZb2u79YY5i1s+d7vuD80A7kmr2YfefO0JprQUhanxSm8bhXigCVfX2kEh+w==",
-      "type": "package",
-      "path": "system.runtime.windowsruntime/4.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "build/net45/System.Runtime.WindowsRuntime.targets",
-        "build/net451/System.Runtime.WindowsRuntime.targets",
-        "build/net461/System.Runtime.WindowsRuntime.targets",
-        "buildTransitive/net45/System.Runtime.WindowsRuntime.targets",
-        "buildTransitive/net451/System.Runtime.WindowsRuntime.targets",
-        "buildTransitive/net461/System.Runtime.WindowsRuntime.targets",
-        "lib/net45/_._",
-        "lib/netstandard1.0/System.Runtime.WindowsRuntime.dll",
-        "lib/netstandard1.0/System.Runtime.WindowsRuntime.xml",
-        "lib/netstandard1.2/System.Runtime.WindowsRuntime.dll",
-        "lib/netstandard1.2/System.Runtime.WindowsRuntime.xml",
-        "lib/netstandard2.0/System.Runtime.WindowsRuntime.dll",
-        "lib/netstandard2.0/System.Runtime.WindowsRuntime.xml",
-        "lib/portable-win8+wp8+wpa81/_._",
-        "lib/uap10.0.16299/_._",
-        "lib/win8/_._",
-        "lib/wp80/_._",
-        "lib/wpa81/_._",
-        "ref/net45/_._",
-        "ref/netcore50/System.Runtime.WindowsRuntime.dll",
-        "ref/netcore50/System.Runtime.WindowsRuntime.xml",
-        "ref/netcore50/de/System.Runtime.WindowsRuntime.xml",
-        "ref/netcore50/es/System.Runtime.WindowsRuntime.xml",
-        "ref/netcore50/fr/System.Runtime.WindowsRuntime.xml",
-        "ref/netcore50/it/System.Runtime.WindowsRuntime.xml",
-        "ref/netcore50/ja/System.Runtime.WindowsRuntime.xml",
-        "ref/netcore50/ko/System.Runtime.WindowsRuntime.xml",
-        "ref/netcore50/ru/System.Runtime.WindowsRuntime.xml",
-        "ref/netcore50/zh-hans/System.Runtime.WindowsRuntime.xml",
-        "ref/netcore50/zh-hant/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.0/System.Runtime.WindowsRuntime.dll",
-        "ref/netstandard1.0/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.0/de/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.0/es/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.0/fr/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.0/it/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.0/ja/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.0/ko/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.0/ru/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.0/zh-hans/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.0/zh-hant/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.2/System.Runtime.WindowsRuntime.dll",
-        "ref/netstandard1.2/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.2/de/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.2/es/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.2/fr/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.2/it/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.2/ja/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.2/ko/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.2/ru/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.2/zh-hans/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard1.2/zh-hant/System.Runtime.WindowsRuntime.xml",
-        "ref/netstandard2.0/System.Runtime.WindowsRuntime.dll",
-        "ref/netstandard2.0/System.Runtime.WindowsRuntime.xml",
-        "ref/portable-win8+wp8+wpa81/_._",
-        "ref/uap10.0.16299/_._",
-        "ref/win8/_._",
-        "ref/wp80/_._",
-        "ref/wpa81/_._",
-        "runtimes/win-aot/lib/netcore50/System.Runtime.WindowsRuntime.dll",
-        "runtimes/win-aot/lib/uap10.0.16299/_._",
-        "runtimes/win/lib/netcore50/System.Runtime.WindowsRuntime.dll",
-        "runtimes/win/lib/netcoreapp3.0/System.Runtime.WindowsRuntime.dll",
-        "runtimes/win/lib/netcoreapp3.0/System.Runtime.WindowsRuntime.xml",
-        "runtimes/win/lib/uap10.0.16299/_._",
-        "system.runtime.windowsruntime.4.7.0.nupkg.sha512",
-        "system.runtime.windowsruntime.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "System.Security.AccessControl/4.5.0": {
       "sha512": "vW8Eoq0TMyz5vAG/6ce483x/CP83fgm4SJe5P8Tb1tZaobcvPrbMEL7rhH1DRdrYbbb6F0vq3OlzmK0Pkwks5A==",
       "type": "package",
@@ -2268,6 +2221,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "EntityFramework >= 6.1.3",
       "Flurl >= 2.8.1",
       "Flurl.Http >= 2.4.1",
       "Microsoft.EntityFrameworkCore >= 3.1.15",
@@ -2275,7 +2229,6 @@
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.15",
       "NETStandard.Library >= 2.0.3",
       "Stripe.net >= 37.35.0",
-      "System.Runtime.WindowsRuntime >= 4.7.0",
       "TuristickaAgencija.Model >= 1.0.0",
       "Xam.Plugins.Messaging >= 5.2.0",
       "Xam.Plugins.Settings >= 3.1.1",
@@ -2334,6 +2287,10 @@
       "netstandard2.0": {
         "targetAlias": "netstandard2.0",
         "dependencies": {
+          "EntityFramework": {
+            "target": "Package",
+            "version": "[6.1.3, )"
+          },
           "Flurl": {
             "target": "Package",
             "version": "[2.8.1, )"
@@ -2368,10 +2325,6 @@
             "target": "Package",
             "version": "[37.35.0, )"
           },
-          "System.Runtime.WindowsRuntime": {
-            "target": "Package",
-            "version": "[4.7.0, )"
-          },
           "Xam.Plugins.Messaging": {
             "target": "Package",
             "version": "[5.2.0, )"
@@ -2402,5 +2355,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'EntityFramework 6.1.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "EntityFramework",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

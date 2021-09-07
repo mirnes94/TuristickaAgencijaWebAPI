@@ -27,9 +27,9 @@ namespace TuristickaAgencija.MobileApp.Views
 
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var item = e.SelectedItem as ListaZelja;
+            var item = e.SelectedItem as Putovanja;
+            Application.Current.MainPage = new MainPage(LoggedInUser.ActiveUser);
             await model.Obrisi(item.Id);
-            await Navigation.PushAsync(new AboutPage());
         }
     }
 }

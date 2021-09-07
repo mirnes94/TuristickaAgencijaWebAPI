@@ -46,8 +46,6 @@ namespace TuristickaAgencija.MobileApp.ViewModels
                     LoggedInUser.ActiveUser = korisnik;
 
                     await Application.Current.MainPage.DisplayAlert("Success", "Dobro dosli " + korisnik.Ime + " " + korisnik.Prezime, "OK");
-                    //Application.Current.MainPage = new PutovanjaPage(korisnik);
-                    //Application.Current.MainPage = new ObavijestiPage();
                     Application.Current.MainPage = new MainPage(korisnik);
                 }
                 else

@@ -33,13 +33,11 @@ namespace TuristickaAgencija.WebAPI.Controllers
             return _gradoviService.GetById(id);
 
         }
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         public Model.Gradovi Insert(GradoviInsertUpdateRequest request)
         {
             return _gradoviService.Insert(request);
         }
-        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public Gradovi Update(int id, GradoviInsertUpdateRequest request)
         {

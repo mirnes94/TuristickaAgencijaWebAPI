@@ -21,7 +21,6 @@ namespace TuristickaAgencija.Model.Request
         [Required]
         [MinLength(4)]
         public string KorisnickoIme { get; set; }
-        public string KonfirmacijskiKod { get; set; }
         public string Password { get; set; }
         public string PasswordConfirmation { get; set; }
 

@@ -28,6 +28,12 @@
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\TuristickaAgencija.MobileApp.UWP.exe">
       <PackagePath>entrypoint\TuristickaAgencija.MobileApp.UWP.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ACER\.nuget\packages\entityframework\6.1.3\lib\net45\EntityFramework.SqlServer.dll">
+      <PackagePath>EntityFramework.SqlServer.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ACER\.nuget\packages\entityframework\6.1.3\lib\net45\EntityFramework.dll">
+      <PackagePath>EntityFramework.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\.nuget\packages\flurl\2.8.1\lib\netstandard2.0\Flurl.dll">
       <PackagePath>Flurl.dll</PackagePath>
     </AppxPackagedFile>

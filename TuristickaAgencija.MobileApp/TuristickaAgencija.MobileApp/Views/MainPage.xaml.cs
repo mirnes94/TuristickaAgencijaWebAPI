@@ -43,8 +43,11 @@ namespace TuristickaAgencija.MobileApp.Views
                     case (int)MenuItemType.Obavijesti:
                         MenuPages.Add(id, new NavigationPage(new ObavijestiPage()));
                         break;
-                    case (int)MenuItemType.Uplate:
+                    case (int)MenuItemType.ListaUplata:
                         MenuPages.Add(id, new NavigationPage(new ListaUplataPage(korisnik)));
+                        break;
+                    case (int)MenuItemType.Uplata:
+                        MenuPages.Add(id, new NavigationPage(new UplataDetaljiPage(korisnik)));
                         break;
                     case (int)MenuItemType.Rezervacije:
                         MenuPages.Add(id, new NavigationPage(new ListaRezervacijaPage(korisnik)));

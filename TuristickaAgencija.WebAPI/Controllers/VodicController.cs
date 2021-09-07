@@ -18,14 +18,14 @@ namespace TuristickaAgencija.WebAPI.Controllers
         {
             _vodicService = vodicService;
         }
-        //[Authorize(Roles = "Admin")]
+       
         [HttpGet]
         public virtual IList<Model.Vodic> Get([FromQuery] VodicSearchRequest request)
         {
             return _vodicService.Get(request);
 
         }
-        //[Authorize(Roles = "Admin")]
+      
         [HttpGet("{id}")]
         public Model.Vodic GetById(int id)
         {
@@ -38,7 +38,7 @@ namespace TuristickaAgencija.WebAPI.Controllers
         {
             return _vodicService.Insert(request);
         }
-        //[Authorize(Roles = "Admin")]
+       
         [HttpPut("{id}")]
         public Model.Vodic Update(int id, VodicInsertUpdateRequest request)
         {

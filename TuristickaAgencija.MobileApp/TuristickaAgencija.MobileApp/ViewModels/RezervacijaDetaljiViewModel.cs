@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TuristickaAgencija.MobileApp.Views;
 using TuristickaAgencija.Model;
 using TuristickaAgencija.Model.Request;
 using Xamarin.Forms;
@@ -17,7 +18,6 @@ namespace TuristickaAgencija.MobileApp.ViewModels
         private readonly APIService _putovanjaService = new APIService("Putovanja");
         private readonly APIService _uplateService = new APIService("Uplate");
         public ObservableCollection<PutovanjaDetaljiViewModel> PutovanjaList { get; set; } = new ObservableCollection<PutovanjaDetaljiViewModel>();
-        //public ObservableCollection<KorisniciDetaljiViewModel> KorisniciList { get; set; } = new ObservableCollection<KorisniciDetaljiViewModel>();
 
         public RezervacijaDetaljiViewModel()
         {
@@ -93,9 +93,10 @@ namespace TuristickaAgencija.MobileApp.ViewModels
                     var minIznosUplate = (double)((float)(rezervacija.BrojOsoba * putovanje.CijenaPutovanja) / 2);
 
 
+                    DateTime datum = DateTime.Now;
                     UplateInsertUpdateRequest uplataInsert = new UplateInsertUpdateRequest
                     {
-                        DatumUplate = DateTime.Now,
+                        Datum = datum,
                         Iznos = IznosUplate,
                         RezervacijaId = rezervacija.Id
                     };
@@ -104,7 +105,7 @@ namespace TuristickaAgencija.MobileApp.ViewModels
                     PutovanjaList.Clear();
                     RezervacijaService.Service.Clear();
                     await Application.Current.MainPage.DisplayAlert("Success", "Rezervacija je kreirana", "OK");
-
+                   Application.Current.MainPage = new MainPage(korisnik);
 
                     if (uplata.Iznos < minIznosUplate)
                     {

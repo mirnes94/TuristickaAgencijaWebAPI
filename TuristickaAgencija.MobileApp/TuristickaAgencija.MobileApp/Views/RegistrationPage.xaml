@@ -11,7 +11,7 @@
                 <Label Text="Registracija @ TuristickaAgencija" HorizontalTextAlignment="Center" Margin="10"
                   Grid.ColumnSpan="2"  FontAttributes="Bold" FontSize="20"/>
                 <Label Text="Ime:"/>
-                <Entry x:Name="imeInput" Text="{Binding Ime}}"></Entry>
+                <Entry x:Name="imeInput" Text="{Binding Ime}"></Entry>
                 <Label x:Name="imeInputError" TextColor="Red" IsVisible="True"></Label>
                 <Label Text="Prezime:"/>
                 <Entry x:Name="prezimeInput" Text="{Binding Prezime}"></Entry>

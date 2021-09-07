@@ -71,3 +71,5 @@ C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.WinUI\obj\Debug\
 C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.WinUI\obj\Debug\netcoreapp3.1\TuristickaAgencija.WinUI.Obavijesti.frmDodajObavijest.resources
 C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.WinUI\obj\Debug\netcoreapp3.1\TuristickaAgencija.WinUI.Vodici.frmVodici.resources
 C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.WinUI\obj\Debug\netcoreapp3.1\TuristickaAgencija.WinUI.Vodici.frmDodajVodica.resources
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.WinUI\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.WinUI\bin\Debug\netcoreapp3.1\EntityFramework.dll

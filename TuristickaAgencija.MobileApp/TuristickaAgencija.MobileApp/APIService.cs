@@ -39,30 +39,6 @@ namespace TuristickaAgencija.MobileApp
             var result = await url.GetJsonAsync<T>();
 
             return result;
-            /*
-            try
-            {
-
-                if (search != null)
-                {
-                    url += "?";
-                    url += await search.ToQueryString();
-                }
-
-                var result = await url.GetJsonAsync<T>();
-
-                return result;
-            }
-
-            catch (FlurlHttpException ex)
-            {
-                if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Unauthorized)
-                {
-
-                    await Application.Current.MainPage.DisplayAlert("Error", "Niste autentificirani", "OK");
-                }
-                throw;
-            }*/
         }
 
         public async Task<T> Login<T>(string username, string password)
@@ -87,7 +63,6 @@ namespace TuristickaAgencija.MobileApp
             try
             {
                 return await url.PostJsonAsync(request).ReceiveJson<T>();
-                //return await url.WithBasicAuth(Username, Password).PostJsonAsync(request).ReceiveJson<T>();
             }
             catch (FlurlHttpException ex)
             {
@@ -99,7 +74,6 @@ namespace TuristickaAgencija.MobileApp
                     stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
                 }
                 await Application.Current.MainPage.DisplayAlert("Greška", stringBuilder.ToString(), "OK");
-                //MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return default(T);
             }
         }
@@ -121,7 +95,6 @@ namespace TuristickaAgencija.MobileApp
                     stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
                 }
                 await Application.Current.MainPage.DisplayAlert("Greška", stringBuilder.ToString(), "OK");
-                //MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return default(T);
             }
         }

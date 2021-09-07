@@ -18,14 +18,14 @@ namespace TuristickaAgencija.WebAPI.Controllers
         {
             _obavijestiService = obavijestiService;
         }
-        //[Authorize(Roles = "Admin")]
+       
         [HttpGet]
         public ActionResult<List<Model.Obavijesti>> Get([FromQuery] ObavijestiSearchRequest request)
         {
             return _obavijestiService.Get(request);
 
         }
-        //[Authorize(Roles = "Admin")]
+       
         [HttpGet("{id}")]
         public Model.Obavijesti GetById(int id)
         {
@@ -38,7 +38,7 @@ namespace TuristickaAgencija.WebAPI.Controllers
         {
             return _obavijestiService.Insert(request);
         }
-        //[Authorize(Roles = "Admin")]
+     
         [HttpPut("{id}")]
         public Model.Obavijesti Update(int id, ObavijestiInsertUpdateRequest request)
         {

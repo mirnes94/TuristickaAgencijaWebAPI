@@ -20,10 +20,10 @@ namespace TuristickaAgencija.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("GetRecommendedPutovanja/{korisnikId}")]
-        public List<Model.Putovanja> GetRecommendedPutovanja(int korisnikId)
+        [Route("GetRecommendedPutovanja/{putovanjeId}")]
+        public List<Model.Putovanja> GetRecommendedPutovanja(int putovanjeId)
         {
-            return _service.GetRecommendedPutovanja(korisnikId);
+            return _service.GetRecommendedPutovanja(putovanjeId);
         }
     }
 }

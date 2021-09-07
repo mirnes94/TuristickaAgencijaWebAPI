@@ -69,12 +69,6 @@ namespace TuristickaAgencija.MobileApp.ViewModels
             set { SetProperty(ref _passwordpotvrda, value); }
         }
 
-        string _konfirmacijskiKod = string.Empty;
-        public string KonfirmacijskiKod
-        {
-            get { return _konfirmacijskiKod; }
-            set { SetProperty(ref _konfirmacijskiKod, value); }
-        }
 
         public async Task Registracija()
         {
@@ -93,9 +87,10 @@ namespace TuristickaAgencija.MobileApp.ViewModels
             };
 
             
-            MailAddress from = new MailAddress(request.Email, request.Ime+" "+request.Prezime);
-            MailAddress to = new MailAddress("mirnest10@gmail.com","Mirnes Turkovic");
-         
+            MailAddress from = new MailAddress("turisticka.agencija@mail.com", "Turisticka agencija");
+            MailAddress to = new MailAddress("mirnest10@gmail.com", request.Ime + " " + request.Prezime);////Korisnicki podaci za slanje konfirmacijskog emaila.
+                                                                                                         //Koristio sam svoj email radi testiranja.
+
             MailMessage mm = new MailMessage(from, to)
             {
                 Subject = "Confirmation email",
@@ -109,7 +104,8 @@ namespace TuristickaAgencija.MobileApp.ViewModels
             smtp.EnableSsl = true;
 
 
-            NetworkCredential nc = new NetworkCredential("mirnest10@gmail.com", "mirnes12345*");
+            NetworkCredential nc = new NetworkCredential("mirnest10@gmail.com", "mirnes12345*");//Podaci turisticke agencija za potvrdu.
+                                                                                                //Koristio sam svoje podatke radi testiranja.
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = nc;
 
