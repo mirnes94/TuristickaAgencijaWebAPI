@@ -62,5 +62,12 @@ namespace TuristickaAgencija.WebAPI.Services.Obavijesti
 
             return _mapper.Map<Model.Obavijesti>(entity);
         }
+
+        public void Delete(int id)
+        {
+            var entity = _context.Obavijesti.Find(id);
+            _context.Obavijesti.Remove(entity);
+            _context.SaveChanges();
+        }
     }
 }

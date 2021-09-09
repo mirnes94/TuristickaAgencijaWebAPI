@@ -63,5 +63,11 @@ namespace TuristickaAgencija.WebAPI.Services.Komentar
 
             return _mapper.Map<Model.Komentar>(entity);
         }
+        public void Delete(int id)
+        {
+            var entity = _context.Komentar.Find(id);
+            _context.Komentar.Remove(entity);
+            _context.SaveChanges();
+        }
     }
 }

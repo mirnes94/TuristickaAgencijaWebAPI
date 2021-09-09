@@ -12,5 +12,6 @@ namespace TuristickaAgencija.WebAPI.Services.Komentar
         Model.Komentar GetById(int id);
         Model.Komentar Insert(KomentarInsertUpdateRequest request);
         Model.Komentar Update(int id, KomentarInsertUpdateRequest request);
+        public void Delete(int id);
     }
 }

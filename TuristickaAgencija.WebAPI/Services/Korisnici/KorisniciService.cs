@@ -173,5 +173,11 @@ namespace TuristickaAgencija.WebAPI.Services.Korisnici
 
             return _mapper.Map<List<Model.Korisnici>>(list);
         }
+        public void Delete(int id)
+        {
+            var entity = _context.Korisnici.Find(id);
+            _context.Korisnici.Remove(entity);
+            _context.SaveChanges();
+        }
     }
 }

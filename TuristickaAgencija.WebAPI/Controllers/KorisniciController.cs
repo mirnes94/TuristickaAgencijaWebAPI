@@ -68,6 +68,12 @@ namespace TuristickaAgencija.WebAPI.Controllers
             return _korisniciService.Potvrdi(username);
         }
 
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            _korisniciService.Delete(id);
+        }
+
 
 
     }

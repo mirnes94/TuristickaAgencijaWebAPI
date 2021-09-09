@@ -31,6 +31,9 @@ namespace TuristickaAgencija.MobileApp.Views
             {
                 switch (id)
                 {
+                    case (int)MenuItemType.Profil:
+                        MenuPages.Add(id, new NavigationPage(new KorisnikPage()));
+                        break;
                     case (int)MenuItemType.Putovanja:
                         MenuPages.Add(id, new NavigationPage(new PutovanjaPage(korisnik)));
                         break;

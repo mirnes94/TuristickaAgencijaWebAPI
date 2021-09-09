@@ -12,5 +12,7 @@ namespace TuristickaAgencija.WebAPI.Services.Obavijesti
         Model.Obavijesti GetById(int id);
         Model.Obavijesti Insert(ObavijestiInsertUpdateRequest request);
         Model.Obavijesti Update(int id, ObavijestiInsertUpdateRequest request);
+
+        public void Delete(int id);
     }
 }

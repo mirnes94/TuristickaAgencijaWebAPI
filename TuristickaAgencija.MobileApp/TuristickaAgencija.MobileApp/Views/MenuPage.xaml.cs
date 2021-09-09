@@ -25,6 +25,7 @@ namespace TuristickaAgencija.MobileApp.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Welcome, Title="Welcome" },
+                new HomeMenuItem {Id = MenuItemType.Profil, Title="Profil korisnika" },
                 new HomeMenuItem {Id = MenuItemType.Putovanja, Title="Putovanja" },
                 new HomeMenuItem {Id = MenuItemType.Obavijesti, Title="Obavijesti" },
                 new HomeMenuItem {Id = MenuItemType.Rezervacije, Title="Rezervacije" },
@@ -32,6 +33,7 @@ namespace TuristickaAgencija.MobileApp.Views
                 new HomeMenuItem {Id = MenuItemType.Uplata, Title="Uplata" },
                 new HomeMenuItem {Id = MenuItemType.Favoriti, Title="Favoriti" },
                 new HomeMenuItem {Id = MenuItemType.AboutUs, Title="About Us" },
+                
             };
 
             MenuItemsListView.ItemsSource = menuItems;
