@@ -31,5 +31,11 @@ namespace TuristickaAgencija.MobileApp.Views
             Application.Current.MainPage = new LoginPage();
             await model.Obrisi(item);
         }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new KorisnikUpdatePage()));
+        }
+
     }
 }

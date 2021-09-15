@@ -35,3 +35,4 @@ C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\Turist
 C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp\obj\Debug\netstandard2.0\Views\ListaUplataPage.xaml.g.cs
 C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp\obj\Debug\netstandard2.0\Views\UplataDetaljiPage.xaml.g.cs
 C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp\obj\Debug\netstandard2.0\Views\KorisnikPage.xaml.g.cs
+C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp\obj\Debug\netstandard2.0\Views\KorisnikUpdatePage.xaml.g.cs

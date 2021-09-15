@@ -19,8 +19,10 @@ xmlns:vm="clr-namespace:TuristickaAgencija.MobileApp.ViewModels"
 
                 </StackLayout>
             </StackLayout>
-
-            <ListView ItemsSource="{Binding KorisniciList}" ItemSelected="ListView_ItemSelected">
+            <StackLayout HorizontalOptions="EndAndExpand">
+            <Button Text="Uredi profil" Clicked="Button_Clicked" Margin="5" Padding="5"></Button>
+        </StackLayout>
+        <ListView ItemsSource="{Binding KorisniciList}" ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
