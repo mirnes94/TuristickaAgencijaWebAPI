@@ -25,7 +25,7 @@ namespace TuristickaAgencija.WinUI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44365/api")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:43791/api")]
         public string APIUrl {
             get {
                 return ((string)(this["APIUrl"]));
