@@ -95,7 +95,14 @@ namespace TuristickaAgencija.WinUI
                 return default(T);
             }
         }
-       
+
+        public async Task<T> Authentication<T>(string username, string password)
+        {
+            var url = $"{Properties.Settings.Default.APIUrl}/{_route}/Authenticiraj/{username},{password}";
+
+            return await url.GetJsonAsync<T>();
+        }
+
 
     }
 }

@@ -144,10 +144,11 @@ namespace TuristickaAgencija.WebAPI
             });
 
             //app.UseHttpsRedirection();
-           // app.UseStaticFiles();
+            // app.UseStaticFiles();
+            app.UseRouting();
 
             app.UseAuthentication();
-            app.UseRouting();
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

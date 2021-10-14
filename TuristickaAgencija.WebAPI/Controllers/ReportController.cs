@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,6 +15,7 @@ namespace TuristickaAgencija.WebAPI.Controllers
     [ApiExplorerSettings(IgnoreApi = true)]
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [Authorize]
     public class ReportController : Controller
     {
         /*

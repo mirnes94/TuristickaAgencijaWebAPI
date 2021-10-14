@@ -13,6 +13,7 @@ namespace TuristickaAgencija.WebAPI.Controllers
     
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PrevozController : ControllerBase
     {
         private readonly IPrevozService _prevozService;

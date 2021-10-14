@@ -13,6 +13,7 @@ namespace TuristickaAgencija.WebAPI.Controllers
    
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class SmjestajController : ControllerBase
     {
         private readonly ISmjestajService _smjestajService;

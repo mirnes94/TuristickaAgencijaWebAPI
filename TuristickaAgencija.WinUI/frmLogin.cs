@@ -18,18 +18,34 @@ namespace TuristickaAgencija.WinUI
 
         private async void btnLogin_Click(object sender, EventArgs e)
         {
+            APIService.Username = txtKorisnickoIme.Text;
+            APIService.Password = txtLozinka.Text;
             try
             {
-                APIService.Username = txtKorisnickoIme.Text;
-                APIService.Password = txtLozinka.Text;
-                await _service.Get<dynamic>(null);
+                if (string.IsNullOrEmpty(txtKorisnickoIme.Text) || string.IsNullOrEmpty(txtLozinka.Text))
+                {
+                    MessageBox.Show("All fields are required! Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                frmIndex frm = new frmIndex();
-                frm.Show();
+                else
+                {
+                  
+                    Model.Korisnici korisnik = await _service.Authentication<Model.Korisnici>(txtKorisnickoIme.Text, txtLozinka.Text);
 
-            }catch(Exception ex)
+                    MessageBox.Show("Welcome:\n " + korisnik.Ime + " " + korisnik.Prezime);
+                    DialogResult = DialogResult.OK;
+                    this.Hide();
+                   
+                    frmIndex frm = new frmIndex();
+                    frm.Show();
+                   
+                }
+            }
+            catch (Exception err)
             {
-                MessageBox.Show(ex.Message,"Authentikacija",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Wrong username or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }

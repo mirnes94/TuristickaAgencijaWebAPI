@@ -13,6 +13,7 @@ namespace TuristickaAgencija.WebAPI.Controllers
    
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class FirmaController : ControllerBase
     {
         private readonly IFirmaService _firmaService;

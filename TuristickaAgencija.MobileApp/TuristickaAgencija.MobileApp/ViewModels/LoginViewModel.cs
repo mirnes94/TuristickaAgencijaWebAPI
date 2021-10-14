@@ -34,30 +34,36 @@ namespace TuristickaAgencija.MobileApp.ViewModels
         async Task OnLoginClicked()
         {
             IsBusy = true;
-            APIService.Username = Username;
-            APIService.Password = Password;
-            Model.Korisnici korisnik = await service.Login<Model.Korisnici>(Username, Password);
-
-            if (korisnik != null)
+            try
             {
-                if (korisnik.Status == true)
+                Model.Korisnici korisnik = await service.Authentication<Model.Korisnici>(Username, Password);
+                if (korisnik != null)
                 {
-                    
-                    LoggedInUser.ActiveUser = korisnik;
+                    if (korisnik.Status == true)
+                    {
 
-                    await Application.Current.MainPage.DisplayAlert("Success", "Dobro dosli " + korisnik.Ime + " " + korisnik.Prezime, "OK");
-                    Application.Current.MainPage = new MainPage(korisnik);
+                        LoggedInUser.ActiveUser = korisnik;
+
+                        await Application.Current.MainPage.DisplayAlert("Success", "Dobro dosli " + korisnik.Ime + " " + korisnik.Prezime, "OK");
+                        Application.Current.MainPage = new MainPage(korisnik);
+                    }
+                    else
+                    {
+                        await Application.Current.MainPage.DisplayAlert("Error", "Potrebno je da potvrdite Vas racun", "OK");
+                    }
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Potrebno je da potvrdite Vas racun", "OK");
+                    IsBusy = false;
+                    await Application.Current.MainPage.DisplayAlert("Error", "Wrong username or password", "OK");
                 }
-               
             }
-            else
+            catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Netačni pristupni podaci", "OK");
+                IsBusy = false;
+                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
             }
+           
         }
     }
     }

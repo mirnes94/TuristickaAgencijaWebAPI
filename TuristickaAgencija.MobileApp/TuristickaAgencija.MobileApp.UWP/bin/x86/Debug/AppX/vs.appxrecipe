@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-09-14T11:55:43.671</Modified>
+      <Modified>2021-10-13T09:28:12.070</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\TuristickaAgencija.MobileApp.UWP.exe">
       <PackagePath>entrypoint\TuristickaAgencija.MobileApp.UWP.exe</PackagePath>
-      <Modified>2021-09-14T11:55:36.690</Modified>
+      <Modified>2021-10-13T09:28:08.388</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\.nuget\packages\entityframework\6.1.3\lib\net45\EntityFramework.SqlServer.dll">
       <PackagePath>EntityFramework.SqlServer.dll</PackagePath>
@@ -196,7 +196,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp\bin\Debug\netstandard2.0\TuristickaAgencija.MobileApp.dll">
       <PackagePath>TuristickaAgencija.MobileApp.dll</PackagePath>
-      <Modified>2021-09-14T12:04:20.722</Modified>
+      <Modified>2021-10-13T09:27:53.543</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp\bin\Debug\netstandard2.0\TuristickaAgencija.Model.dll">
       <PackagePath>TuristickaAgencija.Model.dll</PackagePath>
@@ -371,11 +371,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-09-14T11:55:36.351</Modified>
+      <Modified>2021-10-13T09:28:08.105</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-09-14T11:55:36.352</Modified>
+      <Modified>2021-10-13T09:28:08.106</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -395,7 +395,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\bin\x86\Debug\Core\TuristickaAgencija.MobileApp.UWP.exe">
       <PackagePath>TuristickaAgencija.MobileApp.UWP.exe</PackagePath>
-      <Modified>2021-09-14T11:55:43.636</Modified>
+      <Modified>2021-10-13T09:28:12.050</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

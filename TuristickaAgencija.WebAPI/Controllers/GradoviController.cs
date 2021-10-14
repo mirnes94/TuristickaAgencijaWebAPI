@@ -14,6 +14,7 @@ namespace TuristickaAgencija.WebAPI.Controllers
     //[Authorize(AuthenticationSchemes = "BasicAuthentication")]
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class GradoviController : ControllerBase
     {
         private readonly IGradoviService _gradoviService;

@@ -120,6 +120,13 @@ namespace TuristickaAgencija.MobileApp
             return await url.GetJsonAsync<T>();
         }
 
+        public async Task<T> Authentication<T>(string username, string password)
+        {
+            var url = $"{apiUrl}/{_route}/Authenticiraj/{username},{password}";
+
+            return await url.GetJsonAsync<T>();
+        }
+
 
     }
 }

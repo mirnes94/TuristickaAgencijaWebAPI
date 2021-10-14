@@ -11,9 +11,9 @@ using TuristickaAgencija.WebAPI.Services.Drzava;
 
 namespace TuristickaAgencija.WebAPI.Controllers
 {
-  
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
+    [Authorize]
     public class DrzavaController : ControllerBase
     {
         private readonly IDrzavaService _drzavaService;

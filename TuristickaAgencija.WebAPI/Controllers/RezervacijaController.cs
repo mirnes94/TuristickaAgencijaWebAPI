@@ -12,6 +12,7 @@ namespace TuristickaAgencija.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class RezervacijaController : ControllerBase
     {
         private readonly IRezervacijaService _rezervacijaService;

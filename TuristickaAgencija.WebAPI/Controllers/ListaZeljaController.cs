@@ -6,11 +6,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using TuristickaAgencija.Model.Request;
 using TuristickaAgencija.WebAPI.Services.ListaZelja;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TuristickaAgencija.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ListaZeljaController : ControllerBase
     {
         private readonly IListaZeljaService _listaZeljaService;
