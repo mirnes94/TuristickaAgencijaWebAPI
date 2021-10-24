@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RiDMKj9+XiMm9LDMW+ZqqrhGXmLoDPnN3If8dyoyfZiNsw/vC1xDxQV+3kSHReBplKqDULEMENNZReVKi8zPZQ==",
+  "dgSpecHash": "P9qoObIyUrNwnn7vBZhbgEeyPJNm89Cw6grHyRRNOLuiwm1He/9nCfBR2/mgkJmh7RPC2Mi6Mgv2kCW6MW1Wxg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ACER\\Source\\Repos\\TuristickaAgencijaWebAP-123\\TuristickaAgencija.WebAPI\\TuristickaAgencija.WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\ACER\\Desktop\\RS2\\TuristickaAgencija\\TuristickaAgencija.WebAPI\\TuristickaAgencija.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACER\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\6.0.0\\automapper.extensions.microsoft.dependencyinjection.6.0.0.nupkg.sha512",

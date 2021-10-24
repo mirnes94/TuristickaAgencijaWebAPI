@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NMlP4WrWeHiteulXft15bm6GjGWq7abmAl27Mk9Vv4XM9/N47LAcyzRE6uN1zAE/zITz/9EhMlSTBit9CLJRwA==",
+  "dgSpecHash": "4M5438SgTgmBAq8mcl4twXLnWvQEPNlXSNW4vJFBrum/gmj2s7qnyztBKOkp6kMC+5fAHjYzr2brnWRyEH/wJg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ACER\\Source\\Repos\\TuristickaAgencijaWebAP-123\\TuristickaAgencija.Model\\TuristickaAgencija.Model.csproj",
+  "projectFilePath": "C:\\Users\\ACER\\Desktop\\RS2\\TuristickaAgencija\\TuristickaAgencija.Model\\TuristickaAgencija.Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACER\\.nuget\\packages\\entityframework\\6.1.3\\entityframework.6.1.3.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",

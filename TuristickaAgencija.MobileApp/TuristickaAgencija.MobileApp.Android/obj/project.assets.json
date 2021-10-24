@@ -3721,11 +3721,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ACER\\Source\\Repos\\TuristickaAgencijaWebAP-123\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.Android\\TuristickaAgencija.MobileApp.Android.csproj",
+      "projectUniqueName": "C:\\Users\\ACER\\Desktop\\RS2\\TuristickaAgencija\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.Android\\TuristickaAgencija.MobileApp.Android.csproj",
       "projectName": "TuristickaAgencija.MobileApp.Android",
-      "projectPath": "C:\\Users\\ACER\\Source\\Repos\\TuristickaAgencijaWebAP-123\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.Android\\TuristickaAgencija.MobileApp.Android.csproj",
+      "projectPath": "C:\\Users\\ACER\\Desktop\\RS2\\TuristickaAgencija\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.Android\\TuristickaAgencija.MobileApp.Android.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ACER\\Source\\Repos\\TuristickaAgencijaWebAP-123\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.Android\\obj\\",
+      "outputPath": "C:\\Users\\ACER\\Desktop\\RS2\\TuristickaAgencija\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -3748,8 +3748,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "C:\\Users\\ACER\\Source\\Repos\\TuristickaAgencijaWebAP-123\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.csproj": {
-              "projectPath": "C:\\Users\\ACER\\Source\\Repos\\TuristickaAgencijaWebAP-123\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.csproj"
+            "C:\\Users\\ACER\\Desktop\\RS2\\TuristickaAgencija\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.csproj": {
+              "projectPath": "C:\\Users\\ACER\\Desktop\\RS2\\TuristickaAgencija\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.csproj"
             }
           }
         }

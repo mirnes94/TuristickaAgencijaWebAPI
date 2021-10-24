@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6FHnsZ2Y2P7pGCj9mpzlCTfkZw8zMcv8Rs1SSAgdXKGhJqiHhnRf06Kbzp2WyqC8Qb3+UWkFAqkkswkygAUvmw==",
+  "dgSpecHash": "9o2G7KQAykrZfxKaxZBUlkO0CgAQt7Fxv3OEKx1G5eW4hl/Rd7dZY2CWsm0aiVP4X4XCJC6twfKxPz7sEv0OXQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ACER\\Source\\Repos\\TuristickaAgencijaWebAP-123\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.UWP\\TuristickaAgencija.MobileApp.UWP.csproj",
+  "projectFilePath": "C:\\Users\\ACER\\Desktop\\RS2\\TuristickaAgencija\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.UWP\\TuristickaAgencija.MobileApp.UWP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACER\\.nuget\\packages\\entityframework\\6.1.3\\entityframework.6.1.3.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\flurl\\2.8.1\\flurl.2.8.1.nupkg.sha512",
