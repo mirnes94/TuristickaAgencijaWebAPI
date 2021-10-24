@@ -1,1 +1,1 @@
-C:\Users\ACER\Desktop\RS2\TuristickaAgencija\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\TuristickaAgencija.MobileApp.UWP.csproj;x86
+C:\Users\ACER\Source\Repos\TuristickaAgencijaWebAP-123\TuristickaAgencija.MobileApp\TuristickaAgencija.MobileApp.UWP\TuristickaAgencija.MobileApp.UWP.csproj;x86

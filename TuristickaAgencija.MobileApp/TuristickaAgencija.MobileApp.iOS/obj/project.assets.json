@@ -3682,11 +3682,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ACER\\Desktop\\RS2\\TuristickaAgencija\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.iOS\\TuristickaAgencija.MobileApp.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\ACER\\Source\\Repos\\TuristickaAgencijaWebAP-123\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.iOS\\TuristickaAgencija.MobileApp.iOS.csproj",
       "projectName": "TuristickaAgencija.MobileApp.iOS",
-      "projectPath": "C:\\Users\\ACER\\Desktop\\RS2\\TuristickaAgencija\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.iOS\\TuristickaAgencija.MobileApp.iOS.csproj",
+      "projectPath": "C:\\Users\\ACER\\Source\\Repos\\TuristickaAgencijaWebAP-123\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.iOS\\TuristickaAgencija.MobileApp.iOS.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ACER\\Desktop\\RS2\\TuristickaAgencija\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.iOS\\obj\\",
+      "outputPath": "C:\\Users\\ACER\\Source\\Repos\\TuristickaAgencijaWebAP-123\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -3709,8 +3709,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\ACER\\Desktop\\RS2\\TuristickaAgencija\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.csproj": {
-              "projectPath": "C:\\Users\\ACER\\Desktop\\RS2\\TuristickaAgencija\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.csproj"
+            "C:\\Users\\ACER\\Source\\Repos\\TuristickaAgencijaWebAP-123\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.csproj": {
+              "projectPath": "C:\\Users\\ACER\\Source\\Repos\\TuristickaAgencijaWebAP-123\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp\\TuristickaAgencija.MobileApp.csproj"
             }
           }
         }
