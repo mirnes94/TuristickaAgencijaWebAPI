@@ -1,9 +1,0 @@
-C:\Users\ACER\source\repos\TuristickaAgencija\TuristickaAgencija.WinUI\bin\Debug\TuristickaAgencija.WinUI.exe.config
-C:\Users\ACER\source\repos\TuristickaAgencija\TuristickaAgencija.WinUI\bin\Debug\TuristickaAgencija.WinUI.exe
-C:\Users\ACER\source\repos\TuristickaAgencija\TuristickaAgencija.WinUI\bin\Debug\TuristickaAgencija.WinUI.pdb
-C:\Users\ACER\source\repos\TuristickaAgencija\TuristickaAgencija.WinUI\obj\Debug\TuristickaAgencija.WinUI.csprojAssemblyReference.cache
-C:\Users\ACER\source\repos\TuristickaAgencija\TuristickaAgencija.WinUI\obj\Debug\TuristickaAgencija.WinUI.Properties.Resources.resources
-C:\Users\ACER\source\repos\TuristickaAgencija\TuristickaAgencija.WinUI\obj\Debug\TuristickaAgencija.WinUI.csproj.GenerateResource.cache
-C:\Users\ACER\source\repos\TuristickaAgencija\TuristickaAgencija.WinUI\obj\Debug\TuristickaAgencija.WinUI.csproj.CoreCompileInputs.cache
-C:\Users\ACER\source\repos\TuristickaAgencija\TuristickaAgencija.WinUI\obj\Debug\TuristickaAgencija.WinUI.exe
-C:\Users\ACER\source\repos\TuristickaAgencija\TuristickaAgencija.WinUI\obj\Debug\TuristickaAgencija.WinUI.pdb
