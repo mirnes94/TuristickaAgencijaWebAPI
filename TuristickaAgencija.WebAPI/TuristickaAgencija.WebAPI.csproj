@@ -8,7 +8,15 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Report\**" />
+    <Content Remove="Report\**" />
+    <EmbeddedResource Remove="Report\**" />
+    <None Remove="Report\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
@@ -35,10 +43,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TuristickaAgencija.Model\TuristickaAgencija.Model.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Report\" />
   </ItemGroup>
 
 
