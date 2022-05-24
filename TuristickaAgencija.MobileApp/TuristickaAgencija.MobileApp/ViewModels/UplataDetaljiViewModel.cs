@@ -63,18 +63,26 @@ namespace TuristickaAgencija.MobileApp.ViewModels
         {
 
             DateTime datum = DateTime.Now;
-            UplateInsertUpdateRequest uplataInsert = new UplateInsertUpdateRequest
+            try
             {
-                Datum = datum,
-                Iznos = IznosUplate,
-                RezervacijaId = RezervacijaId
-            };
-            if(uplataInsert.Iznos!=0 && uplataInsert.RezervacijaId!=0)
-            {
-                await _uplateService.Insert<Model.Uplate>(uplataInsert);
-                Application.Current.MainPage = new MainPage(LoggedInUser.ActiveUser);
+                UplateInsertUpdateRequest uplataInsert = new UplateInsertUpdateRequest
+                {
+                    Datum = datum,
+                    Iznos = IznosUplate,
+                    RezervacijaId = RezervacijaId
+                };
+                if (uplataInsert.Iznos != 0 && uplataInsert.RezervacijaId != 0)
+                {
+                    await _uplateService.Insert<Model.Uplate>(uplataInsert);
+                    Application.Current.MainPage = new MainPage(LoggedInUser.ActiveUser);
+                }
+
             }
-           
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Neuspješna uplata", "OK");
+            }
+            
         }
     }
 }

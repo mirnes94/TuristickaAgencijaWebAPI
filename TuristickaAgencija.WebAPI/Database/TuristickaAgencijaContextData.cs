@@ -9,7 +9,31 @@ namespace TuristickaAgencija.WebAPI.Database
 {
     public partial class TuristickaAgencijaContext
     {
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder)
+        public static byte[] ReadFile(string sPath)
+        {
+            //Initialize byte array with a null value initially.
+            byte[] data = null;
+
+            //Use FileInfo object to get file size.
+            FileInfo fInfo = new FileInfo(sPath);
+            long numBytes = fInfo.Length;
+
+            //Open FileStream to read file
+            FileStream fStream = new FileStream(sPath, FileMode.Open, FileAccess.Read);
+
+            //Use BinaryReader to read file stream into byte array.
+            BinaryReader br = new BinaryReader(fStream);
+
+            //When you use BinaryReader, you need to supply number of bytes 
+            //to read from file.
+            //In this case we want to read entire file. 
+            //So supplying total number of bytes.
+            data = br.ReadBytes((int)numBytes);
+
+            return data;
+        }
+    
+    partial void OnModelCreatingPartial(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Korisnici>().HasData(
                 new WebAPI.Database.Korisnici()
@@ -94,7 +118,9 @@ namespace TuristickaAgencija.WebAPI.Database
             modelBuilder.Entity<Uloge>().HasData(
                 new Uloge
                 {
-                    Id = 1, Naziv = "Admin", Opis = "Administrator sistema"
+                    Id = 1, 
+                    Naziv = "Admin",
+                    Opis = "Administrator sistema"
                 },
                  new Uloge
                  {
@@ -288,7 +314,7 @@ namespace TuristickaAgencija.WebAPI.Database
                     CijenaNocenja = 100,
                     NazivSmjestaja = "Hotel",
                     OpisSmjestaja = "Hotel sa 5 zvjezdica. Ukljucen dorucak",
-                    Slika = null,
+                    Slika = ReadFile("TestImage/OIP1.jpg"),
                     TipSobe = "trokrevetna"
 
                 },
@@ -298,7 +324,7 @@ namespace TuristickaAgencija.WebAPI.Database
                        CijenaNocenja = 60,
                        NazivSmjestaja = "Hotel",
                        OpisSmjestaja = "Hotel sa 4 zvjezdica.Ukljucen dorucak",
-                       Slika = null,
+                       Slika = ReadFile("TestImage/OIP1.jpg"),
                        TipSobe = "dvokrevetna"
 
                    },
@@ -308,7 +334,7 @@ namespace TuristickaAgencija.WebAPI.Database
                           CijenaNocenja = 40,
                           NazivSmjestaja = "Hotel",
                           OpisSmjestaja = "Hotel sa 4 zvjezdica",
-                          Slika = null,
+                          Slika = ReadFile("TestImage/OIP1.jpg"),
                           TipSobe = "dvkrevetna"
 
                       }
@@ -325,7 +351,7 @@ namespace TuristickaAgencija.WebAPI.Database
                     GradId = 3,
                     PrevozId = 1,
                     SmjestajId = 3,
-                    Slika = null
+                    Slika = ReadFile("TestImage/OIP1.jpg")
                 },
                   new Putovanja
                   {
@@ -339,7 +365,7 @@ namespace TuristickaAgencija.WebAPI.Database
                       GradId = 4,
                       PrevozId = 2,
                       SmjestajId = 2,
-                      Slika = null
+                      Slika = ReadFile("TestImage/OIP1.jpg")
                   },
                      new Putovanja
                      {
@@ -353,7 +379,7 @@ namespace TuristickaAgencija.WebAPI.Database
                          GradId = 5,
                          PrevozId = 2,
                          SmjestajId = 1,
-                         Slika = null
+                         Slika = ReadFile("TestImage/OIP1.jpg")
                      },
                      new Putovanja
                      {
@@ -367,7 +393,7 @@ namespace TuristickaAgencija.WebAPI.Database
                          GradId = 6,
                          PrevozId = 1,
                          SmjestajId = 2,
-                         Slika = null
+                         Slika = ReadFile("TestImage/OIP1.jpg")
                      },
                      new Putovanja
                      {
@@ -381,7 +407,7 @@ namespace TuristickaAgencija.WebAPI.Database
                          GradId = 6,
                          PrevozId = 2,
                          SmjestajId = 1,
-                         Slika = null
+                         Slika = ReadFile("TestImage/OIP1.jpg")
                      },
                       new Putovanja
                       {
@@ -395,7 +421,7 @@ namespace TuristickaAgencija.WebAPI.Database
                           GradId = 3,
                           PrevozId = 2,
                           SmjestajId = 3,
-                          Slika = null
+                          Slika = ReadFile("TestImage/OIP1.jpg")
                       },
                        new Putovanja
                        {
@@ -409,7 +435,7 @@ namespace TuristickaAgencija.WebAPI.Database
                            GradId = 7,
                            PrevozId = 2,
                            SmjestajId = 2,
-                           Slika = null
+                           Slika = ReadFile("TestImage/OIP1.jpg")
                        },
                         new Putovanja
                         {
@@ -423,7 +449,7 @@ namespace TuristickaAgencija.WebAPI.Database
                             GradId = 10,
                             PrevozId = 1,
                             SmjestajId = 2,
-                            Slika = null
+                            Slika = ReadFile("TestImage/OIP1.jpg")
                         },
                           new Putovanja
                           {
@@ -437,7 +463,7 @@ namespace TuristickaAgencija.WebAPI.Database
                               GradId = 11,
                               PrevozId = 1,
                               SmjestajId = 3,
-                              Slika = null
+                              Slika = ReadFile("TestImage/OIP1.jpg")
                           }
 
                 );
@@ -965,7 +991,7 @@ namespace TuristickaAgencija.WebAPI.Database
                  Jmbg="1457896541278",
                  Kontakt="061475963",
                  Prezime="Prezime1",
-                 Slika = null
+                 Slika = ReadFile("TestImage/OIP1.jpg")
              },
                new Vodic
                {
@@ -974,7 +1000,7 @@ namespace TuristickaAgencija.WebAPI.Database
                    Jmbg = "1459896541278",
                    Kontakt = "062475963",
                    Prezime = "Prezime2",
-                   Slika = null
+                   Slika = ReadFile("TestImage/OIP1.jpg")
                },
                new Vodic
                {
@@ -983,7 +1009,7 @@ namespace TuristickaAgencija.WebAPI.Database
                    Jmbg = "8959896541278",
                    Kontakt = "062495963",
                    Prezime = "Prezime3",
-                   Slika = null
+                   Slika = ReadFile("TestImage/OIP1.jpg")
                },
                  new Vodic
                  {
@@ -992,7 +1018,7 @@ namespace TuristickaAgencija.WebAPI.Database
                      Jmbg = "8959896541277",
                      Kontakt = "062495964",
                      Prezime = "Prezime4",
-                     Slika = null
+                     Slika = ReadFile("TestImage/OIP1.jpg")
                  },
                    new Vodic
                    {
@@ -1001,7 +1027,7 @@ namespace TuristickaAgencija.WebAPI.Database
                        Jmbg = "8959866541278",
                        Kontakt = "062495563",
                        Prezime = "Prezime5",
-                       Slika = null
+                       Slika = ReadFile("TestImage/OIP1.jpg")
                    },
                     new Vodic
                     {
@@ -1010,7 +1036,7 @@ namespace TuristickaAgencija.WebAPI.Database
                         Jmbg = "8959866441278",
                         Kontakt = "061495963",
                         Prezime = "Prezime6",
-                        Slika = null
+                        Slika = ReadFile("TestImage/OIP1.jpg")
                     },
                        new Vodic
                        {
@@ -1019,7 +1045,7 @@ namespace TuristickaAgencija.WebAPI.Database
                            Jmbg = "8959866441278",
                            Kontakt = "061499963",
                            Prezime = "Prezime7",
-                           Slika = null
+                           Slika = ReadFile("TestImage/OIP1.jpg")
                        },
                           new Vodic
                           {
@@ -1028,7 +1054,7 @@ namespace TuristickaAgencija.WebAPI.Database
                               Jmbg = "1359866441278",
                               Kontakt = "0601495963",
                               Prezime = "Prezime8",
-                              Slika = null
+                              Slika = ReadFile("TestImage/OIP1.jpg")
                           }
              );
 

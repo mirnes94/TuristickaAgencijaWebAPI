@@ -41,6 +41,8 @@ namespace TuristickaAgencija.MobileApp.ViewModels
                 {
                     if (korisnik.Status == true)
                     {
+                        APIService.Username = Username;
+                        APIService.Password = Password;
 
                         LoggedInUser.ActiveUser = korisnik;
 

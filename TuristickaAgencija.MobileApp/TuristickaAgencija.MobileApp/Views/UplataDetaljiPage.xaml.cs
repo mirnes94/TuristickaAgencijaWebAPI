@@ -115,7 +115,7 @@ namespace TuristickaAgencija.MobileApp.Views
 
         }
 
-        private bool ValidateUplata()
+        private bool ValidateCard()
         {
             bool valid = true;
             if ( ValidateBrojKartice() == false ||ValidateGodinaIsteka() == false ||ValidateMjesecIsteka() == false || ValidateCvv() == false)
@@ -257,18 +257,18 @@ namespace TuristickaAgencija.MobileApp.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            if(ValidateRezervacija()== true)
+            if(ValidateCard()== true)
             {
-                if (ValidateUplata() == true)
+                if (ValidateRezervacija() == true)
                 {
                     PayWithStripe();
                     await Navigation.PushModalAsync(new NavigationPage(new MainPage(model.Korisnik)));
                 }
                 else
-                    await DisplayAlert("Error", "Uplata Input error", "OK");
+                    await DisplayAlert("Error", "Rezervacija Input error", "OK");
             }
             else
-                await DisplayAlert("Error", "Rezervacija Input error", "OK");
+                await DisplayAlert("Error", "Card Input error", "OK");
 
 
 

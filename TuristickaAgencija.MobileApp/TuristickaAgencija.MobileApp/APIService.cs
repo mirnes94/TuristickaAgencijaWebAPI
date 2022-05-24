@@ -30,15 +30,27 @@ namespace TuristickaAgencija.MobileApp
         public async Task<T> Get<T>(object search)
         {
             var url = $"{apiUrl}/{_route}";
-            if (search != null)
+            try
             {
-                url += "?";
-                url += await search.ToQueryString();
+                if (search != null)
+                {
+                    url += "?";
+                    url += await search.ToQueryString();
+                }
+
+                return await url.WithBasicAuth(Username,Password).GetJsonAsync<T>();
             }
+            catch (FlurlHttpException ex)
+            {
+                if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    await Application.Current.MainPage.DisplayAlert("API Call","Niste autentificirani", "OK");
+                    return default(T);
 
-            var result = await url.GetJsonAsync<T>();
+                }
+                throw;
 
-            return result;
+            }
         }
 
         public async Task<T> Login<T>(string username, string password)
@@ -62,7 +74,7 @@ namespace TuristickaAgencija.MobileApp
 
             try
             {
-                return await url.PostJsonAsync(request).ReceiveJson<T>();
+                return await url.WithBasicAuth(Username,Password).PostJsonAsync(request).ReceiveJson<T>();
             }
             catch (FlurlHttpException ex)
             {
@@ -104,7 +116,7 @@ namespace TuristickaAgencija.MobileApp
             {
                 var url = $"{apiUrl}/{_route}/{id}";
 
-                return await url.DeleteAsync().ReceiveJson<T>();
+                return await url.WithBasicAuth(Username,Password).DeleteAsync().ReceiveJson<T>();
             }
             catch (System.Exception ex)
             {
@@ -117,14 +129,14 @@ namespace TuristickaAgencija.MobileApp
         {
             var url = $"{apiUrl}/{_route}/GetRecommendedPutovanja/{id}";
 
-            return await url.GetJsonAsync<T>();
+            return await url.WithBasicAuth(Username,Password).GetJsonAsync<T>();
         }
 
         public async Task<T> Authentication<T>(string username, string password)
         {
             var url = $"{apiUrl}/{_route}/Authenticiraj/{username},{password}";
 
-            return await url.GetJsonAsync<T>();
+            return await url.WithBasicAuth(Username,Password).GetJsonAsync<T>();
         }
 
 

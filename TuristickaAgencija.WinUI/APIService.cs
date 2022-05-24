@@ -100,7 +100,7 @@ namespace TuristickaAgencija.WinUI
         {
             var url = $"{Properties.Settings.Default.APIUrl}/{_route}/Authenticiraj/{username},{password}";
 
-            return await url.GetJsonAsync<T>();
+            return await url.WithBasicAuth(Username,Password).GetJsonAsync<T>();
         }
 
 

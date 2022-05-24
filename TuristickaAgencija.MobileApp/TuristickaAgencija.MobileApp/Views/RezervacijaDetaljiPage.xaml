@@ -57,19 +57,20 @@
                             <Label Text="{Binding Putovanje.CijenaPutovanja}"></Label>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                            
-                            <Entry Placeholder="Broj osoba" x:Name="brojOsobaInput" Text="{Binding BrojOsoba}" Keyboard="Numeric"></Entry>
+
+                            <Entry Placeholder="Broj osoba" x:Name="brojOsobaInput" Text="{Binding BrojOsoba}" Keyboard="Numeric" WidthRequest="100"></Entry>
                             <Label x:Name="brojOsobaInputError" TextColor="Red" IsVisible="True"></Label>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                            
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+
+                             <Entry Placeholder="Iznos uplate" x:Name="iznosUplateInput" Text="{Binding IznosUplate}" WidthRequest="100" Keyboard="Numeric"></Entry>
+                              <Label x:Name="iznosUplateInputError" TextColor="Red" IsVisible="True"></Label>
+                        </StackLayout>
+
                             <Entry Placeholder="Napomena" x:Name="napomenaInput" Text="{Binding Napomena}" WidthRequest="300"></Entry>
                             <Label x:Name="napomenaInputError" TextColor="Red" IsVisible="True"></Label>
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                           
-                            <Entry Placeholder="Iznos uplate" x:Name="iznosUplateInput" Text="{Binding IznosUplate}" Keyboard="Numeric"></Entry>
-                            <Label x:Name="iznosUplateInputError" TextColor="Red" IsVisible="True"></Label>
                         </StackLayout>
                         <StackLayout Padding="20">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
