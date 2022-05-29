@@ -17,6 +17,8 @@ services:
     restart: unless-stopped
     build:
       context: .
+    volumes:
+      - './TuristickaAgencija.WebAPI/TestImage:/app/TestImage'
     environment:
       - ConnectionStrings:TuristickaAgencija=Server=turistickaagencija-sql,1433;Database=DockerDatabase1;User=sa;Password=QWElkj132!;ConnectRetryCount=0
     ports:
