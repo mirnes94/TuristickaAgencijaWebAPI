@@ -24,7 +24,6 @@ class _UplataState extends State<Uplata> {
     super.initState();
     Stripe.publishableKey =
         "pk_test_51LaG1nEUjDocQuVTZ3rZmqN8oXwIeX2JyRUhHyBadwIZatCfvXw5a1qTv4QOG5uQmZqP5zvcNpPWtcy9rbz7Bzmb00Hu193O8s";
-    //Stripe.stripeAccountId = "acct_1LaG1nEUjDocQuVTt";
     Stripe.merchantIdentifier = "merchant.com.turistickaagencija";
     Stripe.instance.applySettings();
     print("Stripe:${Stripe.merchantIdentifier} - ${Stripe.publishableKey}");
@@ -211,9 +210,6 @@ class _UplataState extends State<Uplata> {
     var korisniciList = korisnici!.map((i) => Korisnici.fromJson(i)).toList();
 
     for (Korisnici user in korisniciList) {
-      print(user.korisnickoIme
-          .toString()
-          .compareTo(APIService.username.toString()));
       if (user.korisnickoIme
               .toString()
               .compareTo(APIService.username.toString()) ==

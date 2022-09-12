@@ -51,7 +51,6 @@ class _ProfileState extends State<Profile> {
 
     String ime = "";
     String prezime = "";
-    int id = 0;
 
     var korisnici = await APIService.Get('Korisnici', null);
     var korisniciList = korisnici!.map((i) => Korisnici.fromJson(i)).toList();
@@ -68,7 +67,6 @@ class _ProfileState extends State<Profile> {
           0) {
         ime = user.ime;
         prezime = user.prezime;
-        id = user.id;
       }
     }
     print("Ime:" + ime.toString());

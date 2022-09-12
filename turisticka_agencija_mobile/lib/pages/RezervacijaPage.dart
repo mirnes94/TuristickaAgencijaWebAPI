@@ -75,11 +75,6 @@ class _RezervacijaPageState extends State<RezervacijaPage> {
     var korisniciList = korisnici!.map((i) => Korisnici.fromJson(i)).toList();
 
     for (Korisnici user in korisniciList) {
-      print("API username-2:" + APIService.username);
-      print("korisnicko ime-2:" + user.korisnickoIme);
-      print(user.korisnickoIme
-          .toString()
-          .compareTo(APIService.username.toString()));
       if (user.korisnickoIme
               .toString()
               .compareTo(APIService.username.toString()) ==

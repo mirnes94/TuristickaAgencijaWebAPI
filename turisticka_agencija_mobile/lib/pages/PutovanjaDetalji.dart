@@ -9,11 +9,9 @@ import 'package:turisticka_agencija_mobile/models/Putovanja.dart';
 
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-import '../models/KomentarModel.dart';
 import '../models/Korisnici.dart';
 import '../services/APIService.dart';
 import 'RezervacijaDetaljiPage.dart';
-import 'package:auto_reload/auto_reload.dart';
 
 class PutovanjaDetalji extends StatelessWidget {
   TextEditingController komentarController = new TextEditingController();
