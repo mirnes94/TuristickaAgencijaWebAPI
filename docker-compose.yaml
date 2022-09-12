@@ -10,6 +10,8 @@ services:
       - MSSQL_PID=Developer
     ports:
       - 1401:1433
+    expose:
+      - 1433
     networks:
       - turistickaagencijanet
 
@@ -17,6 +19,7 @@ services:
     restart: unless-stopped
     build:
       context: .
+      dockerfile: Dockerfile
     volumes:
       - './TuristickaAgencija.WebAPI/TestImage:/app/TestImage'
     environment:

@@ -24,7 +24,7 @@ namespace TuristickaAgencija.WebAPI.Services.Uplate
 
             if (request?.KorisnikId.HasValue == true)
             {
-                query = query.Where(x => x.Rezervacija.KorisnikId == request.KorisnikId);
+                query = query.Where(x => x.KorisnikId == request.KorisnikId);
             }
 
 

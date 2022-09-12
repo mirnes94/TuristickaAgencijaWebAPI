@@ -69,7 +69,8 @@ namespace TuristickaAgencija.MobileApp.ViewModels
                 {
                     Datum = datum,
                     Iznos = IznosUplate,
-                    RezervacijaId = RezervacijaId
+                    RezervacijaId = RezervacijaId,
+                    KorisnikId = LoggedInUser.ActiveUser.Id
                 };
                 if (uplataInsert.Iznos != 0 && uplataInsert.RezervacijaId != 0)
                 {

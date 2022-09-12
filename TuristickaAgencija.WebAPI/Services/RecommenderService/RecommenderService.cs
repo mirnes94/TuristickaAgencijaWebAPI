@@ -11,8 +11,7 @@ namespace TuristickaAgencija.WebAPI.Services.RecommenderService
     public class RecommenderService : IRecommenderService
     {
         Dictionary<int, List<Model.Ocjene>> putovanja = new Dictionary<int, List<Model.Ocjene>>();
-        private readonly TuristickaAgencijaContext _context;
-        private readonly IMapper _mapper;
+        private readonly TuristickaAgencijaContext _context;        private readonly IMapper _mapper;
         public RecommenderService(TuristickaAgencijaContext context, IMapper mapper)
         {
             _context = context;

@@ -249,7 +249,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 1,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 778, DateTimeKind.Local).AddTicks(8669),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(5247),
                             KorisnikId = 3,
                             PutovanjeId = 1,
                             Sadrzaj = "Komentar1"
@@ -257,7 +257,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 2,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 779, DateTimeKind.Local).AddTicks(5687),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(7638),
                             KorisnikId = 4,
                             PutovanjeId = 1,
                             Sadrzaj = "Komentar2"
@@ -265,7 +265,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 3,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 779, DateTimeKind.Local).AddTicks(5938),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(7864),
                             KorisnikId = 5,
                             PutovanjeId = 2,
                             Sadrzaj = "Komentar3"
@@ -273,7 +273,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 4,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 779, DateTimeKind.Local).AddTicks(5964),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(7881),
                             KorisnikId = 3,
                             PutovanjeId = 2,
                             Sadrzaj = "Komentar4"
@@ -281,7 +281,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 5,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 779, DateTimeKind.Local).AddTicks(5997),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(7889),
                             KorisnikId = 3,
                             PutovanjeId = 3,
                             Sadrzaj = "Komentar5"
@@ -289,7 +289,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 6,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 779, DateTimeKind.Local).AddTicks(6031),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(7897),
                             KorisnikId = 6,
                             PutovanjeId = 5,
                             Sadrzaj = "Komentar6"
@@ -297,7 +297,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 7,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 779, DateTimeKind.Local).AddTicks(6050),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(7904),
                             KorisnikId = 4,
                             PutovanjeId = 8,
                             Sadrzaj = "Komentar7"
@@ -305,7 +305,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 8,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 779, DateTimeKind.Local).AddTicks(6060),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(7912),
                             KorisnikId = 6,
                             PutovanjeId = 8,
                             Sadrzaj = "Komentar8"
@@ -313,7 +313,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 9,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 779, DateTimeKind.Local).AddTicks(6070),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(7920),
                             KorisnikId = 5,
                             PutovanjeId = 9,
                             Sadrzaj = "Komentar9"
@@ -321,7 +321,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 10,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 779, DateTimeKind.Local).AddTicks(6081),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(7928),
                             KorisnikId = 3,
                             PutovanjeId = 9,
                             Sadrzaj = "Komentar10"
@@ -466,21 +466,21 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             KorisnikUlogaId = 1,
-                            DatumIzmjene = new DateTime(2022, 5, 23, 15, 9, 28, 750, DateTimeKind.Local).AddTicks(7313),
+                            DatumIzmjene = new DateTime(2022, 9, 11, 8, 36, 9, 327, DateTimeKind.Local).AddTicks(7853),
                             KorisnikId = 1,
                             UlogaId = 1
                         },
                         new
                         {
                             KorisnikUlogaId = 2,
-                            DatumIzmjene = new DateTime(2022, 5, 23, 15, 9, 28, 759, DateTimeKind.Local).AddTicks(9488),
+                            DatumIzmjene = new DateTime(2022, 9, 11, 8, 36, 9, 335, DateTimeKind.Local).AddTicks(1089),
                             KorisnikId = 1,
                             UlogaId = 2
                         },
                         new
                         {
                             KorisnikUlogaId = 3,
-                            DatumIzmjene = new DateTime(2022, 5, 23, 15, 9, 28, 759, DateTimeKind.Local).AddTicks(9714),
+                            DatumIzmjene = new DateTime(2022, 9, 11, 8, 36, 9, 335, DateTimeKind.Local).AddTicks(1198),
                             KorisnikId = 2,
                             UlogaId = 2
                         });
@@ -612,7 +612,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 1,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 780, DateTimeKind.Local).AddTicks(6960),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 348, DateTimeKind.Local).AddTicks(3627),
                             KorisnikId = 3,
                             Naziv = "Obavijest1",
                             Sadrzaj = "Sadrzaj1"
@@ -620,7 +620,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 2,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(1570),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 348, DateTimeKind.Local).AddTicks(6159),
                             KorisnikId = 4,
                             Naziv = "Obavijest2",
                             Sadrzaj = "Sadrzaj2"
@@ -628,7 +628,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 3,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(1892),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 348, DateTimeKind.Local).AddTicks(6340),
                             KorisnikId = 5,
                             Naziv = "Obavijest3",
                             Sadrzaj = "Sadrzaj3"
@@ -636,7 +636,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 4,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(1917),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 348, DateTimeKind.Local).AddTicks(6355),
                             KorisnikId = 3,
                             Naziv = "Obavijest4",
                             Sadrzaj = "Sadrzaj4"
@@ -644,7 +644,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 5,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(1934),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 348, DateTimeKind.Local).AddTicks(6364),
                             KorisnikId = 3,
                             Naziv = "Obavijest5",
                             Sadrzaj = "Sadrzaj5"
@@ -652,7 +652,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 6,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(1947),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 348, DateTimeKind.Local).AddTicks(6374),
                             KorisnikId = 6,
                             Naziv = "Obavijest6",
                             Sadrzaj = "Sadrzaj6"
@@ -660,7 +660,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 7,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(1963),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 348, DateTimeKind.Local).AddTicks(6383),
                             KorisnikId = 4,
                             Naziv = "Obavijest7",
                             Sadrzaj = "Sadrzaj7"
@@ -668,7 +668,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 8,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(1981),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 348, DateTimeKind.Local).AddTicks(6392),
                             KorisnikId = 6,
                             Naziv = "Obavijest8",
                             Sadrzaj = "Sadrzaj8"
@@ -676,7 +676,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 9,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(1995),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 348, DateTimeKind.Local).AddTicks(6399),
                             KorisnikId = 5,
                             Naziv = "Obavijest9",
                             Sadrzaj = "Sadrzaj9"
@@ -684,7 +684,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 10,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(2009),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 348, DateTimeKind.Local).AddTicks(6407),
                             KorisnikId = 3,
                             Naziv = "Obavijest10",
                             Sadrzaj = "Sadrzaj10"
@@ -722,7 +722,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 1,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(5210),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 348, DateTimeKind.Local).AddTicks(8098),
                             KorisnikId = 3,
                             Ocjena = 4,
                             PutovanjeId = 1
@@ -730,7 +730,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 2,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(9309),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 349, DateTimeKind.Local).AddTicks(829),
                             KorisnikId = 4,
                             Ocjena = 5,
                             PutovanjeId = 1
@@ -738,7 +738,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 3,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(9507),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 349, DateTimeKind.Local).AddTicks(943),
                             KorisnikId = 5,
                             Ocjena = 4,
                             PutovanjeId = 2
@@ -746,7 +746,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 4,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(9525),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 349, DateTimeKind.Local).AddTicks(958),
                             KorisnikId = 3,
                             Ocjena = 5,
                             PutovanjeId = 2
@@ -754,7 +754,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 5,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(9538),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 349, DateTimeKind.Local).AddTicks(966),
                             KorisnikId = 3,
                             Ocjena = 5,
                             PutovanjeId = 3
@@ -762,7 +762,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 6,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(9551),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 349, DateTimeKind.Local).AddTicks(974),
                             KorisnikId = 6,
                             Ocjena = 4,
                             PutovanjeId = 5
@@ -770,7 +770,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 7,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(9563),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 349, DateTimeKind.Local).AddTicks(982),
                             KorisnikId = 4,
                             Ocjena = 5,
                             PutovanjeId = 8
@@ -778,7 +778,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 8,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(9575),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 349, DateTimeKind.Local).AddTicks(990),
                             KorisnikId = 6,
                             Ocjena = 5,
                             PutovanjeId = 8
@@ -786,7 +786,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 9,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(9586),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 349, DateTimeKind.Local).AddTicks(997),
                             KorisnikId = 5,
                             Ocjena = 4,
                             PutovanjeId = 9
@@ -794,7 +794,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 10,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 781, DateTimeKind.Local).AddTicks(9598),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 349, DateTimeKind.Local).AddTicks(1005),
                             KorisnikId = 3,
                             Ocjena = 5,
                             PutovanjeId = 9
@@ -898,8 +898,8 @@ namespace TuristickaAgencija.WebAPI.Migrations
                             Id = 1,
                             BrojMjesta = 30,
                             CijenaPutovanja = 200f,
-                            DatumDolaska = new DateTime(2022, 5, 23, 15, 9, 28, 772, DateTimeKind.Local).AddTicks(504),
-                            DatumPolaska = new DateTime(2022, 5, 23, 15, 9, 28, 771, DateTimeKind.Local).AddTicks(9369),
+                            DatumDolaska = new DateTime(2022, 9, 11, 8, 36, 9, 342, DateTimeKind.Local).AddTicks(9069),
+                            DatumPolaska = new DateTime(2022, 9, 11, 8, 36, 9, 342, DateTimeKind.Local).AddTicks(8250),
                             GradId = 3,
                             NazivPutovanja = "Putovanje1",
                             OpisPutovanja = "Putovanjeee1",
@@ -912,8 +912,8 @@ namespace TuristickaAgencija.WebAPI.Migrations
                             Id = 2,
                             BrojMjesta = 35,
                             CijenaPutovanja = 150f,
-                            DatumDolaska = new DateTime(2022, 5, 23, 15, 9, 28, 773, DateTimeKind.Local).AddTicks(4282),
-                            DatumPolaska = new DateTime(2022, 5, 23, 15, 9, 28, 773, DateTimeKind.Local).AddTicks(4036),
+                            DatumDolaska = new DateTime(2022, 9, 11, 8, 36, 9, 343, DateTimeKind.Local).AddTicks(8203),
+                            DatumPolaska = new DateTime(2022, 9, 11, 8, 36, 9, 343, DateTimeKind.Local).AddTicks(8142),
                             GradId = 4,
                             NazivPutovanja = "Putovanje2",
                             OpisPutovanja = "Putovanjeee2",
@@ -926,8 +926,8 @@ namespace TuristickaAgencija.WebAPI.Migrations
                             Id = 3,
                             BrojMjesta = 33,
                             CijenaPutovanja = 250f,
-                            DatumDolaska = new DateTime(2022, 5, 23, 15, 9, 28, 773, DateTimeKind.Local).AddTicks(9597),
-                            DatumPolaska = new DateTime(2022, 5, 23, 15, 9, 28, 773, DateTimeKind.Local).AddTicks(9537),
+                            DatumDolaska = new DateTime(2022, 9, 11, 8, 36, 9, 344, DateTimeKind.Local).AddTicks(1671),
+                            DatumPolaska = new DateTime(2022, 9, 11, 8, 36, 9, 344, DateTimeKind.Local).AddTicks(1636),
                             GradId = 5,
                             NazivPutovanja = "Putovanje3",
                             OpisPutovanja = "Putovanjeee3",
@@ -940,8 +940,8 @@ namespace TuristickaAgencija.WebAPI.Migrations
                             Id = 4,
                             BrojMjesta = 33,
                             CijenaPutovanja = 220f,
-                            DatumDolaska = new DateTime(2022, 5, 23, 15, 9, 28, 774, DateTimeKind.Local).AddTicks(3434),
-                            DatumPolaska = new DateTime(2022, 5, 23, 15, 9, 28, 774, DateTimeKind.Local).AddTicks(3380),
+                            DatumDolaska = new DateTime(2022, 9, 11, 8, 36, 9, 344, DateTimeKind.Local).AddTicks(4682),
+                            DatumPolaska = new DateTime(2022, 9, 11, 8, 36, 9, 344, DateTimeKind.Local).AddTicks(4649),
                             GradId = 6,
                             NazivPutovanja = "Putovanje4",
                             OpisPutovanja = "Putovanjeee4",
@@ -954,8 +954,8 @@ namespace TuristickaAgencija.WebAPI.Migrations
                             Id = 5,
                             BrojMjesta = 35,
                             CijenaPutovanja = 300f,
-                            DatumDolaska = new DateTime(2022, 5, 23, 15, 9, 28, 774, DateTimeKind.Local).AddTicks(6976),
-                            DatumPolaska = new DateTime(2022, 5, 23, 15, 9, 28, 774, DateTimeKind.Local).AddTicks(6918),
+                            DatumDolaska = new DateTime(2022, 9, 11, 8, 36, 9, 344, DateTimeKind.Local).AddTicks(7775),
+                            DatumPolaska = new DateTime(2022, 9, 11, 8, 36, 9, 344, DateTimeKind.Local).AddTicks(7744),
                             GradId = 6,
                             NazivPutovanja = "Putovanje5",
                             OpisPutovanja = "Putovanjeee5",
@@ -968,8 +968,8 @@ namespace TuristickaAgencija.WebAPI.Migrations
                             Id = 6,
                             BrojMjesta = 35,
                             CijenaPutovanja = 180f,
-                            DatumDolaska = new DateTime(2022, 5, 23, 15, 9, 28, 775, DateTimeKind.Local).AddTicks(453),
-                            DatumPolaska = new DateTime(2022, 5, 23, 15, 9, 28, 775, DateTimeKind.Local).AddTicks(407),
+                            DatumDolaska = new DateTime(2022, 9, 11, 8, 36, 9, 345, DateTimeKind.Local).AddTicks(929),
+                            DatumPolaska = new DateTime(2022, 9, 11, 8, 36, 9, 345, DateTimeKind.Local).AddTicks(897),
                             GradId = 3,
                             NazivPutovanja = "Putovanje6",
                             OpisPutovanja = "Putovanjeee6",
@@ -982,8 +982,8 @@ namespace TuristickaAgencija.WebAPI.Migrations
                             Id = 7,
                             BrojMjesta = 35,
                             CijenaPutovanja = 320f,
-                            DatumDolaska = new DateTime(2022, 5, 23, 15, 9, 28, 775, DateTimeKind.Local).AddTicks(3326),
-                            DatumPolaska = new DateTime(2022, 5, 23, 15, 9, 28, 775, DateTimeKind.Local).AddTicks(3290),
+                            DatumDolaska = new DateTime(2022, 9, 11, 8, 36, 9, 345, DateTimeKind.Local).AddTicks(3846),
+                            DatumPolaska = new DateTime(2022, 9, 11, 8, 36, 9, 345, DateTimeKind.Local).AddTicks(3815),
                             GradId = 7,
                             NazivPutovanja = "Putovanje7",
                             OpisPutovanja = "Putovanjeee7",
@@ -996,8 +996,8 @@ namespace TuristickaAgencija.WebAPI.Migrations
                             Id = 8,
                             BrojMjesta = 35,
                             CijenaPutovanja = 320f,
-                            DatumDolaska = new DateTime(2022, 5, 23, 15, 9, 28, 775, DateTimeKind.Local).AddTicks(7025),
-                            DatumPolaska = new DateTime(2022, 5, 23, 15, 9, 28, 775, DateTimeKind.Local).AddTicks(6968),
+                            DatumDolaska = new DateTime(2022, 9, 11, 8, 36, 9, 345, DateTimeKind.Local).AddTicks(6946),
+                            DatumPolaska = new DateTime(2022, 9, 11, 8, 36, 9, 345, DateTimeKind.Local).AddTicks(6915),
                             GradId = 10,
                             NazivPutovanja = "Putovanje8",
                             OpisPutovanja = "Putovanjeee8",
@@ -1010,8 +1010,8 @@ namespace TuristickaAgencija.WebAPI.Migrations
                             Id = 9,
                             BrojMjesta = 35,
                             CijenaPutovanja = 350f,
-                            DatumDolaska = new DateTime(2022, 5, 23, 15, 9, 28, 776, DateTimeKind.Local).AddTicks(1390),
-                            DatumPolaska = new DateTime(2022, 5, 23, 15, 9, 28, 776, DateTimeKind.Local).AddTicks(1326),
+                            DatumDolaska = new DateTime(2022, 9, 11, 8, 36, 9, 345, DateTimeKind.Local).AddTicks(9915),
+                            DatumPolaska = new DateTime(2022, 9, 11, 8, 36, 9, 345, DateTimeKind.Local).AddTicks(9883),
                             GradId = 11,
                             NazivPutovanja = "Putovanje9",
                             OpisPutovanja = "Putovanjeee9",
@@ -1062,7 +1062,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         {
                             Id = 1,
                             BrojOsoba = 2,
-                            DatumRezervacije = new DateTime(2022, 5, 23, 15, 9, 28, 777, DateTimeKind.Local).AddTicks(6333),
+                            DatumRezervacije = new DateTime(2022, 9, 11, 8, 36, 9, 346, DateTimeKind.Local).AddTicks(8782),
                             Ime = "Rezervacija1",
                             KorisnikId = 3,
                             Napomena = "Napomena1",
@@ -1073,7 +1073,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         {
                             Id = 2,
                             BrojOsoba = 3,
-                            DatumRezervacije = new DateTime(2022, 5, 23, 15, 9, 28, 778, DateTimeKind.Local).AddTicks(3901),
+                            DatumRezervacije = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(3295),
                             Ime = "Rezervacija2",
                             KorisnikId = 4,
                             Napomena = "Napomena2",
@@ -1084,7 +1084,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         {
                             Id = 3,
                             BrojOsoba = 2,
-                            DatumRezervacije = new DateTime(2022, 5, 23, 15, 9, 28, 778, DateTimeKind.Local).AddTicks(4118),
+                            DatumRezervacije = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(3405),
                             Ime = "Rezervacija3",
                             KorisnikId = 5,
                             Napomena = "Napomena3",
@@ -1095,7 +1095,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         {
                             Id = 4,
                             BrojOsoba = 3,
-                            DatumRezervacije = new DateTime(2022, 5, 23, 15, 9, 28, 778, DateTimeKind.Local).AddTicks(4145),
+                            DatumRezervacije = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(3419),
                             Ime = "Rezervacija4",
                             KorisnikId = 3,
                             Napomena = "Napomena4",
@@ -1106,7 +1106,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         {
                             Id = 5,
                             BrojOsoba = 2,
-                            DatumRezervacije = new DateTime(2022, 5, 23, 15, 9, 28, 778, DateTimeKind.Local).AddTicks(4161),
+                            DatumRezervacije = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(3428),
                             Ime = "Rezervacija5",
                             KorisnikId = 4,
                             Napomena = "Napomena5",
@@ -1117,7 +1117,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         {
                             Id = 6,
                             BrojOsoba = 2,
-                            DatumRezervacije = new DateTime(2022, 5, 23, 15, 9, 28, 778, DateTimeKind.Local).AddTicks(4177),
+                            DatumRezervacije = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(3437),
                             Ime = "Rezervacija6",
                             KorisnikId = 6,
                             Napomena = "Napomena6",
@@ -1128,7 +1128,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         {
                             Id = 7,
                             BrojOsoba = 2,
-                            DatumRezervacije = new DateTime(2022, 5, 23, 15, 9, 28, 778, DateTimeKind.Local).AddTicks(4193),
+                            DatumRezervacije = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(3447),
                             Ime = "Rezervacija7",
                             KorisnikId = 4,
                             Napomena = "Napomena7",
@@ -1139,7 +1139,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         {
                             Id = 8,
                             BrojOsoba = 3,
-                            DatumRezervacije = new DateTime(2022, 5, 23, 15, 9, 28, 778, DateTimeKind.Local).AddTicks(4207),
+                            DatumRezervacije = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(3456),
                             Ime = "Rezervacija8",
                             KorisnikId = 3,
                             Napomena = "Napomena8",
@@ -1150,7 +1150,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         {
                             Id = 9,
                             BrojOsoba = 3,
-                            DatumRezervacije = new DateTime(2022, 5, 23, 15, 9, 28, 778, DateTimeKind.Local).AddTicks(4465),
+                            DatumRezervacije = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(3466),
                             Ime = "Rezervacija9",
                             KorisnikId = 4,
                             Napomena = "Napomena8",
@@ -1161,7 +1161,7 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         {
                             Id = 10,
                             BrojOsoba = 5,
-                            DatumRezervacije = new DateTime(2022, 5, 23, 15, 9, 28, 778, DateTimeKind.Local).AddTicks(4498),
+                            DatumRezervacije = new DateTime(2022, 9, 11, 8, 36, 9, 347, DateTimeKind.Local).AddTicks(3477),
                             Ime = "Rezervacija10",
                             KorisnikId = 6,
                             Napomena = "Napomena9",
@@ -1272,10 +1272,15 @@ namespace TuristickaAgencija.WebAPI.Migrations
                     b.Property<double>("Iznos")
                         .HasColumnType("float");
 
-                    b.Property<int?>("RezervacijaId")
+                    b.Property<int>("KorisnikId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RezervacijaId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("KorisnikId");
 
                     b.HasIndex("RezervacijaId");
 
@@ -1285,71 +1290,81 @@ namespace TuristickaAgencija.WebAPI.Migrations
                         new
                         {
                             Id = 1,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 782, DateTimeKind.Local).AddTicks(2112),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 349, DateTimeKind.Local).AddTicks(2670),
                             Iznos = 100.0,
+                            KorisnikId = 1,
                             RezervacijaId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 783, DateTimeKind.Local).AddTicks(255),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 350, DateTimeKind.Local).AddTicks(913),
                             Iznos = 120.0,
+                            KorisnikId = 2,
                             RezervacijaId = 2
                         },
                         new
                         {
                             Id = 3,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 783, DateTimeKind.Local).AddTicks(432),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 350, DateTimeKind.Local).AddTicks(1004),
                             Iznos = 150.0,
+                            KorisnikId = 3,
                             RezervacijaId = 3
                         },
                         new
                         {
                             Id = 4,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 783, DateTimeKind.Local).AddTicks(449),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 350, DateTimeKind.Local).AddTicks(1015),
                             Iznos = 120.0,
+                            KorisnikId = 4,
                             RezervacijaId = 4
                         },
                         new
                         {
                             Id = 5,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 783, DateTimeKind.Local).AddTicks(460),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 350, DateTimeKind.Local).AddTicks(1024),
                             Iznos = 150.0,
+                            KorisnikId = 5,
                             RezervacijaId = 5
                         },
                         new
                         {
                             Id = 6,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 783, DateTimeKind.Local).AddTicks(472),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 350, DateTimeKind.Local).AddTicks(1031),
                             Iznos = 150.0,
+                            KorisnikId = 6,
                             RezervacijaId = 6
                         },
                         new
                         {
                             Id = 7,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 783, DateTimeKind.Local).AddTicks(486),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 350, DateTimeKind.Local).AddTicks(1039),
                             Iznos = 180.0,
+                            KorisnikId = 3,
                             RezervacijaId = 7
                         },
                         new
                         {
                             Id = 8,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 783, DateTimeKind.Local).AddTicks(498),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 350, DateTimeKind.Local).AddTicks(1047),
                             Iznos = 150.0,
+                            KorisnikId = 4,
                             RezervacijaId = 8
                         },
                         new
                         {
                             Id = 9,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 783, DateTimeKind.Local).AddTicks(512),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 350, DateTimeKind.Local).AddTicks(1055),
                             Iznos = 180.0,
+                            KorisnikId = 5,
                             RezervacijaId = 9
                         },
                         new
                         {
                             Id = 10,
-                            Datum = new DateTime(2022, 5, 23, 15, 9, 28, 783, DateTimeKind.Local).AddTicks(524),
+                            Datum = new DateTime(2022, 9, 11, 8, 36, 9, 350, DateTimeKind.Local).AddTicks(1063),
                             Iznos = 170.0,
+                            KorisnikId = 6,
                             RezervacijaId = 10
                         });
                 });
@@ -1658,9 +1673,17 @@ namespace TuristickaAgencija.WebAPI.Migrations
 
             modelBuilder.Entity("TuristickaAgencija.WebAPI.Database.Uplate", b =>
                 {
+                    b.HasOne("TuristickaAgencija.WebAPI.Database.Korisnici", "Korisnik")
+                        .WithMany()
+                        .HasForeignKey("KorisnikId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("TuristickaAgencija.WebAPI.Database.Rezervacija", "Rezervacija")
                         .WithMany("Uplate")
-                        .HasForeignKey("RezervacijaId");
+                        .HasForeignKey("RezervacijaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("TuristickaAgencija.WebAPI.Database.VodiciPutovanja", b =>

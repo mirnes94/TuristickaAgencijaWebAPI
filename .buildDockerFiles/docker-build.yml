@@ -1,0 +1,37 @@
+name: Docker Build
+
+on:
+  push:
+    branches:
+      - '*'
+    paths:
+      - .buildDockerFiles/docker-build.yml
+      - Dockerfile
+      - docker-compose.yml
+      - TuristickaAgencija.Model/**
+      - TuristickaAgencija.WebAPI/**
+      - TuristickaAgencija.WinUI/**
+  pull_request:
+    branches:
+      - '*'
+    paths:
+      - .buildDockerFiles/docker-build.yml
+      - Dockerfile
+      - docker-compose.yml
+      - TuristickaAgencija.Model/**
+      - TuristickaAgencija.WebAPI/**
+      - TuristickaAgencija.WinUI/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Start containers
+      run: |
+        docker-compose --file docker-compose.yml \
+          up --build --detach --timeout 30
+    - name: Stop containers
+      if: always()
+      run: docker-compose --file docker-compose.yml down
+    

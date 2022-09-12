@@ -916,70 +916,81 @@ namespace TuristickaAgencija.WebAPI.Database
               Id=1,
               Datum=DateTime.Now,
               Iznos=100,
-              RezervacijaId=1
+              RezervacijaId=1,
+              KorisnikId =1,
               },
                 new Uplate
                 {
                     Id = 2,
                     Datum = DateTime.Now,
                     Iznos = 120,
-                    RezervacijaId = 2
+                    RezervacijaId = 2,
+                    KorisnikId =2
                 },
                  new Uplate
                  {
                      Id = 3,
                      Datum = DateTime.Now,
                      Iznos = 150,
-                     RezervacijaId = 3
+                     RezervacijaId = 3,
+                     KorisnikId = 3
                  },
                   new Uplate
                   {
                       Id = 4,
                       Datum = DateTime.Now,
                       Iznos = 120,
-                      RezervacijaId = 4
+                      RezervacijaId = 4,
+                      KorisnikId = 4
+
                   },
                      new Uplate
                      {
                          Id = 5,
                          Datum = DateTime.Now,
                          Iznos = 150,
-                         RezervacijaId = 5
+                         RezervacijaId = 5,
+                         KorisnikId = 5
                      },
                         new Uplate
                         {
                             Id = 6,
                             Datum = DateTime.Now,
                             Iznos = 150,
-                            RezervacijaId = 6
+                            RezervacijaId = 6,
+                            KorisnikId = 6
                         },
                           new Uplate
                           {
                               Id = 7,
                               Datum = DateTime.Now,
                               Iznos = 180,
-                              RezervacijaId = 7
+                              RezervacijaId = 7,
+                              KorisnikId = 3
                           },
                             new Uplate
                             {
                                 Id = 8,
                                 Datum = DateTime.Now,
                                 Iznos = 150,
-                                RezervacijaId = 8
+                                RezervacijaId = 8,
+                                KorisnikId = 4
                             },
                               new Uplate
                               {
                                   Id = 9,
                                   Datum = DateTime.Now,
                                   Iznos = 180,
-                                  RezervacijaId = 9
+                                  RezervacijaId = 9,
+                                  KorisnikId = 5
                               },
                                 new Uplate
                                 {
                                     Id = 10,
                                     Datum = DateTime.Now,
                                     Iznos = 170,
-                                    RezervacijaId = 10
+                                    RezervacijaId = 10,
+                                    KorisnikId = 6
                                 }
 
               );

@@ -98,7 +98,8 @@ namespace TuristickaAgencija.MobileApp.ViewModels
                     {
                         Datum = datum,
                         Iznos = IznosUplate,
-                        RezervacijaId = rezervacija.Id
+                        RezervacijaId = rezervacija.Id,
+                        KorisnikId = LoggedInUser.ActiveUser.Id
                     };
                     var uplata = await _uplateService.Insert<Model.Uplate>(uplataInsert);
 

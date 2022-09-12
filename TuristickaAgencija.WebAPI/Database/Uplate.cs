@@ -12,8 +12,10 @@ namespace TuristickaAgencija.WebAPI.Database
         public int Id { get; set; }
         public DateTime Datum { get; set; }
         public double Iznos { get; set; }
-        public int? RezervacijaId { get; set; }
+        public int RezervacijaId { get; set; }
+        public int KorisnikId { get; set; }
 
         public virtual Rezervacija Rezervacija { get; set; }
+        public virtual Korisnici Korisnik { get; set; }
     }
 }

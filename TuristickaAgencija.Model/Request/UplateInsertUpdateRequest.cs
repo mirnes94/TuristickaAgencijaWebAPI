@@ -13,5 +13,6 @@ namespace TuristickaAgencija.Model.Request
         public double Iznos { get; set; }
         [Required]
         public int RezervacijaId { get; set; }
+        public int KorisnikId { get; set; }
     }
 }
