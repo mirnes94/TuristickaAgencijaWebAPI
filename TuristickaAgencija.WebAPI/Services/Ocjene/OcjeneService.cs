@@ -36,7 +36,7 @@ namespace TuristickaAgencija.WebAPI.Services.Ocjene
 
         public Model.Ocjene GetById(int id)
         {
-            var entity = _context.Ocjene.Find(id);
+            var entity = _context.Ocjene.Find(id); 
 
             return _mapper.Map<Model.Ocjene>(entity);
         }
