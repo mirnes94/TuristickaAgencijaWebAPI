@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:turisticka_agencija_mobile/services/APIService.dart';
 
 import '../models/Korisnici.dart';
@@ -14,6 +17,7 @@ class _LoginState extends State<Login> {
   TextEditingController usernameController = new TextEditingController();
   TextEditingController passwordController = new TextEditingController();
   var result;
+  bool _visible = false;
   void getData() async {
     result = await APIService.Get('Korisnici', null);
   }
@@ -72,17 +76,27 @@ class _LoginState extends State<Login> {
                 color: Colors.amber[500],
                 borderRadius: BorderRadius.circular(30)),
             child: TextButton(
-                onPressed: () {
+                onPressed: () async {
                   print(
                       usernameController.text + ' ' + passwordController.text);
                   APIService.username = usernameController.text;
                   APIService.password = passwordController.text;
 
-                  var response = APIService.Authenticate(
+                  var response = await APIService.Authenticate(
                       "Korisnici", APIService.username, APIService.password);
-                  if (response != null) {
+                  print("Response"+ response.toString());
+                  if (response == 200) {
                     Navigator.of(context).pushReplacementNamed('/home');
                     print(result);
+                  }
+                  if (response == 0){
+                  setState(() {
+                    if(_visible == false){
+                      _visible = !_visible;
+                    }
+                  usernameController.text = "";
+                  passwordController.text = "";
+                });
                   }
                   //Navigator.of(context).pushReplacementNamed('/home');
                 },
@@ -90,7 +104,14 @@ class _LoginState extends State<Login> {
                   "Login",
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 )),
-          )
+          ),
+          Visibility(
+            child: Text(
+                "Invalid username or password",
+              style: TextStyle(color: Colors.red, fontSize: 15),
+            ),
+            visible: _visible,
+          ),
         ],
       ),
     )));

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 //import 'package:shared_preferences/shared_preferences.dart';
@@ -16,6 +18,7 @@ import 'pages/RezervacijaPage.dart';
 
 const _stripePublishableKey =
     'pk_test_51LaG1nEUjDocQuVTAja0XXqod5cCwO4ZT76PuPx1YFVVMvYC80d4HeDojacwCu50og0WRT5AqBjtdIxQkjngfImD0057K50def';
+
 
 Future<void> main() async {
   //initializeLocator();
