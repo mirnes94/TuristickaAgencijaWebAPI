@@ -37,3 +37,8 @@ Mobile verzija:
   
   Korisničko ime: kmujic
   Lozinka: 123456
+
+Stripe payment:
+  CARD NUMBER: 4242424242424242
+  CVC: Bilo koja 3 broja
+  DATE: Bilo koji buduci datum
