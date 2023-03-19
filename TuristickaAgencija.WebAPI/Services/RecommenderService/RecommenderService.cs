@@ -63,7 +63,7 @@ namespace TuristickaAgencija.WebAPI.Services.RecommenderService
                         putovanje2.OpisPutovanja = putovanje1.OpisPutovanja;
                         putovanje2.PrevozId = (int)putovanje1.PrevozId;
                         putovanje2.Slika = putovanje1.Slika;
-                        putovanje2.SmjestajId = (int)putovanje1.SmjestajId;
+                        putovanje1.SmjestajId = (int)putovanje2.SmjestajId;
                       
 
                         preporucenaPutovanja.Add(putovanje2);

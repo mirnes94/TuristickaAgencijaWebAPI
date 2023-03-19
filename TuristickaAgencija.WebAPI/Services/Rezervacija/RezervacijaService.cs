@@ -22,7 +22,7 @@ namespace TuristickaAgencija.WebAPI.Services.Rezervacija
         public void Delete(int id)
         {
             var entity = _context.Rezervacija.Find(id);
-            var uplata = _context.Uplate.Where(e => e.RezervacijaId == entity.Id).FirstOrDefault();
+            var uplata = _context.Uplate.FirstOrDefault(e => e.RezervacijaId == entity.Id);
             _context.Rezervacija.Remove(entity);
             _context.Uplate.Remove(uplata);
             _context.SaveChanges();

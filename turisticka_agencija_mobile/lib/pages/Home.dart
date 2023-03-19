@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:turisticka_agencija_mobile/utils/util.dart';
 
-import '../services/APIService.dart';
 import 'Login.dart';
 
 class Home extends StatefulWidget {
+  static const String routeName = "/home";
   const Home({Key? key}) : super(key: key);
 
   @override
@@ -69,10 +70,10 @@ class _HomeState extends State<Home> {
             ListTile(
               title: Text("Log out"),
               onTap: () {
-                if (APIService.username.isNotEmpty &&
-                    APIService.password.isNotEmpty) {
-                  APIService.username = "";
-                  APIService.password = "";
+                if (Authorization.username.isNotEmpty &&
+                    Authorization.password.isNotEmpty) {
+                  Authorization.username = "";
+                  Authorization.password = "";
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Login()));
                 }

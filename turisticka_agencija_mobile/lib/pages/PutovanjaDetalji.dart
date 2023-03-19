@@ -1,6 +1,5 @@
 import 'dart:convert';
-import 'dart:ffi';
-import 'package:ffi/ffi.dart';
+import 'package:provider/provider.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 import 'package:flutter/material.dart';
@@ -8,9 +7,15 @@ import 'package:turisticka_agencija_mobile/models/Komentar.dart';
 import 'package:turisticka_agencija_mobile/models/Putovanja.dart';
 
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:turisticka_agencija_mobile/providers/komentar_provider.dart';
+import 'package:turisticka_agencija_mobile/providers/korisnici_provider.dart';
+import 'package:turisticka_agencija_mobile/providers/ocjene_provider.dart';
+import 'package:turisticka_agencija_mobile/utils/util.dart';
 
 import '../models/Korisnici.dart';
-import '../services/APIService.dart';
+import '../providers/lista_zelja_provider.dart';
+import '../providers/putovanja_provider.dart';
+import '../providers/recommender_provider.dart';
 import 'RezervacijaDetaljiPage.dart';
 
 class PutovanjaDetalji extends StatelessWidget {
@@ -21,11 +26,25 @@ class PutovanjaDetalji extends StatelessWidget {
   bool rated = false;
   final putovanjeKey = GlobalKey();
 
+  PutovanjaProvider? _putovanjaProvider = null;
+  KomentarProvider? _komentarProvider = null;
+  KorisniciProvider? _korisniciProvider = null;
+  RecommenderProvider? _recommenderProvider = null;
+  OcjeneProvider? _ocjeneProvider = null;
+  ListaZeljaProvider? _listaZeljaProvider = null;
+
   PutovanjaDetalji({required Key key, required this.putovanje})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    _putovanjaProvider = context.read<PutovanjaProvider>();
+    _komentarProvider = context.read<KomentarProvider>();
+    _korisniciProvider = context.read<KorisniciProvider>();
+    _recommenderProvider = context.read<RecommenderProvider>();
+    _ocjeneProvider = context.read<OcjeneProvider>();
+    _listaZeljaProvider = context.read<ListaZeljaProvider>();
+
     return Scaffold(
         appBar: AppBar(
           title: Text('Detalji putovanja'),
@@ -158,10 +177,10 @@ class PutovanjaDetalji extends StatelessWidget {
                 style: TextStyle(fontSize: 20),
               ),
               SingleChildScrollView(
-                child: FutureBuilder<List<Komentar>>(
+                child: FutureBuilder<List<Komentar?>>(
                   future: getKomentari(),
                   builder: (BuildContext context,
-                      AsyncSnapshot<List<Komentar>> snapshot) {
+                      AsyncSnapshot<List<Komentar?>> snapshot) {
                     if (snapshot.connectionState == (ConnectionState.waiting)) {
                       return const Center(child: Text("Loading..."));
                     } else if (snapshot.hasError) {
@@ -175,7 +194,7 @@ class PutovanjaDetalji extends StatelessWidget {
                           shrinkWrap: true,
                           itemBuilder: (BuildContext context, int index) {
                             print("index:" + index.toString());
-                            return KomentariWidget(data![index]);
+                            return KomentariWidget(data![index]!);
                           },
                           itemCount: data!.length);
                     }
@@ -220,10 +239,10 @@ class PutovanjaDetalji extends StatelessWidget {
                 style: TextStyle(fontSize: 20),
               ),
               SingleChildScrollView(
-                child: FutureBuilder<List<Putovanja>>(
+                child: FutureBuilder<List<Putovanja?>>(
                   future: getRecomendedPutovanja(),
                   builder: (BuildContext context,
-                      AsyncSnapshot<List<Putovanja>> snapshot) {
+                      AsyncSnapshot<List<Putovanja?>> snapshot) {
                     if (snapshot.connectionState == (ConnectionState.waiting)) {
                       return const Center(child: Text("Loading..."));
                     } else if (snapshot.hasError) {
@@ -237,7 +256,7 @@ class PutovanjaDetalji extends StatelessWidget {
                           shrinkWrap: true,
                           itemBuilder: (BuildContext context, int index) {
                             print("index:" + index.toString());
-                            return PutovanjaWidget(data![index]);
+                            return PutovanjaWidget(data![index]!);
                           },
                           itemCount: data!.length);
                     }
@@ -252,20 +271,20 @@ class PutovanjaDetalji extends StatelessWidget {
         )));
   }
 
-  Future<List<Komentar>> getKomentari() async {
+  Future<List<Komentar?>> getKomentari() async {
     Map<String, String>? queryParams = null;
 
     queryParams = {'PutovanjeId': putovanje.id.toString()};
-    var komentari = await APIService.Get('Komentar', queryParams);
-    return komentari!.map((i) => Komentar.fromJson(i)).toList();
+    var komentari = await _komentarProvider?.get(queryParams);
+    return komentari!.map((i) => _komentarProvider?.fromJson(i)).toList();
   }
 
-  Future<List<Komentar>> getFutureKomentari() async {
+  Future<List<Komentar?>> getFutureKomentari() async {
     Map<String, String>? queryParams = null;
 
     queryParams = {'PutovanjeId': putovanje.id.toString()};
-    var komentari = await APIService.Get('Komentar', queryParams);
-    return komentari!.map((i) => Komentar.fromJson(i)).toList();
+    var komentari = await _komentarProvider?.get(queryParams);
+    return komentari!.map((i) => _komentarProvider?.fromJson(i)).toList();
   }
 
   Widget KomentariWidget(Komentar e) {
@@ -291,43 +310,35 @@ class PutovanjaDetalji extends StatelessWidget {
       },*/
       child: Padding(
         padding: const EdgeInsets.all(20),
-        child: Text('${p.nazivPutovanja} (${p.cijenaPutovanja}KM)'),
+        child: Text('Naziv putovanja:${p.nazivPutovanja} \nCijena putovanja:${p.cijenaPutovanja}KM'),
       ),
     );
   }
 
-  Future<List<Putovanja>> getRecomendedPutovanja() async {
+  Future<List<Putovanja?>> getRecomendedPutovanja() async {
     Map<String, String>? queryParams = null;
 
     queryParams = {'putovanjeId': putovanje.id.toString()};
-    var putovanja = await APIService.Get(
-        'Recommender/GetRecommendedPutovanja', queryParams);
-    print(putovanja);
+    var putovanja = await _recommenderProvider?.getById(putovanje.id,null);
     if (putovanja != null) {
-      return putovanja.map((i) => Putovanja.fromJson(i)).toList();
+      return putovanja.map((i) => _putovanjaProvider?.fromJson(i)).toList();
     } else {
       queryParams = {'SmjestajId': putovanje.smjestajId.toString()};
-      var putovanjaTemp = await APIService.Get("Putovanja", queryParams);
-      return putovanjaTemp!.map((i) => Putovanja.fromJson(i)).toList();
+      var putovanjaTemp = await _putovanjaProvider?.get(queryParams);
+      return putovanjaTemp!.map((i) => _putovanjaProvider?.fromJson(i)).toList();
     }
   }
 
-  Future<void> addKomentar(String sadrzaj) async {
+  Future<Komentar?> addKomentar(String sadrzaj) async {
     int id = 0;
-    var response;
 
-    var korisnici = await APIService.Get('Korisnici', null);
-    var korisniciList = korisnici!.map((i) => Korisnici.fromJson(i)).toList();
+    var korisnici = await _korisniciProvider?.get(null);
+    var korisniciList = korisnici!.map((i) => _korisniciProvider?.fromJson(i)).toList();
 
-    for (Korisnici user in korisniciList) {
-      print("API username-2:" + APIService.username);
-      print("korisnicko ime-2:" + user.korisnickoIme);
-      print(user.korisnickoIme
-          .toString()
-          .compareTo(APIService.username.toString()));
-      if (user.korisnickoIme
+    for (Korisnici? user in korisniciList) {
+      if (user!.korisnickoIme
               .toString()
-              .compareTo(APIService.username.toString()) ==
+              .compareTo(Authorization.username.toString()) ==
           0) {
         id = user.id;
       }
@@ -339,25 +350,20 @@ class PutovanjaDetalji extends StatelessWidget {
       "putovanjeId": putovanje.id,
       "sadrzaj": sadrzaj
     };
-    print("komentar" + body.toString());
-    return await APIService.Post("Komentar", body);
+
+    return await _komentarProvider?.insert(body);
   }
 
   Future addOcjena(int ocjena) async {
-    int korisnikId = 1;
+    int korisnikId = 0;
 
-    var korisnici = await APIService.Get('Korisnici', null);
-    var korisniciList = korisnici!.map((i) => Korisnici.fromJson(i)).toList();
+    var korisnici = await _korisniciProvider?.get(null);
+    var korisniciList = korisnici!.map((i) => _korisniciProvider?.fromJson(i)).toList();
 
-    for (Korisnici user in korisniciList) {
-      print("API username-2:" + APIService.username);
-      print("korisnicko ime-2:" + user.korisnickoIme);
-      print(user.korisnickoIme
-          .toString()
-          .compareTo(APIService.username.toString()));
-      if (user.korisnickoIme
+    for (Korisnici? user in korisniciList) {
+      if (user!.korisnickoIme
               .toString()
-              .compareTo(APIService.username.toString()) ==
+              .compareTo(Authorization.username.toString()) ==
           0) {
         korisnikId = user.id;
       }
@@ -369,25 +375,20 @@ class PutovanjaDetalji extends StatelessWidget {
       "putovanjeId": putovanje.id,
       "ocjena": ocjena
     };
-    print("" + body.toString());
-    return await APIService.Post("Ocjene", body);
+
+    return await _ocjeneProvider?.insert(body);
   }
 
   Future addToListaZelja() async {
-    int korisnikId = 2;
+    int korisnikId = 0;
 
-    var korisnici = await APIService.Get('Korisnici', null);
-    var korisniciList = korisnici!.map((i) => Korisnici.fromJson(i)).toList();
+    var korisnici = await _korisniciProvider?.get(null);
+    var korisniciList = korisnici!.map((i) => _korisniciProvider?.fromJson(i)).toList();
 
-    for (Korisnici user in korisniciList) {
-      print("API username-2:" + APIService.username);
-      print("korisnicko ime-2:" + user.korisnickoIme);
-      print(user.korisnickoIme
-          .toString()
-          .compareTo(APIService.username.toString()));
-      if (user.korisnickoIme
+    for (Korisnici? user in korisniciList) {
+      if (user!.korisnickoIme
               .toString()
-              .compareTo(APIService.username.toString()) ==
+              .compareTo(Authorization.username.toString()) ==
           0) {
         korisnikId = user.id;
       }
@@ -398,7 +399,7 @@ class PutovanjaDetalji extends StatelessWidget {
       "putovanjeId": putovanje.id,
       "opis": putovanje.opisPutovanja
     };
-    print("favorit" + body.toString());
-    return await APIService.Post("ListaZelja", body);
+
+    return await _listaZeljaProvider?.insert(body);
   }
 }

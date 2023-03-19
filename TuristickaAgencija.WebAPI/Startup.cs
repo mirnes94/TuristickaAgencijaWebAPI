@@ -14,6 +14,7 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using TuristickaAgencija.WebAPI.Database;
@@ -119,7 +120,11 @@ namespace TuristickaAgencija.WebAPI
             //services.AddDbContext<TuristickaAgencijaContext>(options => options.UseSqlServer(connection));
 
             var connection = Configuration.GetConnectionString("TuristickaAgencija");
-            services.AddDbContext<TuristickaAgencijaContext>(options => options.UseSqlServer(connection));
+            //services.AddDbContext<TuristickaAgencijaContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<TuristickaAgencijaContext>(options => {
+                options.UseSqlServer(connection);
+                options.EnableSensitiveDataLogging(true);
+            });
 
 
         }

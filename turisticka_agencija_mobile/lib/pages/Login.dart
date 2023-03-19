@@ -1,10 +1,9 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'package:turisticka_agencija_mobile/services/APIService.dart';
+import 'package:provider/provider.dart';
+import 'package:turisticka_agencija_mobile/providers/authenticate_provider.dart';
+import 'package:turisticka_agencija_mobile/utils/util.dart';
 
-import '../models/Korisnici.dart';
+import '../providers/korisnici_provider.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -17,9 +16,20 @@ class _LoginState extends State<Login> {
   TextEditingController usernameController = new TextEditingController();
   TextEditingController passwordController = new TextEditingController();
   var result;
+  var id = -1;
   bool _visible = false;
+  KorisniciProvider? _korisniciProvider = null;
+  AuthenticateProvider? _authenticateProvider = null;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _korisniciProvider = context.read<KorisniciProvider>();
+    _authenticateProvider = context.read<AuthenticateProvider>();
+  }
   void getData() async {
-    result = await APIService.Get('Korisnici', null);
+    result = await _korisniciProvider?.get();
   }
 
   @override
@@ -65,6 +75,7 @@ class _LoginState extends State<Login> {
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
                 hintText: "Password"),
+            obscureText: true,
           ),
           SizedBox(
             height: 20,
@@ -79,12 +90,12 @@ class _LoginState extends State<Login> {
                 onPressed: () async {
                   print(
                       usernameController.text + ' ' + passwordController.text);
-                  APIService.username = usernameController.text;
-                  APIService.password = passwordController.text;
+                  Authorization.username = usernameController.text;
+                  Authorization.password = passwordController.text;
 
-                  var response = await APIService.Authenticate(
-                      "Korisnici", APIService.username, APIService.password);
-                  print("Response"+ response.toString());
+                  String usernamePassword = (Authorization.username+","+Authorization.password).replaceAll(' ', '');
+
+                  var response = await _authenticateProvider?.authenticate(usernamePassword);
                   if (response == 200) {
                     Navigator.of(context).pushReplacementNamed('/home');
                     print(result);

@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'Komentar.g.dart';
+
+@JsonSerializable()
 class Komentar {
   String datum;
   int? id;
@@ -12,23 +17,7 @@ class Komentar {
       required this.putovanjeId,
       required this.sadrzaj});
 
-  factory Komentar.fromJson(Map<String, dynamic> json) {
-    return Komentar(
-      datum: json['datum'],
-      id: json['id'],
-      korisnikId: json['korisnikId'],
-      putovanjeId: json['putovanjeId'],
-      sadrzaj: json['sadrzaj'],
-    );
-  }
+  factory Komentar.fromJson(Map<String, dynamic> json) => _$KomentarFromJson(json);
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['datum'] = this.datum;
-    data['id'] = this.id;
-    data['korisnikId'] = this.korisnikId;
-    data['putovanjeId'] = this.putovanjeId;
-    data['sadrzaj'] = this.sadrzaj;
-    return data;
-  }
+  Map<String, dynamic> toJson() => _$KomentarToJson(this);
 }

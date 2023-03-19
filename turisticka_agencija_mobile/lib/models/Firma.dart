@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'Firma.g.dart';
+
+@JsonSerializable()
 class Firma {
     String adresa;
     String brojZiroracuna;
@@ -8,23 +13,7 @@ class Firma {
     Firma({required this.adresa, required this.brojZiroracuna, required this.gradId,
         required this.id, required this.naziv});
 
-    factory Firma.fromJson(Map<String, dynamic> json) {
-        return Firma(
-            adresa: json['adresa'], 
-            brojZiroracuna: json['brojZiroracuna'], 
-            gradId: json['gradId'], 
-            id: json['id'], 
-            naziv: json['naziv'], 
-        );
-    }
+    factory Firma.fromJson(Map<String, dynamic> json) => _$FirmaFromJson(json);
 
-    Map<String, dynamic> toJson() {
-        final Map<String, dynamic> data = new Map<String, dynamic>();
-        data['adresa'] = this.adresa;
-        data['brojZiroracuna'] = this.brojZiroracuna;
-        data['gradId'] = this.gradId;
-        data['id'] = this.id;
-        data['naziv'] = this.naziv;
-        return data;
-    }
+    Map<String, dynamic> toJson() => _$FirmaToJson(this);
 }

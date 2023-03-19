@@ -11,6 +11,7 @@
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
 
   <ItemGroup>

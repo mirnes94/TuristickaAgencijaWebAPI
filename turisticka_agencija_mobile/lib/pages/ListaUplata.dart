@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:turisticka_agencija_mobile/models/Uplate.dart';
+import 'package:turisticka_agencija_mobile/providers/uplate_provider.dart';
+import 'package:turisticka_agencija_mobile/utils/util.dart';
 
 import '../models/Korisnici.dart';
-import '../services/APIService.dart';
+import '../providers/korisnici_provider.dart';
 
 class ListaUplata extends StatefulWidget {
+  static const String routeName = "/listauplata";
   const ListaUplata({Key? key}) : super(key: key);
 
   @override
@@ -12,6 +16,16 @@ class ListaUplata extends StatefulWidget {
 }
 
 class _ListaUplataState extends State<ListaUplata> {
+  KorisniciProvider? _korisniciProvider = null;
+  UplateProvider? _uplateProvider = null;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _korisniciProvider = context.read<KorisniciProvider>();
+    _uplateProvider = context.read<UplateProvider>();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,9 +39,9 @@ class _ListaUplataState extends State<ListaUplata> {
   }
 
   Widget bodyWidget() {
-    return FutureBuilder<List<Uplate>>(
+    return FutureBuilder<List<Uplate?>?>(
       future: getUplate(),
-      builder: (BuildContext context, AsyncSnapshot<List<Uplate>> snapshot) {
+      builder: (BuildContext context, AsyncSnapshot<List<Uplate?>?> snapshot) {
         if (snapshot.connectionState == (ConnectionState.waiting)) {
           return const Center(child: Text("Loading..."));
         } else if (snapshot.hasError) {
@@ -36,7 +50,7 @@ class _ListaUplataState extends State<ListaUplata> {
           );
         } else {
           return ListView(
-            children: snapshot.data!.map((e) => UplateWidget(e)).toList(),
+            children: snapshot.data!.map((e) => UplateWidget(e!)).toList(),
           );
         }
       },
@@ -47,31 +61,31 @@ class _ListaUplataState extends State<ListaUplata> {
     return Card(
       child: Padding(
           padding: const EdgeInsets.all(20),
-          child: Text('Datum uplate:${u.datum}\nIznos:${u.iznos}')),
+          child: Text('Datum uplate:${u.datum.substring(0,19)}\nIznos:${u.iznos}')),
     );
   }
 
-  Future<List<Uplate>> getUplate() async {
+  Future<List<Uplate?>> getUplate() async {
     Map<String, String>? queryParams;
 
-    var _korisnikId = 0;
-    var korisnici = await APIService.Get('Korisnici', null);
-    var korisniciList = korisnici!.map((i) => Korisnici.fromJson(i)).toList();
+    int? _korisnikId = 0;
+    var korisnici = await _korisniciProvider?.get(null);
+    var korisniciList = korisnici!.map((i) => _korisniciProvider?.fromJson(i)).toList();
 
-    for (Korisnici user in korisniciList) {
-      print(user.korisnickoIme
+    for (Korisnici? user in korisniciList) {
+      print(user?.korisnickoIme
           .toString()
-          .compareTo(APIService.username.toString()));
-      if (user.korisnickoIme
+          .compareTo(Authorization.username.toString()));
+      if (user?.korisnickoIme
               .toString()
-              .compareTo(APIService.username.toString()) ==
+              .compareTo(Authorization.username.toString()) ==
           0) {
-        _korisnikId = user.id;
+        _korisnikId = user?.id;
       }
     }
 
     queryParams = {'KorisnikId': _korisnikId.toString()};
-    var listaUplata = await APIService.Get('Uplate', queryParams);
-    return listaUplata!.map((i) => Uplate.fromJson(i)).toList();
+    var listaUplata = await _uplateProvider?.get(queryParams);
+    return listaUplata!.map((i) => _uplateProvider?.fromJson(i)).toList();
   }
 }

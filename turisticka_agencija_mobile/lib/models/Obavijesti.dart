@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'Obavijesti.g.dart';
+
+@JsonSerializable()
 class Obavijesti {
     String datum;
     int id;
@@ -7,6 +12,10 @@ class Obavijesti {
 
     Obavijesti({required this.datum,required this.id,required this.korisnikId,required this.naziv,required this.sadrzaj});
 
+    factory Obavijesti.fromJson(Map<String, dynamic> json) => _$ObavijestiFromJson(json);
+
+    Map<String, dynamic> toJson() => _$ObavijestiToJson(this);
+/*
     factory Obavijesti.fromJson(Map<String, dynamic> json) {
         return Obavijesti(
             datum: json['datum'], 
@@ -26,4 +35,6 @@ class Obavijesti {
         data['sadrzaj'] = this.sadrzaj;
         return data;
     }
+
+ */
 }

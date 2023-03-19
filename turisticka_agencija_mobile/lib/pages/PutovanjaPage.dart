@@ -1,13 +1,17 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:turisticka_agencija_mobile/models/Putovanja.dart';
 import 'package:turisticka_agencija_mobile/pages/PutovanjaDetalji.dart';
+import 'package:turisticka_agencija_mobile/providers/putovanja_provider.dart';
+import 'package:turisticka_agencija_mobile/utils/util.dart';
 
 import '../models/Gradovi.dart';
-import '../services/APIService.dart';
+import '../providers/gradovi_provider.dart';
 
 class PutovanjaPage extends StatefulWidget {
+  static const String routeName = "/putovanjapage";
   const PutovanjaPage({Key? key}) : super(key: key);
 
   @override
@@ -18,6 +22,19 @@ class _PutovanjaPageState extends State<PutovanjaPage> {
   final putovanjeKey = GlobalKey<_PutovanjaPageState>();
   Gradovi? _selectedGrad = null;
   List<DropdownMenuItem> items = [];
+  PutovanjaProvider? _putovanjaProvider = null;
+  GradoviProvider? _gradoviProvider = null;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _putovanjaProvider = context.read<PutovanjaProvider>();
+    _gradoviProvider = context.read<GradoviProvider>();
+    print("called initState");
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,9 +51,9 @@ class _PutovanjaPageState extends State<PutovanjaPage> {
   }
 
   Widget bodyWidget() {
-    return FutureBuilder<List<Putovanja>>(
+    return FutureBuilder<List<Putovanja?>>(
       future: getPutovanja(_selectedGrad),
-      builder: (BuildContext context, AsyncSnapshot<List<Putovanja>> snapshot) {
+      builder: (BuildContext context, AsyncSnapshot<List<Putovanja?>> snapshot) {
         if (snapshot.connectionState == (ConnectionState.waiting)) {
           return const Center(child: Text("Loading..."));
         } else if (snapshot.hasError) {
@@ -44,8 +61,9 @@ class _PutovanjaPageState extends State<PutovanjaPage> {
             child: Text('($snapshot.error)'),
           );
         } else {
+          print("Putovanja:"+snapshot.data.toString());
           return ListView(
-            children: snapshot.data!.map((e) => PutovanjaWidget(e)).toList(),
+            children: snapshot.data!.map((e) => PutovanjaWidget(e!)).toList(),
           );
         }
       },
@@ -53,9 +71,9 @@ class _PutovanjaPageState extends State<PutovanjaPage> {
   }
 
   Widget dropDownWidget() {
-    return FutureBuilder<List<Gradovi>>(
+    return FutureBuilder<List<Gradovi?>>(
       future: getGradovi(_selectedGrad),
-      builder: (BuildContext context, AsyncSnapshot<List<Gradovi>> snapshot) {
+      builder: (BuildContext context, AsyncSnapshot<List<Gradovi?>> snapshot) {
         if (snapshot.connectionState == (ConnectionState.waiting)) {
           return const Center(child: Text("Loading..."));
         } else if (snapshot.hasError) {
@@ -104,38 +122,38 @@ class _PutovanjaPageState extends State<PutovanjaPage> {
                       Image(
                           width: 100,
                           height: 100,
-                          image: MemoryImage(Base64Decoder().convert(p.slika))),
-                      Text('${p.nazivPutovanja} (${p.cijenaPutovanja}KM)'),
+                          image: MemoryImage(const Base64Decoder().convert(p.slika))),
+                      Text('Naziv putovanja:${p.nazivPutovanja} \nCijena putovanja:${p.cijenaPutovanja}KM'),
                     ]),
                   ]),
             )));
   }
 
-  Future<List<Gradovi>> getGradovi(Gradovi? selectedGrad) async {
-    var gradovi = await APIService.Get('Gradovi', null);
-    var gradoviList = gradovi!.map((i) => Gradovi.fromJson(i)).toList();
+  Future<List<Gradovi?>> getGradovi(Gradovi? selectedGrad) async {
+    var gradovi = await _gradoviProvider?.get(null);
+    var gradoviList = gradovi!.map((i) => _gradoviProvider?.fromJson(i)).toList();
 
     items = gradoviList.map((item) {
       return DropdownMenuItem<Gradovi>(
         value: item,
-        child: Text(item.nazivGrada),
+        child: Text(item!.nazivGrada),
       );
     }).toList();
 
     if (selectedGrad != null && selectedGrad.id != 0) {
       _selectedGrad =
-          gradoviList.where((element) => element.id == selectedGrad.id).first;
+          gradoviList.where((element) => element?.id == selectedGrad.id).first;
     }
     return gradoviList;
   }
 
-  Future<List<Putovanja>> getPutovanja(Gradovi? selectedItem) async {
+  Future<List<Putovanja?>> getPutovanja(Gradovi? selectedItem) async {
     Map<String, String>? queryParams = null;
 
     if (selectedItem != null && _selectedGrad != 0) {
       queryParams = {'GradId': selectedItem.id.toString()};
     }
-    var putovanja = await APIService.Get('Putovanja', queryParams);
-    return putovanja!.map((i) => Putovanja.fromJson(i)).toList();
+    var putovanja = await _putovanjaProvider?.get(queryParams);
+    return putovanja!.map((i) => _putovanjaProvider?.fromJson(i)).toList();
   }
 }

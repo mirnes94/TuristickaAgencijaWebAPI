@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../services/APIService.dart';
+import '../utils/util.dart';
 import 'Home.dart';
 import 'Login.dart';
 
@@ -16,11 +16,11 @@ class _LogoutState extends State<Logout> {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        print(APIService.username + ' ' + APIService.password);
+        print(Authorization.username + ' ' + Authorization.password);
 
-        if (APIService.username.isNotEmpty && APIService.password.isNotEmpty) {
-          APIService.username = "";
-          APIService.password = "";
+        if (Authorization.username.isNotEmpty && Authorization.password.isNotEmpty) {
+          Authorization.username = "";
+          Authorization.password = "";
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => Login()));
         }

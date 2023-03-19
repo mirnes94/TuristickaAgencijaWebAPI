@@ -3,12 +3,16 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
+import 'package:turisticka_agencija_mobile/models/Uplate.dart';
+import 'package:turisticka_agencija_mobile/providers/uplate_provider.dart';
+import 'package:turisticka_agencija_mobile/utils/util.dart';
 
 import '../models/Korisnici.dart';
-import '../services/APIService.dart';
-//import 'package:stripe_payment/stripe_payment.dart';
+import '../providers/korisnici_provider.dart';
 
 class Uplata extends StatefulWidget {
+  static const String routeName = "/uplata";
   const Uplata({Key? key}) : super(key: key);
 
   @override
@@ -19,6 +23,9 @@ class _UplataState extends State<Uplata> {
   TextEditingController rezervacijaController = new TextEditingController();
   TextEditingController iznosUplateController = new TextEditingController();
 
+  KorisniciProvider? _korisniciProvider = null;
+  UplateProvider? _uplateProvider = null;
+
   @override
   initState() {
     super.initState();
@@ -27,6 +34,8 @@ class _UplataState extends State<Uplata> {
     Stripe.merchantIdentifier = "merchant.com.turistickaagencija";
     Stripe.instance.applySettings();
     print("Stripe:${Stripe.merchantIdentifier} - ${Stripe.publishableKey}");
+    _korisniciProvider = context.read<KorisniciProvider>();
+    _uplateProvider = context.read<UplateProvider>();
   }
 
   Map<String, dynamic>? paymentIntent;
@@ -203,18 +212,18 @@ class _UplataState extends State<Uplata> {
     }
   }
 
-  Future<void> addUplata(int brojRezervacije, int iznosUplate) async {
-    int id = 1 - 0;
+  Future<Uplate?> addUplata(int brojRezervacije, int iznosUplate) async {
+    int id = 0;
 
-    var korisnici = await APIService.Get('Korisnici', null);
-    var korisniciList = korisnici!.map((i) => Korisnici.fromJson(i)).toList();
+    var korisnici = await _korisniciProvider?.get(null);
+    var korisniciList = korisnici!.map((i) => _korisniciProvider?.fromJson(i)).toList();
 
-    for (Korisnici user in korisniciList) {
-      if (user.korisnickoIme
+    for (Korisnici? user in korisniciList) {
+      if (user?.korisnickoIme
               .toString()
-              .compareTo(APIService.username.toString()) ==
+              .compareTo(Authorization.username.toString()) ==
           0) {
-        id = user.id;
+        id = user!.id;
       }
     }
 
@@ -225,8 +234,8 @@ class _UplataState extends State<Uplata> {
         "rezervacijaId": brojRezervacije,
         "korisnikId": id
       };
-      print("uplata" + body.toString() + "id" + id.toString());
-      return await APIService.Post("Uplate", body);
+
+      return await _uplateProvider?.insert(body);
     }
   }
 }

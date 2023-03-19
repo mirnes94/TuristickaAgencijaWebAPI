@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'Gradovi.g.dart';
+
+@JsonSerializable()
 class Gradovi {
     int drzavaId;
     int id;
@@ -5,19 +10,7 @@ class Gradovi {
 
     Gradovi({ required this.drzavaId, required this.id, required this.nazivGrada});
 
-    factory Gradovi.fromJson(Map<String, dynamic> json) {
-        return Gradovi(
-            drzavaId: json['drzavaId'], 
-            id: json['id'], 
-            nazivGrada: json['nazivGrada'], 
-        );
-    }
+    factory Gradovi.fromJson(Map<String, dynamic> json) => _$GradoviFromJson(json);
 
-    Map<String, dynamic> toJson() {
-        final Map<String, dynamic> data = new Map<String, dynamic>();
-        data['drzavaId'] = this.drzavaId;
-        data['id'] = this.id;
-        data['nazivGrada'] = this.nazivGrada;
-        return data;
-    }
+    Map<String, dynamic> toJson() => _$GradoviToJson(this);
 }

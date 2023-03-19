@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'Uloga.g.dart';
+
+@JsonSerializable()
 class Uloga {
     int id;
     String naziv;
@@ -5,19 +10,7 @@ class Uloga {
 
     Uloga({required this.id,required this.naziv,required this.opis});
 
-    factory Uloga.fromJson(Map<String, dynamic> json) {
-        return Uloga(
-            id: json['id'], 
-            naziv: json['naziv'], 
-            opis: json['opis'], 
-        );
-    }
+    factory Uloga.fromJson(Map<String, dynamic> json) => _$UlogaFromJson(json);
 
-    Map<String, dynamic> toJson() {
-        final Map<String, dynamic> data = new Map<String, dynamic>();
-        data['id'] = this.id;
-        data['naziv'] = this.naziv;
-        data['opis'] = this.opis;
-        return data;
-    }
+    Map<String, dynamic> toJson() => _$UlogaToJson(this);
 }

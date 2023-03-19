@@ -1,16 +1,21 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:turisticka_agencija_mobile/pages/Uplata.dart';
 
 import '../models/Korisnici.dart';
 import '../models/Putovanja.dart';
 import '../models/Rezervacija.dart';
 import '../models/Uplate.dart';
-import '../services/APIService.dart';
+import '../providers/korisnici_provider.dart';
+import '../providers/rezervacija_provider.dart';
+import '../providers/uplate_provider.dart';
 
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:http/http.dart' as http;
+
+import '../utils/util.dart';
 
 class RezervacijaDetaljiPage extends StatelessWidget {
   TextEditingController iznosUplateController = new TextEditingController();
@@ -18,6 +23,9 @@ class RezervacijaDetaljiPage extends StatelessWidget {
   TextEditingController napomenaController = new TextEditingController();
 
   final Putovanja putovanje;
+  RezervacijaProvider? _rezervacijaProvider = null;
+  KorisniciProvider? _korisniciProvider = null;
+  UplateProvider? _uplateProvider = null;
 
   RezervacijaDetaljiPage({required Key key, required this.putovanje})
       : super(key: key);
@@ -29,6 +37,9 @@ class RezervacijaDetaljiPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ctx = context;
+    _rezervacijaProvider = context.read<RezervacijaProvider>();
+    _korisniciProvider = context.read<KorisniciProvider>();
+    _uplateProvider = context.read<UplateProvider>();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Rezervacija detalji'),
@@ -42,10 +53,10 @@ class RezervacijaDetaljiPage extends StatelessWidget {
               Column(
                 children: [
                   SingleChildScrollView(
-                    child: FutureBuilder<List<Korisnici>>(
+                    child: FutureBuilder<List<Korisnici?>>(
                       future: getKorisnik(),
                       builder: (BuildContext context,
-                          AsyncSnapshot<List<Korisnici>> snapshot) {
+                          AsyncSnapshot<List<Korisnici?>> snapshot) {
                         if (snapshot.connectionState ==
                             (ConnectionState.waiting)) {
                           return const Center(child: Text("Loading..."));
@@ -155,9 +166,9 @@ class RezervacijaDetaljiPage extends StatelessWidget {
   }
 
   Widget korisnikWidget() {
-    return FutureBuilder<List<Korisnici>>(
+    return FutureBuilder<List<Korisnici?>>(
       future: getKorisnik(),
-      builder: (BuildContext context, AsyncSnapshot<List<Korisnici>> snapshot) {
+      builder: (BuildContext context, AsyncSnapshot<List<Korisnici?>> snapshot) {
         if (snapshot.connectionState == (ConnectionState.waiting)) {
           return const Center(child: Text("Loading..."));
         } else if (snapshot.hasError) {
@@ -169,7 +180,7 @@ class RezervacijaDetaljiPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(15),
               child: Text(
-                  '${snapshot.data?.first.ime}\n${snapshot.data?.first.prezime}\n${snapshot.data?.first.email}\n${snapshot.data?.first.telefon}',
+                  '${snapshot.data?.first?.ime}\n${snapshot.data?.first?.prezime}\n${snapshot.data?.first?.email}\n${snapshot.data?.first?.telefon}',
                   style: TextStyle(fontSize: 20)),
             ),
           );
@@ -270,50 +281,43 @@ class RezervacijaDetaljiPage extends StatelessWidget {
     }
   }
 
-  Future<List<Korisnici>> getKorisnik() async {
+  Future<List<Korisnici?>> getKorisnik() async {
     Map<String, String>? queryParams;
 
     String ime = "";
     String prezime = "";
 
-    var korisnici = await APIService.Get('Korisnici', null);
-    var korisniciList = korisnici!.map((i) => Korisnici.fromJson(i)).toList();
+    var korisnici = await _korisniciProvider?.get(null);
+    var korisniciList = korisnici!.map((i) => _korisniciProvider?.fromJson(i)).toList();
 
-    for (Korisnici user in korisniciList) {
-      if (user.korisnickoIme == APIService.username) {
-        ime = user.ime;
+    for (Korisnici? user in korisniciList) {
+      if (user?.korisnickoIme == Authorization.username) {
+        ime = user!.ime;
         prezime = user.prezime;
-        print("Rezervacija - user id" + user.id.toString());
-        print("Rezervacija - user ime" + user.ime.toString());
       }
     }
-
-    print("Rezervacija - user ime" + ime);
     if (ime.isNotEmpty && prezime.isNotEmpty) {
       queryParams = {'Ime': ime, 'Prezime': prezime};
     }
 
-    var korisnik = await APIService.Get('Korisnici', queryParams);
-    return korisnik!.map((i) => Korisnici.fromJson(i)).toList();
+    var korisnik = await _korisniciProvider?.get(queryParams);
+    return korisnik!.map((i) => _korisniciProvider?.fromJson(i)).toList();
   }
 
   Future addRezervacija(int brojOsoba, String napomena, int iznosUplate) async {
     int korisnikId = 0;
     String ime = "";
     Map<String, String>? queryParams;
-    var korisnici = await APIService.Get('Korisnici', null);
-    var korisniciList = korisnici!.map((i) => Korisnici.fromJson(i)).toList();
+    var korisnici = await _korisniciProvider?.get(null);
+    var korisniciList = korisnici!.map((i) => _korisniciProvider?.fromJson(i)).toList();
 
-    for (Korisnici user in korisniciList) {
-      print(user.korisnickoIme
-          .toString()
-          .compareTo(APIService.username.toString()));
-      if (user.korisnickoIme
+    for (Korisnici? user in korisniciList) {
+      if (user?.korisnickoIme
               .toString()
-              .compareTo(APIService.username.toString()) ==
+              .compareTo(Authorization.username.toString()) ==
           0) {
-        korisnikId = user.id;
-        ime = user.ime + " " + user.prezime;
+        korisnikId = user!.id;
+        ime = "${user.ime} ${user.prezime}";
       }
     }
 
@@ -326,19 +330,19 @@ class RezervacijaDetaljiPage extends StatelessWidget {
       "status": "Rezervisano",
       "napomena": napomena
     };
-    var postRezervacija = await APIService.Post("Rezervacija", bodyRezervacija);
+    var postRezervacija = await _rezervacijaProvider?.insert(bodyRezervacija);
 
     print("Rezervacija" + postRezervacija.toString());
     queryParams = {'KorisnikId': korisnikId.toString()};
 
-    var getRezervacije = await APIService.Get("Rezervacija", queryParams);
+    var getRezervacije = await _rezervacijaProvider?.get(queryParams);
     var getRezervacijeList =
-        getRezervacije!.map((i) => Rezervacija.fromJson(i)).toList();
+        getRezervacije!.map((i) => _rezervacijaProvider?.fromJson(i)).toList();
 
     int rezervacijaId = -1;
-    for (Rezervacija rezervacija in getRezervacijeList) {
+    for (Rezervacija? rezervacija in getRezervacijeList) {
       if (rezervacija == getRezervacijeList.last)
-        rezervacijaId = rezervacija.id;
+        rezervacijaId = rezervacija!.id;
     }
 
     print("Rezervacija id" + rezervacijaId.toString());
@@ -349,6 +353,6 @@ class RezervacijaDetaljiPage extends StatelessWidget {
       "rezervacijaId": rezervacijaId,
       "korisnikId": korisnikId
     };
-    await APIService.Post("Uplate", bodyUplata);
+    await _uplateProvider?.insert(bodyUplata);
   }
 }

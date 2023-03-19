@@ -1,20 +1,15 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'Drzava.g.dart';
+
+@JsonSerializable()
 class Drzava {
     int id;
     String naziv;
 
     Drzava({required this.id, required this.naziv});
 
-    factory Drzava.fromJson(Map<String, dynamic> json) {
-        return Drzava(
-            id: json['id'], 
-            naziv: json['naziv'], 
-        );
-    }
+    factory Drzava.fromJson(Map<String, dynamic> json) => _$DrzavaFromJson(json);
 
-    Map<String, dynamic> toJson() {
-        final Map<String, dynamic> data = new Map<String, dynamic>();
-        data['id'] = this.id;
-        data['naziv'] = this.naziv;
-        return data;
-    }
+    Map<String, dynamic> toJson() => _$DrzavaToJson(this);
 }

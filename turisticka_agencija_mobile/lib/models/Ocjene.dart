@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'Ocjene.g.dart';
+
+@JsonSerializable()
 class Ocjene {
   String datum;
   int id;
@@ -10,21 +15,7 @@ class Ocjene {
       required this.korisnikId,
       required this.ocjena});
 
-  factory Ocjene.fromJson(Map<String, dynamic> json) {
-    return Ocjene(
-      datum: json['datum'],
-      id: json['id'],
-      korisnikId: json['korisnikId'],
-      ocjena: json['ocjena'],
-    );
-  }
+  factory Ocjene.fromJson(Map<String, dynamic> json) => _$OcjeneFromJson(json);
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['datum'] = this.datum;
-    data['id'] = this.id;
-    data['korisnikId'] = this.korisnikId;
-    data['ocjena'] = this.ocjena;
-    return data;
-  }
+  Map<String, dynamic> toJson() => _$OcjeneToJson(this);
 }

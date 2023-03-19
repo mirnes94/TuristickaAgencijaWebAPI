@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Loading extends StatefulWidget {
+  static const String routeName = "/loading";
+
   const Loading({Key? key}) : super(key: key);
 
   @override
