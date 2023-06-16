@@ -30,17 +30,18 @@ namespace TuristickaAgencija.WinUI
 
                 else
                 {
-                  
+
                     Model.Korisnici korisnik = await _service.Authentication<Model.Korisnici>(txtKorisnickoIme.Text, txtLozinka.Text);
 
                     MessageBox.Show("Welcome:\n " + korisnik.Ime + " " + korisnik.Prezime);
                     DialogResult = DialogResult.OK;
                     this.Hide();
-                   
+
                     frmIndex frm = new frmIndex();
                     frm.Show();
-                   
                 }
+              
+                
             }
             catch (Exception err)
             {

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Flurl;
 using Flurl.Http;
 using TuristickaAgencija.Model;
 namespace TuristickaAgencija.WinUI
@@ -100,9 +102,31 @@ namespace TuristickaAgencija.WinUI
         {
             var url = $"{Properties.Settings.Default.APIUrl}/{_route}/Authenticiraj/{username},{password}";
 
-            return await url.WithBasicAuth(Username,Password).GetJsonAsync<T>();
+            try
+            {
+                return await url.WithBasicAuth(Username, Password).GetJsonAsync<T>();
+            }
+            catch (FlurlHttpException ex)
+            {
+                var errors = await ex.GetResponseJsonAsync<Dictionary<string, string[]>>();
+
+                var stringBuilder = new StringBuilder();
+                foreach (var error in errors)
+                {
+                    stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
+                }
+
+                MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return default(T);
+            }
+          
+
         }
 
+        /*
+         * var url = new Url ($"{Properties.Settings.Default.APIUrl}/{_route}/Authenticiraj/{username},{password}").AllowHttpStatus(HttpStatusCode.InternalServerError);
+            return await url.Url.WithBasicAuth(Username,Password).GetJsonAsync<T>();
+         */
 
     }
 }
