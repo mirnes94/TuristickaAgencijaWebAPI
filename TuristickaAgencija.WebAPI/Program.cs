@@ -25,7 +25,7 @@ namespace TuristickaAgencija.WebAPI
                 var service = scope.ServiceProvider.GetRequiredService<TuristickaAgencijaContext>();
                 Data.Seed(service);
             }
-            host.Run();
+            host.Run(); 
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
