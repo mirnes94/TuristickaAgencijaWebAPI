@@ -206,17 +206,19 @@ abstract class BaseProvider<T> with ChangeNotifier {
       return true;
     }
     else if (response.statusCode == 400) {
-      throw Exception("Bad request");
+      return true;
     } else if (response.statusCode == 401) {
-      throw Exception("Unauthorized");
+      return true;
     } else if (response.statusCode == 403) {
-      throw Exception("Forbidden");
+      return true;
     } else if (response.statusCode == 404) {
-      throw Exception("Not found");
+      return true;
     } else if (response.statusCode == 500) {
-      throw Exception("Internal server error");
+      return true;}
+    else if (response.statusCode == 522) {
+      return true;
     } else {
-      throw Exception("Exception... handle this gracefully");
+      return true;
     }
   }
 }

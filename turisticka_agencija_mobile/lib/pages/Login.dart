@@ -20,6 +20,7 @@ class _LoginState extends State<Login> {
   bool _visible = false;
   KorisniciProvider? _korisniciProvider = null;
   AuthenticateProvider? _authenticateProvider = null;
+  String  errorMessage="";
 
   @override
   void initState() {
@@ -93,22 +94,100 @@ class _LoginState extends State<Login> {
                   Authorization.username = usernameController.text;
                   Authorization.password = passwordController.text;
 
-                  String usernamePassword = (Authorization.username+","+Authorization.password).replaceAll(' ', '');
+                    String usernamePassword = (Authorization.username + "," +
+                        Authorization.password).replaceAll(' ', '');
 
-                  var response = await _authenticateProvider?.authenticate(usernamePassword);
-                  if (response == 200) {
-                    Navigator.of(context).pushReplacementNamed('/home');
-                    print(result);
-                  }
-                  if (response == 0){
-                  setState(() {
-                    if(_visible == false){
-                      _visible = !_visible;
+                    var response = await _authenticateProvider?.authenticate(
+                        usernamePassword);
+                    if (response == 200) {
+                      Navigator.of(context).pushReplacementNamed('/home');
+                      print(result);
+                    } else if (response == 204) {
+                      setState(() {
+                        if (_visible == false) {
+                          _visible = !_visible;
+                        }
+                        usernameController.text = "";
+                        passwordController.text = "";
+
+                        errorMessage ="Invalid username or password";
+                      });
+                    } else if(response == 400){
+                      setState(() {
+                        if (_visible == false) {
+                          _visible = !_visible;
+                        }
+                        usernameController.text = "";
+                        passwordController.text = "";
+
+                        errorMessage ="Bad request";
+                      });
                     }
-                  usernameController.text = "";
-                  passwordController.text = "";
-                });
-                  }
+                    else if(response == 401){
+                      setState(() {
+                        if (_visible == false) {
+                          _visible = !_visible;
+                        }
+                        usernameController.text = "";
+                        passwordController.text = "";
+
+                        errorMessage ="Unauthorized";
+                      });
+                    }
+                    else if(response == 403){
+                      setState(() {
+                        if (_visible == false) {
+                          _visible = !_visible;
+                        }
+                        usernameController.text = "";
+                        passwordController.text = "";
+
+                        errorMessage ="Forbidden";
+                      });
+                    } else if(response == 404){
+                      setState(() {
+                        if (_visible == false) {
+                          _visible = !_visible;
+                        }
+                        usernameController.text = "";
+                        passwordController.text = "";
+
+                        errorMessage ="Not found";
+                      });
+                    }
+                    else if(response == 500){
+                      setState(() {
+                        if (_visible == false) {
+                          _visible = !_visible;
+                        }
+                        usernameController.text = "";
+                        passwordController.text = "";
+
+                        errorMessage ="Internal service error";
+                      });
+                    }else if(response == 522){
+                      setState(() {
+                        if (_visible == false) {
+                          _visible = !_visible;
+                        }
+                        usernameController.text = "";
+                        passwordController.text = "";
+
+                        errorMessage ="Connection timed out";
+                      });
+                    }else {
+                      setState(() {
+                        if (_visible == false) {
+                          _visible = !_visible;
+                        }
+                        usernameController.text = "";
+                        passwordController.text = "";
+
+                        errorMessage ="Exception... handle this gracefully";
+                      });
+                    }
+                  print("Response"+ response.toString());
+
                   //Navigator.of(context).pushReplacementNamed('/home');
                 },
                 child: const Text(
@@ -118,7 +197,7 @@ class _LoginState extends State<Login> {
           ),
           Visibility(
             child: Text(
-                "Invalid username or password",
+                errorMessage,
               style: TextStyle(color: Colors.red, fontSize: 15),
             ),
             visible: _visible,

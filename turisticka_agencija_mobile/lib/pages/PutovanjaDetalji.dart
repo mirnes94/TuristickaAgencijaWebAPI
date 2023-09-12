@@ -25,6 +25,7 @@ class PutovanjaDetalji extends StatelessWidget {
   int _ratingValue = 0;
   bool rated = false;
   final putovanjeKey = GlobalKey();
+  List<Color> listColor = Colors.green as List<Color>;
 
   PutovanjaProvider? _putovanjaProvider = null;
   KomentarProvider? _komentarProvider = null;
@@ -108,7 +109,7 @@ class PutovanjaDetalji extends StatelessWidget {
               ToggleSwitch(
                 minWidth: 90.0,
                 initialLabelIndex: 2,
-                activeBgColor: Colors.green,
+                activeBgColor: listColor,
                 inactiveBgColor: Colors.white,
                 labels: ['Da', 'Ne'],
                 onToggle: (index) {
