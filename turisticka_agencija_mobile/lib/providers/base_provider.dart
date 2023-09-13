@@ -17,7 +17,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
   IOClient? http;
 
   BaseProvider(String endpoint) {
-    _baseUrl = const String.fromEnvironment("baseUrl", defaultValue: "https://10.0.2.2:5001/");
+    _baseUrl = const String.fromEnvironment("baseUrl", defaultValue: "http://10.0.2.2:5000/");
     print("baseurl: $_baseUrl");
 
     if (_baseUrl!.endsWith("/") == false) {
@@ -34,10 +34,12 @@ abstract class BaseProvider<T> with ChangeNotifier {
     var url = Uri.parse("$_baseUrl$_endpoint/$data");
 
     Map<String, String> headers = createHeaders();
-
-    var response = await http!.get(url, headers: headers);
-
-    print(url);
+    var response;
+    try{
+      response = await http!.get(url, headers: headers).timeout(Duration(seconds: 10));
+    } catch(e){
+      return 522;
+    }
 
     if (isValidResponseCode(response)) {
       return response.statusCode;

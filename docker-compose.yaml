@@ -24,8 +24,9 @@ services:
       - './TuristickaAgencija.WebAPI/TestImage:/app/TestImage'
     environment:
       - ConnectionStrings:TuristickaAgencija=Server=turistickaagencija-sql,1433;Database=DockerDatabase1;User=sa;Password=QWElkj132!;ConnectRetryCount=0
+      - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - 5000:80
+      - 5000:5000
     networks:
       - turistickaagencijanet
     links:

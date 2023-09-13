@@ -99,7 +99,17 @@ class _LoginState extends State<Login> {
 
                     var response = await _authenticateProvider?.authenticate(
                         usernamePassword);
-                    if (response == 200) {
+                    if(response == 522) {
+                      setState(() {
+                        if (_visible == false) {
+                          _visible = !_visible;
+                        }
+                        usernameController.text = "";
+                        passwordController.text = "";
+
+                        errorMessage ="Connection timeout";
+                      });
+                    }else if (response == 200) {
                       Navigator.of(context).pushReplacementNamed('/home');
                       print(result);
                     } else if (response == 204) {
@@ -206,4 +216,5 @@ class _LoginState extends State<Login> {
       ),
     )));
   }
+
 }
