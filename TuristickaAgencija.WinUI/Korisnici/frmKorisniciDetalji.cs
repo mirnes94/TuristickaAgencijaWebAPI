@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using TuristickaAgencija.Model.Request;
 
@@ -24,7 +25,7 @@ namespace TuristickaAgencija.WinUI.Korisnici
         private async  void btnSacuvaj_ClickAsync(object sender, EventArgs e)
         {
            
-            if (this.ValidateChildren())
+            if (this.ValidateChildren())//&& IsValidEmail(txtEmail.Text) && IsValidPhoneNumber(txtTelefon.Text)
             {
                 //var roleList = clbRole.CheckedItems.Cast<Model.Uloge>().ToList();
                 var roleList = clbRole.CheckedItems.Cast<Model.Uloge>().Select(x => x.Id).ToList();
@@ -53,6 +54,12 @@ namespace TuristickaAgencija.WinUI.Korisnici
                 }
                 MessageBox.Show("Operacija uspješna");
             }
+           /* else
+            {
+                MessageBox.Show("Email ili password nisu u ispravnom formatu");
+               
+            }
+           */
            
         }
 
@@ -77,11 +84,12 @@ namespace TuristickaAgencija.WinUI.Korisnici
 
         private void txtIme_Validating(object sender, CancelEventArgs e)
         {
+         
             if (string.IsNullOrWhiteSpace(txtIme.Text))
             {
                 //errorProvider.SetError(txtIme,Properties.Resources.Validation_RequiredField);
                 errorProvider.SetError(txtIme, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
@@ -94,7 +102,7 @@ namespace TuristickaAgencija.WinUI.Korisnici
             if (string.IsNullOrWhiteSpace(txtPrezime.Text))
             {
                 errorProvider.SetError(txtPrezime, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
@@ -104,10 +112,15 @@ namespace TuristickaAgencija.WinUI.Korisnici
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
+            if (IsValidEmail(txtEmail.Text))
+            {
+                errorProvider.SetError(txtIme, "Email nije u ispravnom formatu");
+                e.Cancel = false;
+            }
             if (string.IsNullOrWhiteSpace(txtEmail.Text))
             {
                 errorProvider.SetError(txtEmail, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
@@ -117,10 +130,15 @@ namespace TuristickaAgencija.WinUI.Korisnici
 
         private void txtTelefon_Validating(object sender, CancelEventArgs e)
         {
+            if (IsValidPhoneNumber(txtTelefon.Text))
+            {
+                errorProvider.SetError(txtTelefon, "Broj telefona nije u ispravnom formatu");
+                e.Cancel = false;
+            }
             if (string.IsNullOrWhiteSpace(txtTelefon.Text))
             {
                 errorProvider.SetError(txtTelefon, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
@@ -133,12 +151,48 @@ namespace TuristickaAgencija.WinUI.Korisnici
             if (string.IsNullOrWhiteSpace(txtKorisnickoIme.Text) && txtKorisnickoIme.Text.Length<3)
             {
                 errorProvider.SetError(txtKorisnickoIme, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
                 errorProvider.SetError(txtKorisnickoIme, null);
             }
         }
+
+        private void txtKorisnickoIme_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        static bool IsValidEmail(string email)
+        {
+           
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            return Regex.IsMatch(email, pattern);
+        }
+
+        static bool IsValidPhoneNumber(string phoneNumber)
+        {
+            string pattern = @"^\+\d{10}$";
+            return Regex.IsMatch(phoneNumber, pattern);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+                e.Cancel = false;
+                return;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
+
+
 }

@@ -26,7 +26,7 @@ namespace TuristickaAgencija.WinUI.Vodici
             {
                 
                 errorProvider.SetError(txtIme, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
@@ -40,7 +40,7 @@ namespace TuristickaAgencija.WinUI.Vodici
             {
 
                 errorProvider.SetError(txtPrezime, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
@@ -54,7 +54,7 @@ namespace TuristickaAgencija.WinUI.Vodici
             {
 
                 errorProvider.SetError(txtKontakt, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
@@ -67,14 +67,14 @@ namespace TuristickaAgencija.WinUI.Vodici
             if(txtJmbg.Text.Length != 13)
             {
                 errorProvider.SetError(txtJmbg, "Jmbg mora imati 13 znakova");
-                e.Cancel = true;
+                e.Cancel = false;
             }
 
             if (string.IsNullOrWhiteSpace(txtJmbg.Text))
             {
 
                 errorProvider.SetError(txtJmbg, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
@@ -87,7 +87,7 @@ namespace TuristickaAgencija.WinUI.Vodici
             {
 
                 errorProvider.SetError(txtSlikaInput, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
@@ -153,6 +153,5 @@ namespace TuristickaAgencija.WinUI.Vodici
             }
         }
 
-       
     }
 }

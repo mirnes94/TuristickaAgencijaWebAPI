@@ -17,6 +17,8 @@ namespace TuristickaAgencija.WinUI.Vodici
         public frmVodici()
         {
             InitializeComponent();
+            this.dgvVodici.DataError += dataGridView1_DataError;
+
         }
         private async Task LoadVodici()
         {
@@ -45,6 +47,23 @@ namespace TuristickaAgencija.WinUI.Vodici
         private async void frmVodici_Load(object sender, EventArgs e)
         {
             await LoadVodici();
+        }
+
+        private void dgvVodici_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            // Ovaj događaj će se pozvati kada se desi greška u podacima DataGridView-a
+            // e.RowIndex i e.ColumnIndex pružaju informacije o indeksima reda i kolone gde se greška desila
+            // e.Context pruža informacije o kontekstu u kojem se greška desila
+
+            MessageBox.Show($"Greška u podacima na indeksu reda {e.RowIndex} i koloni {e.ColumnIndex}. Detalji: {e.Exception.Message}");
+
+            // Postavljanje e.Cancel na true sprečava da DataGridView sam rukuje greškom
+            e.Cancel = true;
         }
     }
 }

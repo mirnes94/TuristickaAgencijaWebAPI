@@ -152,7 +152,7 @@ namespace TuristickaAgencija.WinUI.Putovanja
             if (string.IsNullOrWhiteSpace(txtNazivPutovanja.Text))
             {
                 errorProvider.SetError(txtNazivPutovanja, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
@@ -165,7 +165,7 @@ namespace TuristickaAgencija.WinUI.Putovanja
             if (string.IsNullOrWhiteSpace(txtOpisPutovanja.Text))
             {
                 errorProvider.SetError(txtOpisPutovanja, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
@@ -178,7 +178,7 @@ namespace TuristickaAgencija.WinUI.Putovanja
             if (string.IsNullOrWhiteSpace(txtCijena.Text))
             {
                 errorProvider.SetError(txtCijena, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
@@ -191,7 +191,7 @@ namespace TuristickaAgencija.WinUI.Putovanja
             if (string.IsNullOrWhiteSpace(txtBrojMjesta.Text))
             {
                 errorProvider.SetError(txtBrojMjesta, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
@@ -223,7 +223,7 @@ namespace TuristickaAgencija.WinUI.Putovanja
             if (string.IsNullOrWhiteSpace(txtSlikaInput.Text))
             {
                 errorProvider.SetError(txtSlikaInput, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {

@@ -84,7 +84,7 @@ namespace TuristickaAgencija.WinUI.Obavijesti
             if (string.IsNullOrWhiteSpace(txtNazivObavijesti.Text))
             {
                 errorProvider1.SetError(txtNazivObavijesti, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
@@ -97,7 +97,7 @@ namespace TuristickaAgencija.WinUI.Obavijesti
             if (string.IsNullOrWhiteSpace(txtSadrzajObavijesti.Text))
             {
                 errorProvider1.SetError(txtSadrzajObavijesti, "Obavezno polje");
-                e.Cancel = true;
+                e.Cancel = false;
             }
             else
             {
