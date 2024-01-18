@@ -31,10 +31,10 @@ namespace TuristickaAgencija.WinUI.Korisnici
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvKorisnici = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPrikazi = new System.Windows.Forms.Button();
             this.txtIme = new System.Windows.Forms.TextBox();
             this.txtPrezime = new System.Windows.Forms.TextBox();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKorisnici)).BeginInit();
             this.SuspendLayout();
@@ -42,9 +42,11 @@ namespace TuristickaAgencija.WinUI.Korisnici
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvKorisnici);
-            this.groupBox1.Location = new System.Drawing.Point(12, 58);
+            this.groupBox1.Location = new System.Drawing.Point(17, 97);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(647, 314);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(924, 523);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Korisnici";
@@ -57,20 +59,33 @@ namespace TuristickaAgencija.WinUI.Korisnici
             this.dgvKorisnici.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id});
             this.dgvKorisnici.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvKorisnici.Location = new System.Drawing.Point(3, 19);
+            this.dgvKorisnici.Location = new System.Drawing.Point(4, 29);
+            this.dgvKorisnici.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvKorisnici.Name = "dgvKorisnici";
             this.dgvKorisnici.ReadOnly = true;
+            this.dgvKorisnici.RowHeadersWidth = 62;
             this.dgvKorisnici.RowTemplate.Height = 25;
             this.dgvKorisnici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKorisnici.Size = new System.Drawing.Size(641, 292);
+            this.dgvKorisnici.Size = new System.Drawing.Size(916, 489);
             this.dgvKorisnici.TabIndex = 0;
             this.dgvKorisnici.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvKorisnici_MouseDoubleClick);
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "ID";
+            this.Id.HeaderText = "ID";
+            this.Id.MinimumWidth = 8;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 150;
+            // 
             // btnPrikazi
             // 
-            this.btnPrikazi.Location = new System.Drawing.Point(570, 25);
+            this.btnPrikazi.Location = new System.Drawing.Point(814, 42);
+            this.btnPrikazi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPrikazi.Name = "btnPrikazi";
-            this.btnPrikazi.Size = new System.Drawing.Size(86, 23);
+            this.btnPrikazi.Size = new System.Drawing.Size(123, 38);
             this.btnPrikazi.TabIndex = 1;
             this.btnPrikazi.Text = "Prikazi";
             this.btnPrikazi.UseVisualStyleBackColor = true;
@@ -78,40 +93,36 @@ namespace TuristickaAgencija.WinUI.Korisnici
             // 
             // txtIme
             // 
-            this.txtIme.Location = new System.Drawing.Point(15, 26);
+            this.txtIme.Location = new System.Drawing.Point(21, 43);
+            this.txtIme.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtIme.Name = "txtIme";
             this.txtIme.PlaceholderText = "Ime";
-            this.txtIme.Size = new System.Drawing.Size(140, 23);
+            this.txtIme.Size = new System.Drawing.Size(198, 31);
             this.txtIme.TabIndex = 2;
             // 
             // txtPrezime
             // 
-            this.txtPrezime.Location = new System.Drawing.Point(203, 26);
+            this.txtPrezime.Location = new System.Drawing.Point(290, 43);
+            this.txtPrezime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.PlaceholderText = "Prezime";
-            this.txtPrezime.Size = new System.Drawing.Size(140, 23);
+            this.txtPrezime.Size = new System.Drawing.Size(198, 31);
             this.txtPrezime.TabIndex = 3;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "ID";
-            this.Id.HeaderText = "ID";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
             // 
             // frmKorisnici
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 384);
+            this.ClientSize = new System.Drawing.Size(966, 640);
             this.Controls.Add(this.txtPrezime);
             this.Controls.Add(this.txtIme);
             this.Controls.Add(this.btnPrikazi);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmKorisnici";
             this.Text = "frmKorisnici";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmKorisnici_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKorisnici)).EndInit();
             this.ResumeLayout(false);

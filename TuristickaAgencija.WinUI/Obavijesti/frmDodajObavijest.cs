@@ -38,7 +38,6 @@ namespace TuristickaAgencija.WinUI.Obavijesti
         {
             await LoadKorisnici();
             await LoadObavijesti();
-            //cmbKorisnik.Validating += cmbKorisnik_Validating;
 
         }
 
@@ -92,74 +91,7 @@ namespace TuristickaAgencija.WinUI.Obavijesti
                 MessageBox.Show("Molimo Vas da ispravno popunite sva obavezna polja prije nego što nastavite.");
             }
         }
-        /*
-        private void txtNazivObavijesti_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtNazivObavijesti.Text))
-            {
-                errorProvider1.SetError(txtNazivObavijesti, "Obavezno polje");
-                isFormValid= false;
-            }
-            else
-            {
-                errorProvider1.SetError(txtNazivObavijesti, null);
-                isFormValid = true;
-
-            }
-        }
-
-        private void txtSadrzajObavijesti_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtSadrzajObavijesti.Text))
-            {
-                errorProvider1.SetError(txtSadrzajObavijesti, "Obavezno polje");
-                isFormValid = false;
-            }
-            else
-            {
-                errorProvider1.SetError(txtSadrzajObavijesti, null);
-                isFormValid = true;
-
-            }
-        }
-        
-        private void cmbKorisnik_Validating(object sender, CancelEventArgs e)
-        {
-            //dodati validaciju
-            if (cmbKorisnik.SelectedItem==null)
-            {
-                errorProvider1.SetError(cmbKorisnik, "Obavezno polje");
-                isFormValid = false;
-            }
-            else
-            {
-                errorProvider1.SetError(cmbKorisnik, null);
-
-            }
-
-            if (!isFormValid)
-            {
-                e.Cancel = true;
-            }
-        }
-        
-
-        private void cmbKorisnik_Validating(object sender, CancelEventArgs e)
-        {
-
-            if (string.IsNullOrEmpty(cmbKorisnik.Text))
-            {
-                errorProvider1.SetError(cmbKorisnik, "Obavezno polje");
-                isFormValid = false;
-            }
-            else
-            {
-                errorProvider1.SetError(cmbKorisnik, null);
-                isFormValid = true;
-            }
-
-        }
-        */
+       
 
         private bool isFormValidAll()
         {

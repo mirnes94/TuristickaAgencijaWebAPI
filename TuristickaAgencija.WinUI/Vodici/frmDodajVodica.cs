@@ -23,85 +23,7 @@ namespace TuristickaAgencija.WinUI.Vodici
             InitializeComponent();
             _id = vodicId;
         }
-        /*
-        private void txtIme_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtIme.Text))
-            {
-                
-                errorProvider.SetError(txtIme, "Obavezno polje");
-                isFormValid = false;
-            }
-            else
-            {
-                isFormValid = true;
-                errorProvider.SetError(txtIme, null);
-            }
-        }
-
-        private void txtPrezime_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtPrezime.Text))
-            {
-
-                errorProvider.SetError(txtPrezime, "Obavezno polje");
-                isFormValid = false;
-            }
-            else
-            {
-                isFormValid = true;
-                errorProvider.SetError(txtPrezime, null);
-            }
-        }
-
-        private void txtKontakt_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtKontakt.Text))
-            {
-
-                errorProvider.SetError(txtKontakt, "Obavezno polje");
-                isFormValid = false;
-            }
-            else
-            {
-                isFormValid = true;
-                errorProvider.SetError(txtKontakt, null);
-            }
-        }
-
-        private void txtJmbg_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtJmbg.Text))
-            {
-                errorProvider.SetError(txtJmbg, "Obavezno polje");
-                isFormValid = false;
-            }
-            else if (txtJmbg.Text.Length != 13 && IsNumber(txtJmbg.Text))
-            {
-                errorProvider.SetError(txtJmbg, "JMBG mora imati 13 znakova");
-                isFormValid = false;
-            }
-            else
-            {
-                isFormValid = true;
-                errorProvider.SetError(txtJmbg, null);
-            }
-        }
-        private void txtSlikaInput_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtSlikaInput.Text))
-            {
-
-                errorProvider.SetError(txtSlikaInput, "Obavezno polje");
-                isFormValid = false;
-            }
-            else
-            {
-                isFormValid = true;
-                errorProvider.SetError(txtSlikaInput, null);
-            }
-           
-        }*/
+      
         VodicInsertUpdateRequest request = new VodicInsertUpdateRequest();
         private async void btnSacuvaj_Click(object sender, EventArgs e)
         {
@@ -173,7 +95,6 @@ namespace TuristickaAgencija.WinUI.Vodici
 
         private bool IsFormValidAll()
         {
-            // Resetirajte error providere prije nove provjere
             errorProvider.Clear();
 
             if (string.IsNullOrWhiteSpace(txtIme.Text))
@@ -191,6 +112,11 @@ namespace TuristickaAgencija.WinUI.Vodici
             if (string.IsNullOrWhiteSpace(txtKontakt.Text))
             {
                 errorProvider.SetError(txtKontakt, "Obavezno polje");
+                return false;
+            }
+            else if (!IsValidPhoneNumber(txtKontakt.Text))
+            {
+                errorProvider.SetError(txtKontakt, "Kontakt nije u ispravnom formatu");
                 return false;
             }
 
@@ -231,6 +157,13 @@ namespace TuristickaAgencija.WinUI.Vodici
             string pattern = @"^\d+$";
             return Regex.IsMatch(input, pattern);
         }
+
+        static bool IsValidPhoneNumber(string phoneNumber)
+        {
+            string pattern = @"^\+?\d+$";
+            return Regex.IsMatch(phoneNumber, pattern);
+        }
+
 
     }
 }

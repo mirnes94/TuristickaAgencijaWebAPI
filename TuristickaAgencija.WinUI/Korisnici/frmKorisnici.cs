@@ -36,5 +36,10 @@ namespace TuristickaAgencija.WinUI.Korisnici
             frmKorisniciDetalji frm = new frmKorisniciDetalji(int.Parse(id.ToString()));
             frm.Show();
         }
+
+        private void frmKorisnici_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

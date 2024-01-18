@@ -37,7 +37,6 @@ namespace TuristickaAgencija.WinUI.Putovanja
             await LoadSmjestaj();
             await LoadFirma();
             await LoadPutovanja();
-           // await LoadPrevoz();
 
 
 
@@ -212,7 +211,6 @@ namespace TuristickaAgencija.WinUI.Putovanja
 
         private void txtBrojMjesta_Validating(object sender, CancelEventArgs e)
         {
-            //regex za brojeve
 
             if (string.IsNullOrWhiteSpace(txtBrojMjesta.Text))
             {
