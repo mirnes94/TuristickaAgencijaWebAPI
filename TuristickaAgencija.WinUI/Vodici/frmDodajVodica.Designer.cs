@@ -51,84 +51,89 @@ namespace TuristickaAgencija.WinUI.Vodici
             // Prezime
             // 
             this.Prezime.AutoSize = true;
-            this.Prezime.Location = new System.Drawing.Point(12, 88);
+            this.Prezime.Location = new System.Drawing.Point(17, 147);
+            this.Prezime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Prezime.Name = "Prezime";
-            this.Prezime.Size = new System.Drawing.Size(49, 15);
+            this.Prezime.Size = new System.Drawing.Size(74, 25);
             this.Prezime.TabIndex = 7;
             this.Prezime.Text = "Prezime";
             // 
             // txtPrezime
             // 
-            this.txtPrezime.Location = new System.Drawing.Point(11, 106);
+            this.txtPrezime.Location = new System.Drawing.Point(16, 177);
+            this.txtPrezime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.Size = new System.Drawing.Size(201, 23);
+            this.txtPrezime.Size = new System.Drawing.Size(285, 31);
             this.txtPrezime.TabIndex = 6;
-            this.txtPrezime.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrezime_Validating);
             // 
             // Ime
             // 
             this.Ime.AutoSize = true;
-            this.Ime.Location = new System.Drawing.Point(13, 31);
+            this.Ime.Location = new System.Drawing.Point(19, 52);
+            this.Ime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Ime.Name = "Ime";
-            this.Ime.Size = new System.Drawing.Size(27, 15);
+            this.Ime.Size = new System.Drawing.Size(42, 25);
             this.Ime.TabIndex = 5;
             this.Ime.Text = "Ime";
             // 
             // txtIme
             // 
-            this.txtIme.Location = new System.Drawing.Point(12, 52);
+            this.txtIme.Location = new System.Drawing.Point(17, 87);
+            this.txtIme.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(200, 23);
+            this.txtIme.Size = new System.Drawing.Size(284, 31);
             this.txtIme.TabIndex = 4;
-            this.txtIme.Validating += new System.ComponentModel.CancelEventHandler(this.txtIme_Validating);
             // 
             // Kontakt
             // 
             this.Kontakt.AutoSize = true;
-            this.Kontakt.Location = new System.Drawing.Point(12, 145);
+            this.Kontakt.Location = new System.Drawing.Point(17, 242);
+            this.Kontakt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Kontakt.Name = "Kontakt";
-            this.Kontakt.Size = new System.Drawing.Size(48, 15);
+            this.Kontakt.Size = new System.Drawing.Size(73, 25);
             this.Kontakt.TabIndex = 9;
             this.Kontakt.Text = "Kontakt";
             // 
             // txtKontakt
             // 
-            this.txtKontakt.Location = new System.Drawing.Point(11, 163);
+            this.txtKontakt.Location = new System.Drawing.Point(16, 272);
+            this.txtKontakt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtKontakt.Name = "txtKontakt";
-            this.txtKontakt.Size = new System.Drawing.Size(201, 23);
+            this.txtKontakt.Size = new System.Drawing.Size(285, 31);
             this.txtKontakt.TabIndex = 8;
-            this.txtKontakt.Validating += new System.ComponentModel.CancelEventHandler(this.txtKontakt_Validating);
             // 
             // Jmbg
             // 
             this.Jmbg.AutoSize = true;
-            this.Jmbg.Location = new System.Drawing.Point(12, 202);
+            this.Jmbg.Location = new System.Drawing.Point(17, 337);
+            this.Jmbg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jmbg.Name = "Jmbg";
-            this.Jmbg.Size = new System.Drawing.Size(37, 15);
+            this.Jmbg.Size = new System.Drawing.Size(56, 25);
             this.Jmbg.TabIndex = 11;
             this.Jmbg.Text = "JMBG";
             // 
             // txtJmbg
             // 
-            this.txtJmbg.Location = new System.Drawing.Point(11, 220);
+            this.txtJmbg.Location = new System.Drawing.Point(16, 367);
+            this.txtJmbg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtJmbg.Name = "txtJmbg";
-            this.txtJmbg.Size = new System.Drawing.Size(201, 23);
+            this.txtJmbg.Size = new System.Drawing.Size(285, 31);
             this.txtJmbg.TabIndex = 10;
-            this.txtJmbg.Validating += new System.ComponentModel.CancelEventHandler(this.txtJmbg_Validating);
             // 
             // txtSlikaInput
             // 
-            this.txtSlikaInput.Location = new System.Drawing.Point(251, 131);
+            this.txtSlikaInput.Location = new System.Drawing.Point(359, 218);
+            this.txtSlikaInput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSlikaInput.Name = "txtSlikaInput";
-            this.txtSlikaInput.Size = new System.Drawing.Size(153, 23);
+            this.txtSlikaInput.Size = new System.Drawing.Size(217, 31);
             this.txtSlikaInput.TabIndex = 32;
-            this.txtSlikaInput.Validating += new System.ComponentModel.CancelEventHandler(this.txtSlikaInput_Validating);
             // 
             // btnUploadPicture
             // 
-            this.btnUploadPicture.Location = new System.Drawing.Point(416, 130);
+            this.btnUploadPicture.Location = new System.Drawing.Point(594, 217);
+            this.btnUploadPicture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUploadPicture.Name = "btnUploadPicture";
-            this.btnUploadPicture.Size = new System.Drawing.Size(75, 23);
+            this.btnUploadPicture.Size = new System.Drawing.Size(107, 38);
             this.btnUploadPicture.TabIndex = 31;
             this.btnUploadPicture.Text = "Upload";
             this.btnUploadPicture.UseVisualStyleBackColor = true;
@@ -144,9 +149,10 @@ namespace TuristickaAgencija.WinUI.Vodici
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(416, 220);
+            this.btnSacuvaj.Location = new System.Drawing.Point(594, 367);
+            this.btnSacuvaj.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSacuvaj.Name = "btnSacuvaj";
-            this.btnSacuvaj.Size = new System.Drawing.Size(75, 23);
+            this.btnSacuvaj.Size = new System.Drawing.Size(107, 38);
             this.btnSacuvaj.TabIndex = 33;
             this.btnSacuvaj.Text = "Sacuvaj";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
@@ -154,17 +160,18 @@ namespace TuristickaAgencija.WinUI.Vodici
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(251, 52);
+            this.pictureBox.Location = new System.Drawing.Point(359, 87);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(240, 72);
+            this.pictureBox.Size = new System.Drawing.Size(343, 120);
             this.pictureBox.TabIndex = 34;
             this.pictureBox.TabStop = false;
             // 
             // frmDodajVodica
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 265);
+            this.ClientSize = new System.Drawing.Size(736, 442);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.txtSlikaInput);
@@ -177,6 +184,7 @@ namespace TuristickaAgencija.WinUI.Vodici
             this.Controls.Add(this.txtPrezime);
             this.Controls.Add(this.Ime);
             this.Controls.Add(this.txtIme);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmDodajVodica";
             this.Text = "frmDodajVodica";
             this.Load += new System.EventHandler(this.frmDodajVodica_Load);

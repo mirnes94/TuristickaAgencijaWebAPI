@@ -16,7 +16,6 @@ namespace TuristickaAgencija.WinUI.Obavijesti
         private readonly APIService _korisniciService = new APIService("Korisnici");
         private readonly APIService _obavijestiService = new APIService("Obavijesti");
         private int? _id = null;
-        private bool isFormValid = false;
 
 
         public frmDodajObavijest(int? obavijestId = null)

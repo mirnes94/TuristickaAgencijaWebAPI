@@ -15,7 +15,7 @@ namespace TuristickaAgencija.WinUI.Vodici
     {
         private readonly APIService _service = new APIService("Vodic");
         private int? _id = null;
-        private bool isFormValid = false;
+        
 
 
         public frmDodajVodica(int? vodicId = null)
@@ -23,7 +23,7 @@ namespace TuristickaAgencija.WinUI.Vodici
             InitializeComponent();
             _id = vodicId;
         }
-
+        /*
         private void txtIme_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtIme.Text))
@@ -100,12 +100,12 @@ namespace TuristickaAgencija.WinUI.Vodici
                 isFormValid = true;
                 errorProvider.SetError(txtSlikaInput, null);
             }
-            UpdateButtonStatus();
-        }
+           
+        }*/
         VodicInsertUpdateRequest request = new VodicInsertUpdateRequest();
         private async void btnSacuvaj_Click(object sender, EventArgs e)
         {
-            if (isFormValid)
+            if (IsFormValidAll())
             {
 
 
@@ -131,7 +131,7 @@ namespace TuristickaAgencija.WinUI.Vodici
         }
         
        
-
+        
         private void btnUploadPicture_Click(object sender, EventArgs e)
         {
             var result = openFileDialog.ShowDialog();
@@ -149,15 +149,13 @@ namespace TuristickaAgencija.WinUI.Vodici
                 Image image = Image.FromFile(fileName);
 
                 pictureBox.Image = image;
-                isFormValid = true;
+              
             }
-            else
-            {
-                isFormValid = false;
-            }
+          
 
-            UpdateButtonStatus();
+           
         }
+        
 
         private async void frmDodajVodica_Load(object sender, EventArgs e)
         {
@@ -171,6 +169,49 @@ namespace TuristickaAgencija.WinUI.Vodici
                 
                     
             }
+        }
+
+        private bool IsFormValidAll()
+        {
+            // Resetirajte error providere prije nove provjere
+            errorProvider.Clear();
+
+            if (string.IsNullOrWhiteSpace(txtIme.Text))
+            {
+                errorProvider.SetError(txtIme, "Obavezno polje");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtPrezime.Text))
+            {
+                errorProvider.SetError(txtPrezime, "Obavezno polje");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtKontakt.Text))
+            {
+                errorProvider.SetError(txtKontakt, "Obavezno polje");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtJmbg.Text))
+            {
+                errorProvider.SetError(txtJmbg, "Obavezno polje");
+                return false;
+            }
+            else if (txtJmbg.Text.Length != 13 || !IsNumber(txtJmbg.Text))
+            {
+                errorProvider.SetError(txtJmbg, "JMBG mora imati 13 cifara");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtSlikaInput.Text))
+            {
+                errorProvider.SetError(txtSlikaInput, "Obavezno polje");
+                return false;
+            }
+
+            return true;
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -187,13 +228,9 @@ namespace TuristickaAgencija.WinUI.Vodici
         static bool IsNumber(string input)
         {
             // Koristi regex za proveru
-            string pattern = "^\\d +$";
+            string pattern = @"^\d+$";
             return Regex.IsMatch(input, pattern);
         }
 
-        private void UpdateButtonStatus()
-        {
-            btnSacuvaj.Enabled = isFormValid;
-        }
     }
 }
