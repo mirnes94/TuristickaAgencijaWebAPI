@@ -50,6 +50,7 @@ namespace TuristickaAgencija.WinUI.Vodici
             this.Vodici.TabIndex = 0;
             this.Vodici.TabStop = false;
             this.Vodici.Text = "Vodici";
+            this.Vodici.Enter += new System.EventHandler(this.Vodici_Enter);
             // 
             // dgvVodici
             // 

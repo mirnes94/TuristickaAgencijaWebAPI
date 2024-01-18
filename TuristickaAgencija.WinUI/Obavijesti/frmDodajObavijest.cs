@@ -16,9 +16,13 @@ namespace TuristickaAgencija.WinUI.Obavijesti
         private readonly APIService _korisniciService = new APIService("Korisnici");
         private readonly APIService _obavijestiService = new APIService("Obavijesti");
         private int? _id = null;
+        private bool isFormValid = false;
+
+
         public frmDodajObavijest(int? obavijestId = null)
         {
             InitializeComponent();
+            btnDodajObavijest.CausesValidation = true;
             _id = obavijestId;
         }
         private async Task LoadKorisnici()
@@ -35,6 +39,8 @@ namespace TuristickaAgencija.WinUI.Obavijesti
         {
             await LoadKorisnici();
             await LoadObavijesti();
+            //cmbKorisnik.Validating += cmbKorisnik_Validating;
+
         }
 
         private async Task LoadObavijesti()
@@ -50,9 +56,10 @@ namespace TuristickaAgencija.WinUI.Obavijesti
         }
         private async void btnDodajObavijest_Click(object sender, EventArgs e)
         {
-            ObavijestiInsertUpdateRequest request = new ObavijestiInsertUpdateRequest();
-            if (this.ValidateChildren())
+            
+            if (isFormValidAll())
             {
+                ObavijestiInsertUpdateRequest request = new ObavijestiInsertUpdateRequest();
                 var idKorisnik = cmbKorisnik.SelectedValue;
                 if (int.TryParse(idKorisnik.ToString(), out int KorisnikId))
                 {
@@ -73,49 +80,128 @@ namespace TuristickaAgencija.WinUI.Obavijesti
                 {
                     await _obavijestiService.Insert<Model.Obavijesti>(request);
                 }
-               
+
+                errorProvider1.SetError(txtNazivObavijesti, null);
+                errorProvider1.SetError(txtSadrzajObavijesti, null);
+                errorProvider1.SetError(cmbKorisnik, null);
+
 
                 MessageBox.Show("Operacija uspješna");
             }
+            else
+            {
+                MessageBox.Show("Molimo Vas da ispravno popunite sva obavezna polja prije nego što nastavite.");
+            }
         }
-
+        /*
         private void txtNazivObavijesti_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtNazivObavijesti.Text))
             {
                 errorProvider1.SetError(txtNazivObavijesti, "Obavezno polje");
-                e.Cancel = false;
+                isFormValid= false;
             }
             else
             {
                 errorProvider1.SetError(txtNazivObavijesti, null);
+                isFormValid = true;
+
             }
         }
 
-        private void txtOpisPutovanja_Validating(object sender, CancelEventArgs e)
+        private void txtSadrzajObavijesti_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtSadrzajObavijesti.Text))
             {
                 errorProvider1.SetError(txtSadrzajObavijesti, "Obavezno polje");
-                e.Cancel = false;
+                isFormValid = false;
             }
             else
             {
                 errorProvider1.SetError(txtSadrzajObavijesti, null);
+                isFormValid = true;
+
             }
         }
-        /*
+        
         private void cmbKorisnik_Validating(object sender, CancelEventArgs e)
         {
+            //dodati validaciju
             if (cmbKorisnik.SelectedItem==null)
             {
                 errorProvider1.SetError(cmbKorisnik, "Obavezno polje");
-                e.Cancel = true;
+                isFormValid = false;
             }
             else
             {
                 errorProvider1.SetError(cmbKorisnik, null);
+
             }
-        }*/
+
+            if (!isFormValid)
+            {
+                e.Cancel = true;
+            }
+        }
+        
+
+        private void cmbKorisnik_Validating(object sender, CancelEventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(cmbKorisnik.Text))
+            {
+                errorProvider1.SetError(cmbKorisnik, "Obavezno polje");
+                isFormValid = false;
+            }
+            else
+            {
+                errorProvider1.SetError(cmbKorisnik, null);
+                isFormValid = true;
+            }
+
+        }
+        */
+
+        private bool isFormValidAll()
+        {
+            bool valid = true;
+
+            // Provjera txtNazivObavijesti
+            if (string.IsNullOrWhiteSpace(txtNazivObavijesti.Text))
+            {
+                errorProvider1.SetError(txtNazivObavijesti, "Obavezno polje");
+                valid = false;
+            }
+
+            // Provjera txtSadrzajObavijesti
+            if (string.IsNullOrWhiteSpace(txtSadrzajObavijesti.Text))
+            {
+                errorProvider1.SetError(txtSadrzajObavijesti, "Obavezno polje");
+                valid = false;
+            }
+
+            // Provjera cmbKorisnik
+            if (string.IsNullOrEmpty(cmbKorisnik.Text))
+            {
+                errorProvider1.SetError(cmbKorisnik, "Obavezno polje");
+                valid = false;
+            }
+
+            return valid;
+        }
+
+
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+            return;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

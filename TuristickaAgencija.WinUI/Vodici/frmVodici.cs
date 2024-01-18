@@ -56,14 +56,14 @@ namespace TuristickaAgencija.WinUI.Vodici
 
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            // Ovaj događaj će se pozvati kada se desi greška u podacima DataGridView-a
-            // e.RowIndex i e.ColumnIndex pružaju informacije o indeksima reda i kolone gde se greška desila
-            // e.Context pruža informacije o kontekstu u kojem se greška desila
+          
+            MessageBox.Show($"Greška u podacima na indeksu reda {e.RowIndex + 1} i koloni {e.ColumnIndex + 1}. Detalji: {e.Exception.Message}");
+            e.Cancel = false;
+        }
 
-            MessageBox.Show($"Greška u podacima na indeksu reda {e.RowIndex} i koloni {e.ColumnIndex}. Detalji: {e.Exception.Message}");
+        private void Vodici_Enter(object sender, EventArgs e)
+        {
 
-            // Postavljanje e.Cancel na true sprečava da DataGridView sam rukuje greškom
-            e.Cancel = true;
         }
     }
 }

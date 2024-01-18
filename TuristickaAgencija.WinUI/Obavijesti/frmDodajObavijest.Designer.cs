@@ -49,7 +49,7 @@ namespace TuristickaAgencija.WinUI.Obavijesti
             this.txtSadrzajObavijesti.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtSadrzajObavijesti.Size = new System.Drawing.Size(229, 77);
             this.txtSadrzajObavijesti.TabIndex = 13;
-            this.txtSadrzajObavijesti.Validating += new System.ComponentModel.CancelEventHandler(this.txtOpisPutovanja_Validating);
+            //this.txtSadrzajObavijesti.Validating += new System.ComponentModel.CancelEventHandler(this.txtSadrzajObavijesti_Validating);
             // 
             // txtNazivObavijesti
             // 
@@ -57,7 +57,7 @@ namespace TuristickaAgencija.WinUI.Obavijesti
             this.txtNazivObavijesti.Name = "txtNazivObavijesti";
             this.txtNazivObavijesti.Size = new System.Drawing.Size(228, 23);
             this.txtNazivObavijesti.TabIndex = 12;
-            this.txtNazivObavijesti.Validating += new System.ComponentModel.CancelEventHandler(this.txtNazivObavijesti_Validating);
+            //this.txtNazivObavijesti.Validating += new System.ComponentModel.CancelEventHandler(this.txtNazivObavijesti_Validating);
             // 
             // cmbKorisnik
             // 

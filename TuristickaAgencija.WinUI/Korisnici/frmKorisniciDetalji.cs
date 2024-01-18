@@ -16,6 +16,8 @@ namespace TuristickaAgencija.WinUI.Korisnici
         private readonly APIService _service = new APIService("Korisnici");
         private readonly APIService _ulogeService = new APIService("Uloge");
         private int? _id = null;
+        private bool isFormValid = false;
+
         public frmKorisniciDetalji(int? korisnikId=null)
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace TuristickaAgencija.WinUI.Korisnici
         private async  void btnSacuvaj_ClickAsync(object sender, EventArgs e)
         {
            
-            if (this.ValidateChildren())//&& IsValidEmail(txtEmail.Text) && IsValidPhoneNumber(txtTelefon.Text)
+            if (isFormValid)
             {
                 //var roleList = clbRole.CheckedItems.Cast<Model.Uloge>().ToList();
                 var roleList = clbRole.CheckedItems.Cast<Model.Uloge>().Select(x => x.Id).ToList();
@@ -54,13 +56,12 @@ namespace TuristickaAgencija.WinUI.Korisnici
                 }
                 MessageBox.Show("Operacija uspješna");
             }
-           /* else
+            else
             {
-                MessageBox.Show("Email ili password nisu u ispravnom formatu");
-               
+                MessageBox.Show("Molimo Vas da ispravno popunite sva obavezna polja prije nego što nastavite.");
             }
-           */
-           
+
+
         }
 
         private async void frmKorisniciDetalji_Load(object sender, EventArgs e)
@@ -89,10 +90,11 @@ namespace TuristickaAgencija.WinUI.Korisnici
             {
                 //errorProvider.SetError(txtIme,Properties.Resources.Validation_RequiredField);
                 errorProvider.SetError(txtIme, "Obavezno polje");
-                e.Cancel = false;
+                isFormValid = false;
             }
             else
             {
+                isFormValid = true;
                 errorProvider.SetError(txtIme, null);
             }
         }
@@ -102,59 +104,64 @@ namespace TuristickaAgencija.WinUI.Korisnici
             if (string.IsNullOrWhiteSpace(txtPrezime.Text))
             {
                 errorProvider.SetError(txtPrezime, "Obavezno polje");
-                e.Cancel = false;
+                isFormValid = false;
             }
             else
             {
+                isFormValid = true;
                 errorProvider.SetError(txtPrezime, null);
             }
         }
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
-            if (IsValidEmail(txtEmail.Text))
-            {
-                errorProvider.SetError(txtIme, "Email nije u ispravnom formatu");
-                e.Cancel = false;
-            }
             if (string.IsNullOrWhiteSpace(txtEmail.Text))
             {
                 errorProvider.SetError(txtEmail, "Obavezno polje");
-                e.Cancel = false;
+                isFormValid = false;
+            }
+            else if (!IsValidEmail(txtEmail.Text))
+            {
+                errorProvider.SetError(txtEmail, "Email nije u ispravnom formatu");
+                isFormValid = false;
             }
             else
             {
+                isFormValid = true;
                 errorProvider.SetError(txtEmail, null);
             }
         }
 
         private void txtTelefon_Validating(object sender, CancelEventArgs e)
         {
-            if (IsValidPhoneNumber(txtTelefon.Text))
-            {
-                errorProvider.SetError(txtTelefon, "Broj telefona nije u ispravnom formatu");
-                e.Cancel = false;
-            }
             if (string.IsNullOrWhiteSpace(txtTelefon.Text))
             {
                 errorProvider.SetError(txtTelefon, "Obavezno polje");
-                e.Cancel = false;
+                isFormValid = false;
+            }
+            else if (!IsValidPhoneNumber(txtTelefon.Text))
+            {
+                errorProvider.SetError(txtTelefon, "Broj telefona nije u ispravnom formatu");
+                isFormValid = false;
             }
             else
             {
+                isFormValid = true;
                 errorProvider.SetError(txtTelefon, null);
             }
         }
+
 
         private void txtKorisnickoIme_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtKorisnickoIme.Text) && txtKorisnickoIme.Text.Length<3)
             {
                 errorProvider.SetError(txtKorisnickoIme, "Obavezno polje");
-                e.Cancel = false;
+                isFormValid = false;
             }
             else
             {
+                isFormValid = true;
                 errorProvider.SetError(txtKorisnickoIme, null);
             }
         }
@@ -173,7 +180,7 @@ namespace TuristickaAgencija.WinUI.Korisnici
 
         static bool IsValidPhoneNumber(string phoneNumber)
         {
-            string pattern = @"^\+\d{10}$";
+            string pattern = @"^\+?\d+$";
             return Regex.IsMatch(phoneNumber, pattern);
         }
 

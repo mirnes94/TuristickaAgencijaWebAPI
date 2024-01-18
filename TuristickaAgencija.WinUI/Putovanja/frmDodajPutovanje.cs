@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TuristickaAgencija.Model.Request;
@@ -21,6 +22,8 @@ namespace TuristickaAgencija.WinUI.Putovanja
         private readonly APIService _firmaService = new APIService("Firma");
         private readonly APIService _vodiciService = new APIService("Vodic");
         private int? _id = null;
+        private bool isFormValid = false;
+
         public frmDodajPutovanje(int? putovanjeId = null)
         {
             InitializeComponent();
@@ -106,44 +109,57 @@ namespace TuristickaAgencija.WinUI.Putovanja
         PutovanjaInsertUpdateRequest request = new PutovanjaInsertUpdateRequest();
         private async void btnSacuvaj_Click(object sender, EventArgs e)
         {
-            if (this.ValidateChildren())
+            if (isFormValid)
             {
-                var vodiciList = clbVodici.CheckedItems.Cast<Model.Vodic>().Select(x => x.Id).ToList();
-                var idGrad = cmbGrad.SelectedValue;
-                if (int.TryParse(idGrad.ToString(), out int GradId))
+                if (string.IsNullOrWhiteSpace(txtSlikaInput.Text))
                 {
-                    request.GradId = GradId;
-                }
-                var idSmjestaj = cmbSmjestaj.SelectedValue;
-                if (int.TryParse(idSmjestaj.ToString(), out int SmjestajId))
-                {
-                    request.SmjestajId = SmjestajId;
-                }
-                var idPrevoz = cmbPrevoz.SelectedValue;
-                if (int.TryParse(idPrevoz.ToString(), out int PrevozId))
-                {
-                    request.PrevozId = PrevozId;
-                }
-                request.BrojMjesta = int.Parse(txtBrojMjesta.Text);
-                request.CijenaPutovanja = float.Parse(txtCijena.Text);
-                request.DatumPolaska = dtDatumPolaska.Value;
-                request.DatumDolaska = dtDatumDolaska.Value;
-                request.NazivPutovanja = txtNazivPutovanja.Text;
-                request.OpisPutovanja = txtOpisPutovanja.Text;
-                request.Vodici = vodiciList;
-                if (_id.HasValue)
-                {
-                    await _putovanjaService.Update<Model.Putovanja>((int)_id, request);
+                    errorProvider.SetError(txtSlikaInput, "Morate odabrati sliku");
+                    isFormValid = false;
                 }
                 else
                 {
-                    await _putovanjaService.Insert<Model.Putovanja>(request);
 
+
+                    var vodiciList = clbVodici.CheckedItems.Cast<Model.Vodic>().Select(x => x.Id).ToList();
+                    var idGrad = cmbGrad.SelectedValue;
+                    if (int.TryParse(idGrad.ToString(), out int GradId))
+                    {
+                        request.GradId = GradId;
+                    }
+                    var idSmjestaj = cmbSmjestaj.SelectedValue;
+                    if (int.TryParse(idSmjestaj.ToString(), out int SmjestajId))
+                    {
+                        request.SmjestajId = SmjestajId;
+                    }
+                    var idPrevoz = cmbPrevoz.SelectedValue;
+                    if (int.TryParse(idPrevoz.ToString(), out int PrevozId))
+                    {
+                        request.PrevozId = PrevozId;
+                    }
+                    request.BrojMjesta = int.Parse(txtBrojMjesta.Text);
+                    request.CijenaPutovanja = float.Parse(txtCijena.Text);
+                    request.DatumPolaska = dtDatumPolaska.Value;
+                    request.DatumDolaska = dtDatumDolaska.Value;
+                    request.NazivPutovanja = txtNazivPutovanja.Text;
+                    request.OpisPutovanja = txtOpisPutovanja.Text;
+                    request.Vodici = vodiciList;
+                    if (_id.HasValue)
+                    {
+                        await _putovanjaService.Update<Model.Putovanja>((int)_id, request);
+                    }
+                    else
+                    {
+                        await _putovanjaService.Insert<Model.Putovanja>(request);
+
+                    }
+
+                    MessageBox.Show("Operacija uspješna");
                 }
+            }
+            else
+            {
 
-               
-
-                MessageBox.Show("Operacija uspješna");
+                MessageBox.Show("Molimo Vas da ispravno popunite sva obavezna polja prije nego što nastavite.");
             }
         }
 
@@ -152,10 +168,11 @@ namespace TuristickaAgencija.WinUI.Putovanja
             if (string.IsNullOrWhiteSpace(txtNazivPutovanja.Text))
             {
                 errorProvider.SetError(txtNazivPutovanja, "Obavezno polje");
-                e.Cancel = false;
+                isFormValid = false;
             }
             else
             {
+                isFormValid = true;
                 errorProvider.SetError(txtNazivPutovanja, null);
             }
         }
@@ -165,10 +182,11 @@ namespace TuristickaAgencija.WinUI.Putovanja
             if (string.IsNullOrWhiteSpace(txtOpisPutovanja.Text))
             {
                 errorProvider.SetError(txtOpisPutovanja, "Obavezno polje");
-                e.Cancel = false;
+                isFormValid = false;
             }
             else
             {
+                isFormValid = true;
                 errorProvider.SetError(txtOpisPutovanja, null);
             }
         }
@@ -178,31 +196,45 @@ namespace TuristickaAgencija.WinUI.Putovanja
             if (string.IsNullOrWhiteSpace(txtCijena.Text))
             {
                 errorProvider.SetError(txtCijena, "Obavezno polje");
-                e.Cancel = false;
+                isFormValid = false;
+            }
+            else if (!IsDecimalNumber(txtCijena.Text))
+            {
+                errorProvider.SetError(txtCijena, "Cijena mora biti pozitivan broj");
+                isFormValid = false;
             }
             else
             {
+                isFormValid = true;
                 errorProvider.SetError(txtCijena, null);
             }
         }
 
         private void txtBrojMjesta_Validating(object sender, CancelEventArgs e)
         {
+            //regex za brojeve
+
             if (string.IsNullOrWhiteSpace(txtBrojMjesta.Text))
             {
                 errorProvider.SetError(txtBrojMjesta, "Obavezno polje");
-                e.Cancel = false;
+                isFormValid = false;
+            }
+            else if (!IsNumber(txtBrojMjesta.Text))
+            {
+                errorProvider.SetError(txtBrojMjesta, "Broj mjesta nije u ispravnom formatu");
+                isFormValid = false;
             }
             else
             {
+                isFormValid = true;
                 errorProvider.SetError(txtBrojMjesta, null);
             }
         }
 
         private void btnUploadPicture_Click(object sender, EventArgs e)
         {
-           var result= openFileDialog1.ShowDialog();
-            if(result==DialogResult.OK)
+            var result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
             {
                 var fileName = openFileDialog1.FileName;
 
@@ -215,7 +247,14 @@ namespace TuristickaAgencija.WinUI.Putovanja
                 Image image = Image.FromFile(fileName);
 
                 pictureBox.Image = image;
+
+                isFormValid = true;
             }
+            else
+            {
+                isFormValid = false;
+            }
+
         }
 
         private void txtSlikaInput_Validating(object sender, CancelEventArgs e)
@@ -223,12 +262,28 @@ namespace TuristickaAgencija.WinUI.Putovanja
             if (string.IsNullOrWhiteSpace(txtSlikaInput.Text))
             {
                 errorProvider.SetError(txtSlikaInput, "Obavezno polje");
-                e.Cancel = false;
+                isFormValid = false;
             }
             else
             {
+                isFormValid = true;
                 errorProvider.SetError(txtSlikaInput, null);
             }
         }
+
+        static bool IsNumber(string input)
+        {
+            string pattern = @"^\+?\d+$";
+            return Regex.IsMatch(input, pattern);
+        }
+
+        static bool IsDecimalNumber(string input)
+        {
+            string pattern = @"^?\d+(\.\d+)?$";
+            bool isDecimalNumber = Regex.IsMatch(input, pattern);
+            return isDecimalNumber;
+        }
+
+      
     }
 }
