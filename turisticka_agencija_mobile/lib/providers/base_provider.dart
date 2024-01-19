@@ -13,7 +13,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
   static String? _baseUrl;
   String? _endpoint;
 
-  HttpClient client = new HttpClient();
+  HttpClient client = HttpClient();
   IOClient? http;
 
   BaseProvider(String endpoint) {
@@ -35,9 +35,14 @@ abstract class BaseProvider<T> with ChangeNotifier {
 
     Map<String, String> headers = createHeaders();
     var response;
-    try{
-      response = await http!.get(url, headers: headers).timeout(Duration(seconds: 10));
-    } catch(e){
+    try {
+      print("Before HTTP request");
+      response = await http!.get(url, headers: headers);
+      print("After HTTP request");
+    } catch (e, stackTrace) {
+      print("Timeout error: $e");
+      print("Stack trace: $stackTrace");
+      print("URL: $url");
       return 522;
     }
 
@@ -197,7 +202,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
 
   bool isValidResponseCode(Response response) {
     if (response.statusCode == 200) {
-      if (response.body != "") {
+      if (response.body.isNotEmpty) {
         return true;
       } else {
         return false;

@@ -25,8 +25,10 @@ class PutovanjaDetalji extends StatelessWidget {
   int _ratingValue = 0;
   bool rated = false;
   final putovanjeKey = GlobalKey();
-  List<Color> listColor = Colors.green as List<Color>;
-
+  List<Color> listColor = <Color>[
+    Colors.green[500]!,
+    Colors.green[700]!,
+  ];
   PutovanjaProvider? _putovanjaProvider = null;
   KomentarProvider? _komentarProvider = null;
   KorisniciProvider? _korisniciProvider = null;
